@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:georss="http://www.georss.org/georss" xmlns:dc="http://purl.org/dc/elements/1.1/"><updated>2014-05-10T12:02:57Z</updated><title>USGS Magnitude 4.5+ Earthquakes, Past Week</title><subtitle>Real-time, worldwide earthquake list for the past week</subtitle><link href="http://earthquake.usgs.gov/earthquakes/feed/atom/4.5/week" rel="self"/><link href="http://earthquake.usgs.gov/earthquakes/"/><author><name>U.S. Geological Survey</name></author><id>http://earthquake.usgs.gov/</id><icon>/favicon.ico</icon>
+
+<entry><id>urn:earthquake-usgs-gov:us:b000qgt2</id><title>M 6.0, 11km W of Tecpan de Galeana, Mexico</title><dc:date>2014-05-10T07:36:01Z</dc:date><updated>2014-05-10T12:01:46Z</updated><link href="http://earthquake.usgs.gov/earthquakes/eventpage/usb000qgt2" type="text/html" rel="alternate"/><link href="http://earthquake.usgs.gov/earthquakes/eventpage/usb000qgt2.cap" type="application/cap+xml" rel="related"/><link href="http://earthquake.usgs.gov/earthquakes/eventpage/usb000qgt2#dyfi" type="text/html" rel="related"/><link href="http://earthquake.usgs.gov/earthquakes/eventpage/usb000qgt2#shakemap" type="text/html" rel="related"/><link href="http://earthquake.usgs.gov/earthquakes/eventpage/usb000qgt2#losspager" type="text/html" rel="related"/><summary type="html">
+			&lt;img src="/images/globes/15_-100.jpg" align="left" 
+					alt="17.2304 -100.788" hspace="20"/&gt;
+			&lt;p&gt;Saturday, May 10, 2014 07:36:01 UTC&lt;br/&gt;Saturday, May 10, 2014 02:36:01 at epicenter&lt;/p&gt;
+			&lt;p&gt;&lt;strong&gt;Depth&lt;/strong&gt;: 23.00 km (14.29 mi)&lt;/p&gt;
+		</summary><georss:point>17.2304 -100.788</georss:point><georss:elev>23</georss:elev><category term="Past Day" label="Age"/><category term="6" label="Magnitude"/></entry>
+</feed>

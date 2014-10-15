@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edxlde:EDXLDistribution xmlns:edxlde="urn:oasis:names:tc:emergency:EDXL:DE:1.0" xmlns:georss="http://www.georss.org/georss">
+  <edxlde:distributionID>RFSUniqueID:2014-05-08T10:52:30-00:00</edxlde:distributionID>
+  <edxlde:senderID>webmaster@rfs.nsw.gov.au</edxlde:senderID>
+  <edxlde:dateTimeSent>2014-05-08T10:52:30-00:00</edxlde:dateTimeSent>
+  <edxlde:distributionStatus>Actual</edxlde:distributionStatus>
+  <edxlde:distributionType>Report</edxlde:distributionType>
+  <edxlde:combinedConfidentiality>UNCLASSIFIED AND NOT SENSITIVE</edxlde:combinedConfidentiality>
+  <edxlde:language>en-AU</edxlde:language>
+  <edxlde:targetArea>
+    <edxlde:subdivision>AU-NSW</edxlde:subdivision>
+  </edxlde:targetArea>
+
+<edxlde:contentObject>
+    <edxlde:contentDescription>Information on MVA Gwandalan</edxlde:contentDescription>
+    <edxlde:xmlContent>
+      <edxlde:embeddedXMLContent>
+        <cap:alert xmlns:cap="urn:oasis:names:tc:emergency:cap:1.2">
+          <cap:identifier>2014-05-08T10:31:00-00:00:160068</cap:identifier>
+          <cap:sender>webmaster@rfs.nsw.gov.au</cap:sender>
+          <cap:sent>2014-05-08T10:31:00-00:00</cap:sent>
+          <cap:status>Actual</cap:status>
+          <cap:msgType>Alert</cap:msgType>
+          <cap:scope>Public</cap:scope>
+          <cap:code>urn:oasis:names:tc:emergency:cap:1.2:profile:CAP-AU:1.0</cap:code>
+          <cap:incidents>160068</cap:incidents>
+          <cap:info>
+            <cap:language>en-AU</cap:language>
+            <cap:category>Other</cap:category>
+            <cap:event>Other Non-Urgent Alerts</cap:event>
+            <cap:responseType>Monitor</cap:responseType>
+            <cap:urgency>Unknown</cap:urgency>
+            <cap:severity>Minor</cap:severity>
+            <cap:certainty>Observed</cap:certainty>
+            <cap:eventCode>
+              <cap:valueName>urn:oasis:names:tc:emergency:cap:1.2:profile:CAP-AU:1.0:AUeventLIST:1.0</cap:valueName>
+              <cap:value>other</cap:value>
+            </cap:eventCode>
+            <cap:effective>2014-05-08T10:31:00-00:00</cap:effective>
+            <cap:expires>2014-05-09T10:31:00-00:00</cap:expires>
+            <cap:senderName>NSW Rural Fire Service</cap:senderName>
+            <cap:headline>MVA Gwandalan</cap:headline>
+            <cap:description>ALERT LEVEL: Not Applicable
+LOCATION: 86 Kullaroo Rd Gwandalan
+COUNCIL AREA: Wyong
+STATUS: out of control
+TYPE: Motor Vehicle Accident
+SIZE: 0 
+RESPONSIBLE AGENCY: Rural Fire Service
+UPDATED: 8 May 2014 20:31
+</cap:description>
+            <cap:instruction>Unknown</cap:instruction>
+            <cap:web>http://www.rfs.nsw.gov.au/dsp_content.cfm?cat_id=683</cap:web>
+            <cap:contact>webmaster@rfs.nsw.gov.au</cap:contact>
+            <cap:parameter>
+              <cap:valueName>FuelType</cap:valueName>
+              <cap:value>Forest</cap:value>
+            </cap:parameter>
+            <cap:parameter>
+              <cap:valueName>Location</cap:valueName>
+              <cap:value>86 Kullaroo Rd Gwandalan</cap:value>
+            </cap:parameter>
+            <cap:parameter>
+              <cap:valueName>FireDangerClass</cap:valueName>
+              <cap:value>1</cap:value>
+            </cap:parameter>
+            <cap:parameter>
+              <cap:valueName>Status</cap:valueName>
+              <cap:value>out of control</cap:value>
+            </cap:parameter>
+            <cap:parameter>
+              <cap:valueName>Fireground</cap:valueName>
+              <cap:value>0 ha</cap:value>
+            </cap:parameter>
+            <cap:parameter>
+              <cap:valueName>AllocatedResources</cap:valueName>
+              <cap:value/>
+            </cap:parameter>
+            <cap:parameter>
+              <cap:valueName>ControlAuthority</cap:valueName>
+              <cap:value>Rural Fire Service</cap:value>
+            </cap:parameter>
+            <cap:parameter>
+              <cap:valueName>AlertLevel</cap:valueName>
+              <cap:value>Not Applicable</cap:value>
+            </cap:parameter>
+            <cap:parameter>
+              <cap:valueName>CouncilArea</cap:valueName>
+              <cap:value>Wyong</cap:value>
+            </cap:parameter>
+            <cap:parameter>
+              <cap:valueName>IncidentName</cap:valueName>
+              <cap:value>MVA Gwandalan</cap:value>
+            </cap:parameter>
+            <cap:parameter>
+              <cap:valueName>Evacuation</cap:valueName>
+              <cap:value/>
+            </cap:parameter>
+            <cap:resource>
+              <cap:resourceDesc>map</cap:resourceDesc>
+              <cap:mimeType>text/html</cap:mimeType>
+              <cap:uri>http://www.rfs.nsw.gov.au/dsp_content.cfm?CAT_ID=683</cap:uri>
+            </cap:resource>
+            <cap:area>
+              <cap:areaDesc>86 Kullaroo Rd Gwandalan, Wyong</cap:areaDesc>
+              <cap:circle>-33.1347,151.558 0.0</cap:circle>
+              <cap:geocode>
+                <cap:valueName>urn:oasis:names:tc:emergency:cap:1.2:profile:CAP-AU:1.0:ISO3166-2</cap:valueName>
+                <cap:value>AU-NSW</cap:value>
+              </cap:geocode>
+            </cap:area>
+          </cap:info>
+        </cap:alert>
+      </edxlde:embeddedXMLContent>
+    </edxlde:xmlContent>
+  </edxlde:contentObject>
+</edxlde:EDXLDistribution>

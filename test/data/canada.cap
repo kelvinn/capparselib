@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+  <identifier>2.49.0.1.124.6bddbc91.2012</identifier>
+  <sender>cap@ec.gc.ca</sender>
+  <sent>2012-05-02T23:21:04-00:00</sent>
+  <status>Actual</status>
+  <msgType>Update</msgType>
+  <source>Environment Canada - Environnement Canada - Toronto (CWTO)</source>
+  <scope>Public</scope>
+  <restriction/>
+  <addresses/>
+  <code>profile:CAP-CP:0.4</code>
+  <code>layer:EC-MSC-SMC:1.0</code>
+  <code>layer:SOREM:1.0</code>
+  <note/>
+  <references>cap@ec.gc.ca,2.49.0.1.124.a3f342a4.2012,2012-05-02T21:45:05-00:00 cap@ec.gc.ca,2.49.0.1.124.60f31a3a.2012,2012-05-02T21:55:21-00:00</references>
+  <incidents/>
+  <info>
+    <language>en-CA</language>
+    <category>Met</category>
+    <event>thunderstorm</event>
+    <responseType>AllClear</responseType>
+    <urgency>Past</urgency>
+    <severity>Minor</severity>
+    <certainty>Observed</certainty>
+    <audience>General Public</audience>
+    <eventCode>
+      <valueName>profile:CAP-CP:Event:0.4</valueName>
+      <value>thunderstorm</value>
+    </eventCode>
+    <eventCode>
+      <valueName>SAME</valueName>
+      <value>SVA</value>
+    </eventCode>
+    <effective>2012-05-02T23:20:00-00:00</effective>
+    <expires>2012-05-03T00:20:00-00:00</expires>
+    <senderName>Environment Canada</senderName>
+    <headline>severe thunderstorm watch</headline>
+    <description>This is a test - this CAP message was created for testing and evaluation purposes only.</description>
+    <instruction>Monitor local conditions and take appropriate precautions</instruction>
+    <web>http://www.weatheroffice.gc.ca/warnings/warnings_e.html</web>
+    <contact/>
+    <parameter>
+      <valueName>layer:EC-MSC-SMC:1.0:Alert_Type</valueName>
+      <value>watch</value>
+    </parameter>
+    <parameter>
+      <valueName>layer:EC-MSC-SMC:1.0:Broadcast_Intrusive</valueName>
+      <value>no</value>
+    </parameter>
+    <parameter>
+      <valueName>layer:SOREM:1.0:Broadcast_Immediately</valueName>
+      <value>No</value>
+    </parameter>
+    <parameter>
+      <valueName>layer:EC-MSC-SMC:1.0:Parent_URI</valueName>
+      <value>msc/alert/environment/hazard/mfile-1.0-ascii/decoded_consolidated-xml-2.0/20120502232000000/ww_11_71_cwto/stv/ww_11_71_cwto_201205022144_stv/public/2012_50450/bi/en_upper_complete/fr_not_present</value>
+    </parameter>
+    <parameter>
+      <valueName>layer:EC-MSC-SMC:1.0:CAP_count</valueName>
+      <value>21699</value>
+    </parameter>
+    <area>
+      <areaDesc>Windsor - Leamington - Essex County</areaDesc>
+      <polygon>42.3481,-82.9314 42.3363,-82.6937 42.3476,-82.4889 42.3219,-82.4422 42.1947,-82.4341 42.1948,-82.4537 42.0663,-82.4614 41.9568,-82.3198 41.7166,-82.4593 41.7134,-82.6942 41.8173,-82.9003 42.0409,-83.1224 42.1671,-83.1158 42.2803,-83.097 42.3159,-83.0598 42.3333,-82.9691 42.3481,-82.9314</polygon>
+      <geocode>
+        <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+        <value>041420</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537001</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537003</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537013</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537016</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537028</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537034</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537039</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537048</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537064</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>Chatham-Kent - Rondeau Park</areaDesc>
+      <polygon>42.3564,-81.5498 42.1054,-81.9412 41.9568,-82.3198 42.0663,-82.4614 42.1948,-82.4537 42.1947,-82.4341 42.3219,-82.4422 42.3476,-82.4889 42.4684,-82.4391 42.4962,-82.4388 42.5194,-82.4296 42.5298,-82.4028 42.5736,-82.4213 42.5928,-82.4749 42.6312,-82.4833 42.6303,-82.4309 42.6289,-82.3574 42.6267,-82.2456 42.631,-82.2452 42.6294,-82.1785 42.6281,-82.1333 42.6279,-82.1272 42.627,-82.1004 42.6246,-82.0234 42.6507,-82.0081 42.651,-81.8355 42.651,-81.8352 42.6081,-81.8351 42.5764,-81.7961 42.5705,-81.7888 42.5392,-81.7503 42.5301,-81.7391 42.5039,-81.707 42.5,-81.7023 42.4993,-81.7014 42.4762,-81.673 42.4749,-81.6715 42.3564,-81.5498</polygon>
+      <geocode>
+        <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+        <value>041410</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3536020</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3536029</value>
+      </geocode>
+    </area>
+  </info>
+  <info>
+    <language>fr-CA</language>
+    <category>Met</category>
+    <event>orages</event>
+    <responseType>AllClear</responseType>
+    <urgency>Past</urgency>
+    <severity>Minor</severity>
+    <certainty>Observed</certainty>
+    <audience>General Public</audience>
+    <eventCode>
+      <valueName>profile:CAP-CP:Event:0.4</valueName>
+      <value>thunderstorm</value>
+    </eventCode>
+    <eventCode>
+      <valueName>SAME</valueName>
+      <value>SVA</value>
+    </eventCode>
+    <effective>2012-05-02T23:20:00-00:00</effective>
+    <expires>2012-05-03T00:20:00-00:00</expires>
+    <senderName>Environnement Canada</senderName>
+    <headline>veille d'orages violents</headline>
+    <description>C'est l'épreuve - ce message de PAC a été créé pour les buts d'essai seulement.</description>
+    <instruction>Surveiller les conditions locales et prendre les précautions qui s'imposent</instruction>
+    <web>http://www.weatheroffice.gc.ca/warnings/warnings_f.html</web>
+    <contact/>
+    <parameter>
+      <valueName>layer:EC-MSC-SMC:1.0:Alert_Type</valueName>
+      <value>watch</value>
+    </parameter>
+    <parameter>
+      <valueName>layer:EC-MSC-SMC:1.0:Broadcast_Intrusive</valueName>
+      <value>no</value>
+    </parameter>
+    <parameter>
+      <valueName>layer:SOREM:1.0:Broadcast_Immediately</valueName>
+      <value>No</value>
+    </parameter>
+    <parameter>
+      <valueName>layer:EC-MSC-SMC:1.0:Parent_URI</valueName>
+      <value>msc/alert/environment/hazard/mfile-1.0-ascii/decoded_consolidated-xml-2.0/20120502232000000/ww_11_71_cwto/stv/ww_11_71_cwto_201205022144_stv/public/2012_50450/bi/en_upper_complete/fr_not_present</value>
+    </parameter>
+    <parameter>
+      <valueName>layer:EC-MSC-SMC:1.0:CAP_count</valueName>
+      <value>21699</value>
+    </parameter>
+    <area>
+      <areaDesc>Windsor - Leamington - comté d'Essex</areaDesc>
+      <polygon>42.3481,-82.9314 42.3363,-82.6937 42.3476,-82.4889 42.3219,-82.4422 42.1947,-82.4341 42.1948,-82.4537 42.0663,-82.4614 41.9568,-82.3198 41.7166,-82.4593 41.7134,-82.6942 41.8173,-82.9003 42.0409,-83.1224 42.1671,-83.1158 42.2803,-83.097 42.3159,-83.0598 42.3333,-82.9691 42.3481,-82.9314</polygon>
+      <geocode>
+        <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+        <value>041420</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537001</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537003</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537013</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537016</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537028</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537034</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537039</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537048</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3537064</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>Chatham-Kent - parc Rondeau</areaDesc>
+      <polygon>42.3564,-81.5498 42.1054,-81.9412 41.9568,-82.3198 42.0663,-82.4614 42.1948,-82.4537 42.1947,-82.4341 42.3219,-82.4422 42.3476,-82.4889 42.4684,-82.4391 42.4962,-82.4388 42.5194,-82.4296 42.5298,-82.4028 42.5736,-82.4213 42.5928,-82.4749 42.6312,-82.4833 42.6303,-82.4309 42.6289,-82.3574 42.6267,-82.2456 42.631,-82.2452 42.6294,-82.1785 42.6281,-82.1333 42.6279,-82.1272 42.627,-82.1004 42.6246,-82.0234 42.6507,-82.0081 42.651,-81.8355 42.651,-81.8352 42.6081,-81.8351 42.5764,-81.7961 42.5705,-81.7888 42.5392,-81.7503 42.5301,-81.7391 42.5039,-81.707 42.5,-81.7023 42.4993,-81.7014 42.4762,-81.673 42.4749,-81.6715 42.3564,-81.5498</polygon>
+      <geocode>
+        <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+        <value>041410</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3536020</value>
+      </geocode>
+      <geocode>
+        <valueName>profile:CAP-CP:Location:0.3</valueName>
+        <value>3536029</value>
+      </geocode>
+    </area>
+  </info>
+</alert>

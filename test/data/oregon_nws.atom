@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+This atom/xml feed is an index to active advisories, watches and warnings 
+issued by the National Weather Service.  This index file is not the complete 
+Common Alerting Protocol (CAP) alert message.  To obtain the complete CAP 
+alert, please follow the links for each entry in this index.  Also note the 
+CAP message uses a style sheet to convey the information in a human readable 
+format.  Please view the source of the CAP message to see the complete data 
+set.  Not all information in the CAP message is contained in this index of 
+active alerts.
+-->
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:cap="urn:oasis:names:tc:emergency:cap:1.1" xmlns:ha="http://www.alerting.net/namespace/index_1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom file:///C:/Users/kelvinn/workspace/cozysirenproject/capparselib/schema/atom.xsd">
+	<!-- http-date = Fri, 09 May 2014 10:38:00 GMT -->
+	<id>http://alerts.weather.gov/cap/or.atom</id>
+	<logo>http://alerts.weather.gov/images/xml_logo.gif</logo>
+	<generator>NWS CAP Server</generator>
+	<updated>2014-05-09T15:38:00-07:00</updated>
+	<author>
+		<name>w-nws.webmaster@noaa.gov</name>
+	</author>
+	<title>Current Watches, Warnings and Advisories for Oregon Issued by the National Weather Service</title>
+	<link href="http://alerts.weather.gov/cap/or.atom"/>
+	<entry>
+		<id>http://alerts.weather.gov/cap/wwacapget.php?x=OR125153E5DB78.SpecialWeatherStatement.125153F51DB8OR.PQRSPSPQR.ecf89045b87d414221c9af0b45a3065a</id>
+		<updated>2014-05-09T15:38:00-07:00</updated>
+		<published>2014-05-09T15:38:00-07:00</published>
+		<author>
+			<name>w-nws.webmaster@noaa.gov</name>
+		</author>
+		<title>Special Weather Statement issued May 09 at 3:38PM PDT by NWS</title>
+		<link href="http://alerts.weather.gov/cap/wwacapget.php?x=OR125153E5DB78.SpecialWeatherStatement.125153F51DB8OR.PQRSPSPQR.ecf89045b87d414221c9af0b45a3065a"/>
+		<summary>...WILLAMETTE BASIN SPECIAL RIVER STATEMENT... RIVERS IN NORTHWEST OREGON WILL CONTINUE TO RISE THE NEXT FEW DAYS IN RESPONSE TO SIGNIFICANT RAINFALL THURSDAY AND FRIDAY. IN ADDITION, FLOOD CONTROL RESERVOIRS IN THE WILLAMETTE BASIN ARE APPROACHING SUMMER FULL POOL LEVELS AND WILL NEED TO PASS EXCESS RUNOFF DOWNSTREAM.</summary>
+		<alert xmlns="urn:oasis:names:tc:emergency:cap:1.1">
+			<identifier>!</identifier>
+			<sender>!</sender>
+			<sent>2014-05-09T14:38:00-07:00</sent>
+			<event>Special Weather Statement</event>
+			<cap:effective>2014-05-09T15:38:00-07:00</cap:effective>
+			<cap:expires>2014-05-10T15:38:00-07:00</cap:expires>
+			<cap:status>Actual</cap:status>
+			<cap:msgType>Alert</cap:msgType>
+			<cap:category>Met</cap:category>
+			<cap:urgency>Expected</cap:urgency>
+			<cap:severity>Minor</cap:severity>
+			<cap:certainty>Observed</cap:certainty>
+			<cap:areaDesc>Central Willamette Valley; Northern Oregon Cascade Foothills; South Willamette Valley</cap:areaDesc>
+			<cap:polygon/>
+			<cap:geocode>
+				<valueName>FIPS6</valueName>
+				<value>041003 041005 041039 041043 041047 041051 041053 041071</value>
+				<valueName>UGC</valueName>
+				<value>ORZ007 ORZ008 ORZ010</value>
+			</cap:geocode>
+			<cap:parameter>
+				<valueName>VTEC</valueName>
+				<value/>
+			</cap:parameter>
+		</alert>
+	</entry>
+</feed>

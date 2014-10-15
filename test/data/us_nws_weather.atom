@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns:cap="urn:oasis:names:tc:emergency:cap:1.1" xmlns="http://www.w3.org/2005/Atom" xmlns:ha="http://www.alerting.net/namespace/index_1.0">
+
+
+<id>http://alerts.weather.gov/cap/us.atom</id>
+<logo>http://alerts.weather.gov/images/xml_logo.gif</logo>
+<generator>NWS CAP Server</generator>
+<updated>2014-05-10T22:00:00-06:00</updated>
+<author>
+<name>w-nws.webmaster@noaa.gov</name>
+</author>
+<title>Current Watches, Warnings and Advisories for the United States Issued by the National Weather Service</title>
+<link href="http://alerts.weather.gov/cap/us.atom"/>
+
+<entry>
+	<id>http://alerts.weather.gov/cap/wwacapget.php?x=NM125154019200.WindAdvisory.125154105F10NM.ABQNPWABQ.2d2ce3a407282ee33ba256baac0e8f3c</id>
+	<updated>2014-05-10T22:00:00-06:00</updated>
+	<published>2014-05-10T22:00:00-06:00</published>
+	<author>
+	<name>w-nws.webmaster@noaa.gov</name>
+	</author>
+	<title>Wind Advisory issued May 10 at 10:00PM MDT until May 11 at 7:00PM MDT by NWS</title>
+	<link href="http://alerts.weather.gov/cap/wwacapget.php?x=NM125154019200.WindAdvisory.125154105F10NM.ABQNPWABQ.2d2ce3a407282ee33ba256baac0e8f3c"/>
+	<summary>...VERY STRONG SOUTHWEST WINDS SUNDAY... .SOUTHWEST WINDS WILL HOWL ACROSS MUCH OF NORTH AND CENTRAL NEW MEXICO ON SUNDAY WITH GUSTS AS HIGH AS 60 MPH POSSIBLE AS A CORE OF HIGH WINDS ALOFT COMBINE WITH A STRONG SURFACE PRESSURE GRADIENT. BLOWING DUST MAY RESULT IN SIGNIFICANT VISIBILITY RESTRICTIONS. THE STRONGEST WINDS ARE EXPECTED FROM MID DAY UNTIL</summary>
+	<cap:event>Wind Advisory</cap:event>
+	<cap:effective>2014-05-10T22:00:00-06:00</cap:effective>
+	<cap:expires>2014-05-11T19:00:00-06:00</cap:expires>
+	<cap:status>Actual</cap:status>
+	<cap:msgType>Alert</cap:msgType>
+	<cap:category>Met</cap:category>
+	<cap:urgency>Expected</cap:urgency>
+	<cap:severity>Minor</cap:severity>
+	<cap:certainty>Likely</cap:certainty>
+	<cap:areaDesc>Chaves County Plains; Chuska Mountains; Curry County; De Baca County; East Slopes Sangre de Cristo Mountains; Eastern Lincoln County; Eastern San Miguel County; Estancia Valley; Far Northeast Highlands; Far Northwest Highlands; Guadalupe County; Harding County; Jemez Mountains; Lower Chama River Valley; Lower Rio Grande Valley; Middle Rio Grande Valley, Albuquerque Metro Area; Northern Sangre de Cristos above 9500 feet, Red River; Northwest Highlands; Northwest Plateau; Quay County; Roosevelt County; San Francisco River Valley; San Juan Mountains; Santa Fe Metro Area; Southern Sangre de Cristos above 9500 feet; Southwest Chaves County; Upper Rio Grande Valley; West Central Highlands; West Central Mountains; West Central Plateau; West Slopes Sangre de Cristo Mountains</cap:areaDesc>
+	<cap:polygon/>
+	<cap:geocode>
+	<valueName>FIPS6</valueName>
+	<value>035001 035003 035005 035006 035007 035009 035011 035019 035021 035027 035028 035031 035033 035037 035039 035041 035043 035045 035047 035049 035053 035055 035057 035061</value>
+	<valueName>UGC</valueName>
+	<value>NMZ501 NMZ502 NMZ503 NMZ504 NMZ505 NMZ506 NMZ507 NMZ509 NMZ510 NMZ511 NMZ512 NMZ513 NMZ514 NMZ515 NMZ516 NMZ517 NMZ518 NMZ519 NMZ520 NMZ522 NMZ528 NMZ531 NMZ532 NMZ533 NMZ534 NMZ535 NMZ536 NMZ537 NMZ538 NMZ539 NMZ540</value>
+	</cap:geocode>
+	<cap:parameter>
+	<valueName>VTEC</valueName>
+	<value>/O.CON.KABQ.WI.Y.0032.140511T1600Z-140512T0100Z/</value>
+	</cap:parameter>
+	</entry>
+<entry>
+	<id>http://alerts.weather.gov/cap/wwacapget.php?x=NM125154019200.HighWindWarning.125154105F10NM.ABQNPWABQ.5695225d7518f8d8e2bcfcd1108f98c2</id>
+	<updated>2014-05-10T22:00:00-06:00</updated>
+	<published>2014-05-10T22:00:00-06:00</published>
+	<author>
+	<name>w-nws.webmaster@noaa.gov</name>
+	</author>
+	<title>High Wind Warning issued May 10 at 10:00PM MDT until May 11 at 7:00PM MDT by NWS</title>
+	<link href="http://alerts.weather.gov/cap/wwacapget.php?x=NM125154019200.HighWindWarning.125154105F10NM.ABQNPWABQ.5695225d7518f8d8e2bcfcd1108f98c2"/>
+	<summary>...VERY STRONG SOUTHWEST WINDS SUNDAY... .SOUTHWEST WINDS WILL HOWL ACROSS MUCH OF NORTH AND CENTRAL NEW MEXICO ON SUNDAY WITH GUSTS AS HIGH AS 60 MPH POSSIBLE AS A CORE OF HIGH WINDS ALOFT COMBINE WITH A STRONG SURFACE PRESSURE GRADIENT. BLOWING DUST MAY RESULT IN SIGNIFICANT VISIBILITY RESTRICTIONS. THE STRONGEST WINDS ARE EXPECTED FROM MID DAY UNTIL</summary>
+	<cap:event>High Wind Warning</cap:event>
+	<cap:effective>2014-05-10T22:00:00-06:00</cap:effective>
+	<cap:expires>2014-05-11T19:00:00-06:00</cap:expires>
+	<cap:status>Actual</cap:status>
+	<cap:msgType>Alert</cap:msgType>
+	<cap:category>Met</cap:category>
+	<cap:urgency>Expected</cap:urgency>
+	<cap:severity>Severe</cap:severity>
+	<cap:certainty>Likely</cap:certainty>
+	<cap:areaDesc>Central Highlands; Northeast Highlands; Sandia, Manzano Mountains; South Central Highlands; South Central Mountains; Southwest Mountains; Upper Tularosa Valley</cap:areaDesc>
+	<cap:polygon/>
+	<cap:geocode>
+	<valueName>FIPS6</valueName>
+	<value>035001 035003 035027 035043 035047 035049 035053 035057 035061</value>
+	<valueName>UGC</valueName>
+	<value>NMZ508 NMZ521 NMZ523 NMZ524 NMZ525 NMZ526 NMZ529</value>
+	</cap:geocode>
+	<cap:parameter>
+	<valueName>VTEC</valueName>
+	<value>/O.CON.KABQ.HW.W.0014.140511T1600Z-140512T0100Z/</value>
+	</cap:parameter>
+	</entry>
+</feed>
