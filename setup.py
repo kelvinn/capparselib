@@ -17,6 +17,7 @@ setup(name="capparselib",
     author="Kelvin Nicholson",
     author_email='kelvin@kelvinism.com',
     platforms = ['any'],
-    package_dir = {'capparselib': 'src'},
-    packages = ['capparselib']
+    install_requires=["lxml"],
+    py_modules=['capparselib'],
+    scripts=['capparselib.py']
 )

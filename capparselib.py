@@ -15,10 +15,10 @@
     no validation with parsing this - to be added shortly! Alert validation
     via signatures is also not supported, yet.
 
-    Basic usage include:
+    Basic usage includes (from the source directory):
 
         >>> from capparselib import CAPParser
-        >>> f = r'capparselib/testdata/weather.atom'
+        >>> f = r'test/data/weather.cap'
         >>> src = open(f, 'r').read()
         >>> alert_list = CAPParser(src).as_dict()
 
@@ -203,8 +203,6 @@ class CAPParser:
             self.cap_xml_type = 'EDXL_DE'
         else:  # probably RSS TODO Unfinished
             self.cap_xml_type = 'RSS'
-        #print ns_list
-        #print self.cap_xml_type
 
     def get_objectified_xml(self):
         xsd_filename = XML_TYPE_XSD_MAPPINGS[self.cap_xml_type]
