@@ -24,7 +24,7 @@ You can also install it directly with pip:
 
 Basic usage includes (from the source directory):
 
-    >>> from capparselib import CAPParser
+    >>> from capparselib.parsers import CAPParser
     >>> f = r'test/data/weather.cap'
     >>> src = open(f, 'r').read()
     >>> alert_list = CAPParser(src).as_dict()

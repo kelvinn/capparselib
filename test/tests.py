@@ -43,6 +43,55 @@ class TestCAPParser_1_1(unittest.TestCase):
         result = self.cap_object.alert_list
         self.assertEqual("w-nws.webmaster@noaa.gov", result[0]["cap_sender"])
 
+
+class TestCAPParser_1_2(unittest.TestCase):
+    def setUp(self):
+        f = open('data/taiwan.cap', 'r').read()
+        self.cap_object = CAPParser(f)
+
+    def test_determine_cap_type(self):
+        self.cap_object.determine_cap_type()
+        self.assertEqual("CAP1_2", self.cap_object.cap_xml_type)
+
+    def test_get_objectified_xml(self):
+        self.cap_object.determine_cap_type()
+        objectified_xml = self.cap_object.get_objectified_xml()
+        children = objectified_xml.info.getchildren()
+        self.assertIsNotNone(children)
+
+    def test_parse_alert(self):
+        self.cap_object.determine_cap_type()
+        objectified_xml = self.cap_object.get_objectified_xml()
+        alert_dict = self.cap_object.parse_alert(objectified_xml)
+        self.assertEqual("2014-05-14T20:10:00+08:00", alert_dict['cap_sent'])
+
+    def test_load(self):
+        self.cap_object.load()
+        result = self.cap_object.alert_list
+        self.assertEqual("ddmt01@wra.gov.tw", result[0]["cap_sender"])
+
+
+class TestCAPParser_ATOM(unittest.TestCase):
+    def setUp(self):
+        f = open('data/amber.atom', 'r').read()
+        self.cap_object = CAPParser(f)
+
+    def test_determine_cap_type(self):
+        self.cap_object.determine_cap_type()
+        self.assertEqual("ATOM", self.cap_object.cap_xml_type)
+
+    def test_get_objectified_xml(self):
+        self.cap_object.determine_cap_type()
+        objectified_xml = self.cap_object.get_objectified_xml()
+        children = objectified_xml.entry.getchildren()
+        self.assertIsNotNone(children)
+
+    def test_load(self):
+        self.cap_object.load()
+        result = self.cap_object.alert_list
+        self.assertEqual("KARO@CLETS.DOJ.DC.GOV", result[0]["cap_sender"])
+
+
 if __name__ == '__main__':
-    from capparselib import CAPParser
+    from src.parsers import CAPParser
     unittest.main()

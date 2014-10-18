@@ -1,2 +1,2 @@
 __author__ = 'kelvinn'
-from capparselib.src.capparselib import CAPParser as CAPParser
+from src.parsers import CAPParser as CAPParser

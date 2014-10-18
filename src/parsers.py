@@ -4,8 +4,6 @@
     capparselib.CAPParser
     ~~~~~~~~~~~~~
 
-
-
     :copyright: Kelvin Nicholson (kelvin@kelvinism.com), see AUTHORS for more details
     :license: MOZILLA PUBLIC LICENSE (v1.1), see LICENSE for more details
 """
