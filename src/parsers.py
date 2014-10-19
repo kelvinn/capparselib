@@ -68,7 +68,7 @@ XML_TYPE_XSD_MAPPINGS = {
 }
 
 
-class CAPParser:
+class CAPParser(object):
     def __init__(self, raw_cap_xml):
         self.xml = raw_cap_xml
         self.objectified_xml = None
@@ -102,12 +102,10 @@ class CAPParser:
                     if hasattr(area_obj, 'polygon'):
                         new_area_dict['polygon'] = info_dict['area'].polygon
                     if hasattr(area_obj, 'geocode'):
-                        #geocode_dict = {}
                         geocode_list = []
                         for geocode in area_obj['geocode']:
                             geocode_list.append({"valueName": unicode(geocode.valueName),
                                                  "value": unicode(geocode.value)})
-                            #geocode_dict.update({geocode.valueName: geocode.value})
                         new_area_dict['geocodes'] = geocode_list
                     new_area_dict['area_description'] = unicode(area_obj.areaDesc)
                     new_area_list.append(new_area_dict)
@@ -149,7 +147,6 @@ class CAPParser:
         parser = etree.XMLParser(recover=True, remove_blank_text=True)  #recovers from bad characters.
         tree = etree.fromstring(self.xml, parser)
 
-        #tree = etree.parse(filename, )
         ns_list = tree.nsmap.values()
         if ATOM_URI in ns_list:
             self.cap_xml_type = 'ATOM'

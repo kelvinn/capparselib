@@ -6,12 +6,12 @@ Build the capparselib module for parsing Common Alerting Protocol feeds.
 __author__ = 'kelvinn'
 __email__ = 'kelvin@kelvinism.com'
 
-from distutils.core import setup
+from setuptools import setup
 
 files = ["schema/*"]
 
 setup(name="capparselib",
-    version="0.2",
+    version="0.3",
     description="A module to parse and standardise CAP feeds",
     long_description="This module provides the ability to parse Common Alerting Protocol (CAP) feeds and standardise"
                      "the data into a dict, regardless if it was a 1.1 or 1.2 specification.",
