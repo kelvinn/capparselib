@@ -1,5 +1,8 @@
 # capparselib
 
+[![Code Health](https://landscape.io/github/kelvinn/capparselib/master/landscape.png)](https://landscape.io/github/kelvinn/capparselib/master)
+[![Build Status](https://travis-ci.org/kelvinn/capparselib.svg)](https://travis-ci.org/kelvinn/capparselib)
+
 This module parses and 'normalizes' alerts sent using the
 Common Alerting Protocol. It currently can handle XML in
 CAP1.1 and CAP1.2 format, and supports ATOM feeds.
