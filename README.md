@@ -55,3 +55,5 @@ fields as needed:
 
 If you want to try another CAP parser, take a look at 'cap-alerts',
 located at: https://code.google.com/p/cap-alerts/
+
+Or RCAP, for Ruby, located here: https://github.com/farrel/RCAP
