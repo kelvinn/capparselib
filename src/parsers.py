@@ -168,20 +168,25 @@ class CAPParser(object):
             a = objectify.fromstring(self.xml, parser)
         return a
 
-    def load(self):
-        self.determine_cap_type()
+    def get_alert_list(self):
+        alert_list = []
         objectified_xml = self.get_objectified_xml()
         if self.cap_xml_type == 'ATOM':
             for alert in objectified_xml.entry.content.getchildren():
-                self.alert_list.append(self.parse_alert(alert))
-        elif self.cap_xml_type == 'CAP1.1' or self.cap_xml_type == 'CAP1.2':
-            for alert in objectified_xml.info.getchildren():
-                self.alert_list.append(self.parse_alert(alert))
+                alert_list.append(alert)
+        elif self.cap_xml_type == 'CAP1_1' or self.cap_xml_type == 'CAP1_2':
+            alert_list.append(objectified_xml)
+            #for alert in objectified_xml.entry.content.getchildren():
+            #    alert_list.append(alert)
         elif self.cap_xml_type == 'EDXL_DE':
             for alert in objectified_xml.contentObject.xmlContent.embeddedXMLContent.getchildren():
-                self.alert_list.append(self.parse_alert(alert))
-        else:
-            self.alert_list.append(self.parse_alert(objectified_xml))
+                alert_list.append(alert)
+        return alert_list
+
+    def load(self):
+        self.determine_cap_type()
+        for alert in self.get_alert_list():
+            self.alert_list.append(self.parse_alert(alert))
 
     def as_dict(self):
         return self.alert_list
