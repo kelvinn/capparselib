@@ -232,6 +232,6 @@ if __name__ == '__main__':
         test_name = 'test_%s' % t[0].split("/")[1].replace(".", "_")
         test, test_cap_load, test_parse_alert = test_generator(t[0], t[1], t[2], t[3])
         setattr(TestSequence, test_name, test)
-        setattr(TestSequence, test_name + "cap_load", test_cap_load)
-        setattr(TestSequence, test_name + "parse_alert", test_parse_alert)
+        setattr(TestSequence, test_name + "_cap_load", test_cap_load)
+        setattr(TestSequence, test_name + "_parse_alert", test_parse_alert)
     unittest.main()
