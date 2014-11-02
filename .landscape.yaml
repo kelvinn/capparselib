@@ -1,1 +1,2 @@
-ignore-patterns: src/serializer_1_2.py
+ignore-patterns:
+    - ^src/serializer.*\.py$
