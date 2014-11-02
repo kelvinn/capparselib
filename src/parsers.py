@@ -76,6 +76,54 @@ class CAPParser(object):
         self.alert_list = []
         self.load()
 
+    def process_area(self, info_dict):
+        new_area_list = []
+        for area_obj in info_dict['area']:
+            new_area_dict = {}
+            if hasattr(area_obj, 'circle'):
+                new_area_dict['circle'] = info_dict['area'].circle
+            if hasattr(area_obj, 'polygon'):
+                new_area_dict['polygon'] = info_dict['area'].polygon
+            if hasattr(area_obj, 'geocode'):
+                geocode_list = []
+                for geocode in area_obj['geocode']:
+                    geocode_list.append({"valueName": unicode(geocode.valueName),
+                                         "value": unicode(geocode.value)})
+                new_area_dict['geocodes'] = geocode_list
+            new_area_dict['area_description'] = unicode(area_obj.areaDesc)
+            new_area_list.append(new_area_dict)
+        info_dict['cap_area'] = new_area_list
+        info_dict.pop('area')  # override the area value.
+        return info_dict
+
+    def process_event_code(self, info_dict):
+        event_code_list = []
+        for event_code in info_dict['eventCode']:
+            event_code_list.append({"valueName": unicode(event_code.valueName),
+                                    "value": unicode(event_code.value)})
+        info_dict['cap_event_code'] = event_code_list
+        info_dict.pop('eventCode')
+        return info_dict
+
+    def process_parameter(self, info_dict):
+        parameter_list = []
+        for parameter in info_dict['parameter']:
+            parameter_list.append({"valueName": unicode(parameter.valueName),
+                                   "value": unicode(parameter.value)})
+        info_dict['cap_parameter'] = parameter_list
+        info_dict.pop('parameter')
+        return info_dict
+
+    def process_resource(self, info_dict):
+        resource_list = []
+        for resource in info_dict['resource']:
+            resource_list.append({"resourceDesc": unicode(resource.resourceDesc),
+                                  "mimeType": unicode(resource.mimeType),
+                                  "uri": resource.uri})
+        info_dict['cap_resource'] = resource_list
+        info_dict.pop('resource')
+        return info_dict
+
     def parse_alert(self, alert):
         alert_dict = alert.__dict__
 
@@ -94,48 +142,16 @@ class CAPParser(object):
                     info_dict[new_info_key] = unicode(info_dict.pop(info_key))
 
             if 'area' in info_dict.keys():
-                new_area_list = []
-                for area_obj in info_dict['area']:
-                    new_area_dict = {}
-                    if hasattr(area_obj, 'circle'):
-                        new_area_dict['circle'] = info_dict['area'].circle
-                    if hasattr(area_obj, 'polygon'):
-                        new_area_dict['polygon'] = info_dict['area'].polygon
-                    if hasattr(area_obj, 'geocode'):
-                        geocode_list = []
-                        for geocode in area_obj['geocode']:
-                            geocode_list.append({"valueName": unicode(geocode.valueName),
-                                                 "value": unicode(geocode.value)})
-                        new_area_dict['geocodes'] = geocode_list
-                    new_area_dict['area_description'] = unicode(area_obj.areaDesc)
-                    new_area_list.append(new_area_dict)
-                info_dict['cap_area'] = new_area_list
-                info_dict.pop('area')  # override the area value.
+                info_dict = self.process_area(info_dict)
 
             if 'eventCode' in info_dict.keys():
-                event_code_list = []
-                for event_code in info_dict['eventCode']:
-                    event_code_list.append({"valueName": unicode(event_code.valueName),
-                                            "value": unicode(event_code.value)})
-                info_dict['cap_event_code'] = event_code_list
-                info_dict.pop('eventCode')
+                info_dict = self.process_event_code(info_dict)
 
             if 'parameter' in info_dict.keys():
-                parameter_list = []
-                for parameter in info_dict['parameter']:
-                    parameter_list.append({"valueName": unicode(parameter.valueName),
-                                           "value": unicode(parameter.value)})
-                info_dict['cap_parameter'] = parameter_list
-                info_dict.pop('parameter')
+                info_dict = self.process_parameter(info_dict)
 
             if 'resource' in info_dict.keys():
-                resource_list = []
-                for resource in info_dict['resource']:
-                    resource_list.append({"resourceDesc": unicode(resource.resourceDesc),
-                                          "mimeType": unicode(resource.mimeType),
-                                          "uri": resource.uri})
-                info_dict['cap_resource'] = resource_list
-                info_dict.pop('resource')
+                info_dict = self.process_resource(info_dict)
 
             info_item_list.append(info_dict)
 
@@ -164,24 +180,25 @@ class CAPParser(object):
         with open(os.path.join(CAPLIBRARY_PATH, xsd_filename)) as f:
             doc = etree.parse(f)
             schema = etree.XMLSchema(doc)
-            parser = objectify.makeparser(schema=schema, recover=True, remove_blank_text=True)
-            a = objectify.fromstring(self.xml, parser)
+            try:
+                parser = objectify.makeparser(schema=schema, recover=True, remove_blank_text=True)
+                a = objectify.fromstring(self.xml, parser)
+            except etree.XMLSyntaxError, e:
+                raise Exception("Invalid XML")
         return a
 
     def get_alert_list(self):
-        alert_list = []
+        alerts = []
         objectified_xml = self.get_objectified_xml()
         if self.cap_xml_type == 'ATOM':
             for alert in objectified_xml.entry.content.getchildren():
-                alert_list.append(alert)
+                alerts.append(alert)
         elif self.cap_xml_type == 'CAP1_1' or self.cap_xml_type == 'CAP1_2':
-            alert_list.append(objectified_xml)
-            #for alert in objectified_xml.entry.content.getchildren():
-            #    alert_list.append(alert)
+            alerts.append(objectified_xml)
         elif self.cap_xml_type == 'EDXL_DE':
             for alert in objectified_xml.contentObject.xmlContent.embeddedXMLContent.getchildren():
-                alert_list.append(alert)
-        return alert_list
+                alerts.append(alert)
+        return alerts
 
     def load(self):
         self.determine_cap_type()
