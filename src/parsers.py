@@ -69,8 +69,9 @@ XML_TYPE_XSD_MAPPINGS = {
 
 
 class CAPParser(object):
-    def __init__(self, raw_cap_xml):
+    def __init__(self, raw_cap_xml=None, recover=False):
         self.xml = raw_cap_xml
+        self.recover = recover
         self.objectified_xml = None
         self.cap_xml_type = None
         self.alert_list = []
@@ -160,8 +161,11 @@ class CAPParser(object):
         return alert_dict
 
     def determine_cap_type(self):
-        parser = etree.XMLParser(recover=True, remove_blank_text=True)  #recovers from bad characters.
-        tree = etree.fromstring(self.xml, parser)
+        try:
+            parser = etree.XMLParser(recover=self.recover, remove_blank_text=True)  #recovers from bad characters.
+            tree = etree.fromstring(self.xml, parser)
+        except:
+            raise Exception("Invalid XML")
 
         ns_list = tree.nsmap.values()
         if ATOM_URI in ns_list:
@@ -181,10 +185,10 @@ class CAPParser(object):
             doc = etree.parse(f)
             schema = etree.XMLSchema(doc)
             try:
-                parser = objectify.makeparser(schema=schema, recover=True, remove_blank_text=True)
+                parser = objectify.makeparser(schema=schema, recover=self.recover, remove_blank_text=True)
                 a = objectify.fromstring(self.xml, parser)
             except etree.XMLSyntaxError, e:
-                raise Exception("Invalid XML")
+                raise Exception("Error objectifying XML")
         return a
 
     def get_alert_list(self):
@@ -201,9 +205,10 @@ class CAPParser(object):
         return alerts
 
     def load(self):
-        self.determine_cap_type()
-        for alert in self.get_alert_list():
-            self.alert_list.append(self.parse_alert(alert))
+        if self.xml:
+            self.determine_cap_type()
+            for alert in self.get_alert_list():
+                self.alert_list.append(self.parse_alert(alert))
 
     def as_dict(self):
         return self.alert_list

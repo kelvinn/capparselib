@@ -14,6 +14,7 @@ from StringIO import StringIO
 from datetime import *
 from dateutil.tz import *
 import dateutil.parser
+from lxml import etree
 
 TEST_ROOT = os.path.dirname(os.path.abspath(__file__))
 ROOT_PATH = os.path.join(TEST_ROOT, os.pardir)
@@ -108,6 +109,13 @@ class TestCAPParser_ATOM(unittest.TestCase):
         result = self.cap_object.alert_list
         self.assertEqual("KARO@CLETS.DOJ.DC.GOV", result[0]["cap_sender"])
 
+
+class TestInvalid(unittest.TestCase):
+    def setUp(self):
+        self.f = open('data/invalid.cap', 'r').read()
+
+    def test_invalid(self):
+        self.assertRaises(Exception, CAPParser, self.f)
 
 class TestSerializer(unittest.TestCase):
     """
