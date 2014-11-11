@@ -118,8 +118,11 @@ class TestCAPParser_EDXLDE(unittest.TestCase):
     def test_load(self):
         self.cap_object.load()
         result = self.cap_object.alert_list
-        self.assertEqual(7, len(result[0]))
+        self.assertEqual(9, len(result[0]))
 
+    def test_as_dict(self):
+        alerts = self.cap_object.as_dict()
+        self.assertEqual(59, len(alerts))
 
 class TestInvalid(unittest.TestCase):
     def setUp(self):

@@ -200,7 +200,8 @@ class CAPParser(object):
         elif self.cap_xml_type == 'CAP1_1' or self.cap_xml_type == 'CAP1_2':
             alerts.append(objectified_xml)
         elif self.cap_xml_type == 'EDXL_DE':
-            for alert in objectified_xml.contentObject.xmlContent.embeddedXMLContent.getchildren():
+            for obj in objectified_xml.contentObject:
+                alert = obj.xmlContent.embeddedXMLContent.getchildren()[0]
                 alerts.append(alert)
         return alerts
 
