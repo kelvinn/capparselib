@@ -110,6 +110,17 @@ class TestCAPParser_ATOM(unittest.TestCase):
         self.assertEqual("KARO@CLETS.DOJ.DC.GOV", result[0]["cap_sender"])
 
 
+class TestCAPParser_EDXLDE(unittest.TestCase):
+    def setUp(self):
+        f = open('data/bushfire_valid.edxlde', 'r').read()
+        self.cap_object = CAPParser(f)
+
+    def test_load(self):
+        self.cap_object.load()
+        result = self.cap_object.alert_list
+        self.assertEqual(7, len(result[0]))
+
+
 class TestInvalid(unittest.TestCase):
     def setUp(self):
         self.f = open('data/invalid.cap', 'r').read()
