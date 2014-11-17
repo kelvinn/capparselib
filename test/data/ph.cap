@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2"><identifier>103ff55e-b538-49a2-a94a-64470ddea2cc</identifier><sender>PAGASA-DOST</sender><sent>2014-11-03T14:57:33+08:00</sent><status>Test</status><msgType>Alert</msgType><scope>Public</scope><info><category>Met</category><event>Tropical Cyclone Alert</event><responseType>Prepare</responseType><urgency>Expected</urgency><severity>Minor</severity><certainty>Possible</certainty><expires>2014-11-04T03:57:28+08:00</expires><senderName>PAGASA-DOST</senderName><headline>Tropical Cyclone Alert : Typhoon Paeng  [TEST]</headline><description>No public storm warning signal is in effect in any part of the country. </description><instruction>Monitor for the latest weather bulletin issued by PAGASA every 12 hours. In the meantime, business may be carried out as usual.</instruction><web>http://www.pagasa.dost.gov.ph/tropical-cyclone/weather-bulletin-update</web><contact>PAGASA DOST</contact><parameter><valueName>layer:Google:Region:0.1</valueName><value>Philippine Area of Responsibility</value></parameter><area><areaDesc>Philippine Area of Responsibility</areaDesc><polygon>21,120 21,130 5,130 5,121.5 9.5,113 15,113 21,120</polygon></area></info><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>9T1ZBqeA3IBc5hERb6991cmR/Yg=</DigestValue></Reference></SignedInfo><SignatureValue>VKRdGnpkBRusn2x+5US5Is9acx3G98fIXRah5XrRwZ8xa8Zw8Em3Q0xmGPEsoBu4
+8bTWzt8inHvMdt4JaOmL/tu75FQbm1Qw/QD9f71EQNBlIxrx6vdxj65VYTopzVxS
+GQOT0yftbVbqFHn4XF7sFIoALWmNWS9vbjmTKGKVGvcacMsFyvdupVUT8l80ulG1
+pnPeJJkg0bauvQMnUP1iwcVPP1O556fRbIDOC4OYdNbjS75yE3nu33cYYSNRYKtz
+whNIuYN1uRlkbtsnhAJ6/O/xtBvryvRH7uiK2ima6L2PHnGkylQTKqMvR66tL7YO
+QKyir7Y9U3RlqlEadEzxgg==</SignatureValue><KeyInfo><KeyValue>
+<RSAKeyValue>
+<Modulus>
+yVfF/fKxLtHIbctP7JfrM6OHY3L956UkjaRSRw2cng6M7dumT0DVmefl19dzc2YY
+CqvEefXC1ebZsNai7DCVG5CzUm8gaOnrzvzIhJPCOcI8FYrkG+Wb3Ni23gfoldA/
+DwD/rR2dBtLT6xSJEmqMcb+z5ofAEvv8kg/nD0JSXgE3r4V3BF0C3Bk11PkZdtag
+hVRtLSSsbygP26TdHL9VmmXlB6p0/MY55Qk2XAlUUP81ufycX1y58oTVAJPP3uDa
+LwFm5ae8NeBp2MiF5kF0u7foxy+uh7RH0H8TbvF7IQCdMK3EN7SFSm89tAi7E/Ao
+KTuICl584Dd97ZDFeVVBqw==
+</Modulus>
+<Exponent>
+AQAB
+</Exponent>
+</RSAKeyValue>
+</KeyValue></KeyInfo></Signature></alert>

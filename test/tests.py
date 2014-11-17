@@ -22,6 +22,8 @@ ROOT_PATH = os.path.join(TEST_ROOT, os.pardir)
 os.chdir(TEST_ROOT)
 sys.path.insert(0, os.path.dirname(TEST_ROOT))
 
+# filename, cap type, sent time, sender
+
 CAP_DATA_FILES = [
     ["data/weather.cap", "CAP1_1", "2014-05-10T22:00:00-06:00", "w-nws.webmaster@noaa.gov"],
     ["data/amber.atom", "ATOM", "2010-06-03T19:15:00-05:00", "KARO@CLETS.DOJ.DC.GOV"],
@@ -32,6 +34,7 @@ CAP_DATA_FILES = [
      "http://earthquake.usgs.gov/research/monitoring/anss/neic/"],
     ["data/mexico.atom", "ATOM", "2014-10-31T21:15:00-06:00", "smn.cna.gob.mx"],
     ["data/taiwan.cap", "CAP1_2", "2014-05-14T20:10:00+08:00", "ddmt01@wra.gov.tw"],
+    ["data/ph.cap", "CAP1_2", "2014-11-03T14:57:33+08:00", "PAGASA-DOST"]
 ]
 
 
