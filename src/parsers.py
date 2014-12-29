@@ -195,8 +195,8 @@ class CAPParser(object):
         alerts = []
         objectified_xml = self.get_objectified_xml()
         if self.cap_xml_type == 'ATOM':
-            for alert in objectified_xml.entry.content.getchildren():
-                alerts.append(alert)
+            for alert in objectified_xml.entry:
+                alerts.append(alert.content.getchildren()[0])
         elif self.cap_xml_type == 'CAP1_1' or self.cap_xml_type == 'CAP1_2':
             alerts.append(objectified_xml)
         elif self.cap_xml_type == 'EDXL_DE':

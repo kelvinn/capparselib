@@ -4,7 +4,6 @@
 from StringIO import StringIO
 
 __author__ = 'kelvinn'
-__version__ = '0.1'
 __email__ = 'kelvin@kelvinism.com'
 
 import os
@@ -22,19 +21,20 @@ ROOT_PATH = os.path.join(TEST_ROOT, os.pardir)
 os.chdir(TEST_ROOT)
 sys.path.insert(0, os.path.dirname(TEST_ROOT))
 
-# filename, cap type, sent time, sender
+# filename, cap type, num alerts, sent time, sender
 
 CAP_DATA_FILES = [
-    ["data/weather.cap", "CAP1_1", "2014-05-10T22:00:00-06:00", "w-nws.webmaster@noaa.gov"],
-    ["data/amber.atom", "ATOM", "2010-06-03T19:15:00-05:00", "KARO@CLETS.DOJ.DC.GOV"],
-    ["data/australia.cap", "CAP1_2", "2011-10-05T23:04:00+10:00", "webmaster@rfs.nsw.gov.au"],
-    ["data/earthquake.cap", "CAP1_1", "2010-08-31T00:09:25-05:00",
+    ["data/weather.cap", "CAP1_1", 1, "2014-05-10T22:00:00-06:00", "w-nws.webmaster@noaa.gov"],
+    ["data/amber.atom", "ATOM", 1, "2010-06-03T19:15:00-05:00", "KARO@CLETS.DOJ.DC.GOV"],
+    ["data/australia.cap", "CAP1_2", 1, "2011-10-05T23:04:00+10:00", "webmaster@rfs.nsw.gov.au"],
+    ["data/earthquake.cap", "CAP1_1", 1, "2010-08-31T00:09:25-05:00",
      "http://earthquake.usgs.gov/research/monitoring/anss/neic/"],
-    ["data/earthquake-iso8859-1.cap", "CAP1_2", "2012-10-14T22:53:04+00:00",
+    ["data/earthquake-iso8859-1.cap", "CAP1_2", 1, "2012-10-14T22:53:04+00:00",
      "http://earthquake.usgs.gov/research/monitoring/anss/neic/"],
-    ["data/mexico.atom", "ATOM", "2014-10-31T21:15:00-06:00", "smn.cna.gob.mx"],
-    ["data/taiwan.cap", "CAP1_2", "2014-05-14T20:10:00+08:00", "ddmt01@wra.gov.tw"],
-    ["data/ph.cap", "CAP1_2", "2014-11-03T14:57:33+08:00", "PAGASA-DOST"]
+    ["data/mexico.atom", "ATOM", 469, "2014-10-31T21:15:00-06:00", "smn.cna.gob.mx"],
+    ["data/taiwan.cap", "CAP1_2", 1, "2014-05-14T20:10:00+08:00", "ddmt01@wra.gov.tw"],
+    ["data/ph.cap", "CAP1_2", 1, "2014-11-03T14:57:33+08:00", "PAGASA-DOST"],
+    ["data/wcatwc-warning.cap", "CAP1_2", 1, "2011-09-02T11:36:50-00:00", "http://newwcatwc.arh.noaa.gov/tsuPortal/"]
 ]
 
 
@@ -222,7 +222,7 @@ class TestSequence(unittest.TestCase):
     pass
 
 
-def test_generator(filename, cap_xml_type, cap_sent, cap_sender):
+def test_generator(filename, cap_xml_type, cap_alert_count, cap_sent, cap_sender):
     def test(self):
         f = open(filename, 'r').read()
         self.cap_object = CAPParser(f)
@@ -232,10 +232,11 @@ def test_generator(filename, cap_xml_type, cap_sent, cap_sender):
     def test_cap_load(self):
         f = open(filename, 'r').read()
         self.cap_object = CAPParser(f)
-        self.cap_object.load()
+        #self.cap_object.load()
         result = self.cap_object.alert_list
         self.assertEqual(cap_sender, result[0]["cap_sender"])
         self.assertEqual(cap_sent, result[0]['cap_sent'])
+        self.assertEqual(cap_alert_count, len(result))
 
     def test_parse_alert(self):
         f = open(filename, 'r').read()
@@ -255,7 +256,7 @@ if __name__ == '__main__':
     # This creates dynamic test cases to test many files
     for t in CAP_DATA_FILES:
         test_name = 'test_%s' % t[0].split("/")[1].replace(".", "_")
-        test, test_cap_load, test_parse_alert = test_generator(t[0], t[1], t[2], t[3])
+        test, test_cap_load, test_parse_alert = test_generator(t[0], t[1], t[2], t[3], t[4],)
         setattr(TestSequence, test_name, test)
         setattr(TestSequence, test_name + "_cap_load", test_cap_load)
         setattr(TestSequence, test_name + "_parse_alert", test_parse_alert)
