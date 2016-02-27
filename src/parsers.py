@@ -133,31 +133,32 @@ class CAPParser(object):
                 new_alert_key = CAP_MAPPINGS[alert_key]
                 alert_dict[new_alert_key] = alert_dict.pop(alert_key)
 
-        info_item_list = []
-        for info_item in alert.info:
-            info_dict = info_item.__dict__
+        if alert.__dict__.has_key('info'):
+            info_item_list = []
+            for info_item in alert.info:
+                info_dict = info_item.__dict__
 
-            for info_key in info_dict.keys():
-                if info_key in CAP_MAPPINGS:
-                    new_info_key = CAP_MAPPINGS[info_key]
-                    info_dict[new_info_key] = unicode(info_dict.pop(info_key))
+                for info_key in info_dict.keys():
+                    if info_key in CAP_MAPPINGS:
+                        new_info_key = CAP_MAPPINGS[info_key]
+                        info_dict[new_info_key] = unicode(info_dict.pop(info_key))
 
-            if 'area' in info_dict.keys():
-                info_dict = self.process_area(info_dict)
+                if 'area' in info_dict.keys():
+                    info_dict = self.process_area(info_dict)
 
-            if 'eventCode' in info_dict.keys():
-                info_dict = self.process_event_code(info_dict)
+                if 'eventCode' in info_dict.keys():
+                    info_dict = self.process_event_code(info_dict)
 
-            if 'parameter' in info_dict.keys():
-                info_dict = self.process_parameter(info_dict)
+                if 'parameter' in info_dict.keys():
+                    info_dict = self.process_parameter(info_dict)
 
-            if 'resource' in info_dict.keys():
-                info_dict = self.process_resource(info_dict)
+                if 'resource' in info_dict.keys():
+                    info_dict = self.process_resource(info_dict)
 
-            info_item_list.append(info_dict)
+                info_item_list.append(info_dict)
 
-        alert_dict['cap_info'] = info_item_list
-        alert_dict.pop('info')
+            alert_dict['cap_info'] = info_item_list
+            alert_dict.pop('info')
         return alert_dict
 
     def determine_cap_type(self):

@@ -34,6 +34,7 @@ CAP_DATA_FILES = [
     ["data/mexico.atom", "ATOM", 469, "2014-10-31T21:15:00-06:00", "smn.cna.gob.mx"],
     ["data/taiwan.cap", "CAP1_2", 1, "2014-05-14T20:10:00+08:00", "ddmt01@wra.gov.tw"],
     ["data/ph.cap", "CAP1_2", 1, "2014-11-03T14:57:33+08:00", "PAGASA-DOST"],
+    ["data/no_info_tag.cap", "CAP1_2", 1, "2016-02-25T12:47:09-08:00", "AtHoc"],
     ["data/wcatwc-warning.cap", "CAP1_2", 1, "2011-09-02T11:36:50-00:00", "http://newwcatwc.arh.noaa.gov/tsuPortal/"]
 ]
 
