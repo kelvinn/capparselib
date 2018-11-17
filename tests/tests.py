@@ -35,9 +35,12 @@ CAP_DATA_FILES = [
     ["resources/mexico.xml", "CAP1_2", 1, "2018-10-20T07:15:00-05:00", "smn.cna.gob.mx"],
     ["resources/taiwan.cap", "CAP1_2", 1, "2014-05-14T20:10:00+08:00", "ddmt01@wra.gov.tw"],
     ["resources/ph.cap", "CAP1_2", 1, "2014-11-03T14:57:33+08:00", "PAGASA-DOST"],
-    ["resources/no_info_tag.cap", "CAP1_2", 1, "2016-02-25T12:47:09-08:00", "AtHoc"],
     ["resources/wcatwc-warning.cap", "CAP1_2", 1, "2011-09-02T11:36:50-00:00",
      "http://newwcatwc.arh.noaa.gov/tsuPortal/"]
+]
+
+CAP_DATA_FILES_NO_INFO = [
+    ["resources/no_info_tag.cap", "CAP1_2", 1, "2016-02-25T12:47:09-08:00", "AtHoc"]
 ]
 
 
@@ -153,7 +156,7 @@ class TestInvalid(unittest.TestCase):
 class TestClass(unittest.TestCase):
 
     @parameterized.expand(CAP_DATA_FILES)
-    def test_can_open(self, filename, cap_xml_type, cap_alert_count, cap_sent, cap_sender):
+    def test_valid(self, filename, cap_xml_type, cap_alert_count, cap_sent, cap_sender):
         with open(filename, 'br') as f:
             data = f.read()
             encoding = chardet.detect(data)['encoding']
@@ -174,3 +177,32 @@ class TestClass(unittest.TestCase):
             alert = alert_list[0]
             alert_dict = self.cap_object.parse_alert(alert)
             self.assertEqual(cap_sent, alert_dict['cap_sent'])
+
+            info_list = alert['info']
+            self.assertIsNotNone(info_list)
+
+    @parameterized.expand(CAP_DATA_FILES_NO_INFO)
+    def test_invalid(self, filename, cap_xml_type, cap_alert_count, cap_sent, cap_sender):
+        with open(filename, 'br') as f:
+            data = f.read()
+            encoding = chardet.detect(data)['encoding']
+
+            # Can we even load the cap alert?
+            self.cap_object = CAPParser(data.decode(encoding))
+            self.cap_object.determine_cap_type()
+            self.assertEqual(cap_xml_type, self.cap_object.cap_xml_type)
+
+            # Did the CAP alert have a sender/sent?
+            result = self.cap_object.alert_list
+            self.assertEqual(cap_sender, result[0]["cap_sender"])
+            self.assertEqual(cap_sent, result[0]['cap_sent'])
+            self.assertEqual(cap_alert_count, len(result))
+
+            # Now, can we parse the alerts?
+            alert_list = self.cap_object.get_alert_list()
+            alert = alert_list[0]
+            alert_dict = self.cap_object.parse_alert(alert)
+            self.assertEqual(cap_sent, alert_dict['cap_sent'])
+
+            info_list = alert.get('info')
+            self.assertIsNone(info_list)
