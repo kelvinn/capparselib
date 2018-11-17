@@ -1,6 +1,12 @@
 # .coveragerc to control coverage.py
 [run]
 branch = True
+omit =
+    # omit virtualenvs
+    */.venv/*
+    */virtualenv/*
+    # omit everything related to travisCI
+    */.travis/*
 
 [report]
 # Regexes for lines to exclude from consideration
@@ -26,6 +32,7 @@ ignore_errors = True
 source =
     src/
     tests/
+
 
 [html]
 directory = coverage_html_report
