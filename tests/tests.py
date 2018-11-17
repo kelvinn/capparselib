@@ -10,14 +10,15 @@ import sys
 import unittest
 import chardet
 from io import open
+from parameterized import parameterized
+from src.parsers import CAPParser
+
 
 TEST_ROOT = os.path.dirname(os.path.abspath(__file__))
 ROOT_PATH = os.path.join(TEST_ROOT, os.pardir)
 
 os.chdir(TEST_ROOT)
 sys.path.insert(0, os.path.dirname(TEST_ROOT))
-
-from src.parsers import CAPParser
 
 # filename, cap type, num alerts, sent time, sender
 
@@ -35,7 +36,8 @@ CAP_DATA_FILES = [
     ["resources/taiwan.cap", "CAP1_2", 1, "2014-05-14T20:10:00+08:00", "ddmt01@wra.gov.tw"],
     ["resources/ph.cap", "CAP1_2", 1, "2014-11-03T14:57:33+08:00", "PAGASA-DOST"],
     ["resources/no_info_tag.cap", "CAP1_2", 1, "2016-02-25T12:47:09-08:00", "AtHoc"],
-    ["resources/wcatwc-warning.cap", "CAP1_2", 1, "2011-09-02T11:36:50-00:00", "http://newwcatwc.arh.noaa.gov/tsuPortal/"]
+    ["resources/wcatwc-warning.cap", "CAP1_2", 1, "2011-09-02T11:36:50-00:00",
+     "http://newwcatwc.arh.noaa.gov/tsuPortal/"]
 ]
 
 
@@ -148,54 +150,27 @@ class TestInvalid(unittest.TestCase):
         self.assertRaises(Exception, CAPParser, self.data.decode(self.encoding))
 
 
-class TestSequence(unittest.TestCase):
-    cap_object = None
-    pass
+class TestClass(unittest.TestCase):
 
-
-def test_generator(filename, cap_xml_type, cap_alert_count, cap_sent, cap_sender):
-
-    def test(self):
+    @parameterized.expand(CAP_DATA_FILES)
+    def test_can_open(self, filename, cap_xml_type, cap_alert_count, cap_sent, cap_sender):
         with open(filename, 'br') as f:
             data = f.read()
             encoding = chardet.detect(data)['encoding']
+
+            # Can we even load the cap alert?
             self.cap_object = CAPParser(data.decode(encoding))
             self.cap_object.determine_cap_type()
             self.assertEqual(cap_xml_type, self.cap_object.cap_xml_type)
 
-    def test_cap_load(self):
-        with open(filename, 'br') as f:
-            data = f.read()
-            encoding = chardet.detect(data)['encoding']
-            self.cap_object = CAPParser(data.decode(encoding))
+            # Did the CAP alert have a sender/sent?
             result = self.cap_object.alert_list
             self.assertEqual(cap_sender, result[0]["cap_sender"])
             self.assertEqual(cap_sent, result[0]['cap_sent'])
             self.assertEqual(cap_alert_count, len(result))
 
-    def test_parse_alert(self):
-        with open(filename, 'br') as f:
-            data = f.read()
-            encoding = chardet.detect(data)['encoding']
-            if encoding is not 'ascii':
-                self.cap_object = CAPParser(data.decode(encoding))
-            else:
-                self.cap_object = CAPParser(data.decode('utf-8'))
+            # Now, can we parse the alerts?
             alert_list = self.cap_object.get_alert_list()
             alert = alert_list[0]
             alert_dict = self.cap_object.parse_alert(alert)
             self.assertEqual(cap_sent, alert_dict['cap_sent'])
-
-    return test, test_cap_load, test_parse_alert
-
-
-if __name__ == '__main__':
-
-    # This creates dynamic test cases to test many files
-    for t in CAP_DATA_FILES:
-        test_name = 'test_%s' % t[0].split("/")[1].replace(".", "_")
-        test, test_cap_load, test_parse_alert = test_generator(t[0], t[1], t[2], t[3], t[4], )
-        setattr(TestSequence, test_name, test)
-        setattr(TestSequence, test_name + "_cap_load", test_cap_load)
-        setattr(TestSequence, test_name + "_parse_alert", test_parse_alert)
-    unittest.main()

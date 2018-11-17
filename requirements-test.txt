@@ -1,1 +1,4 @@
 chardet
+parameterized
+coverage
+coveralls
