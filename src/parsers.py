@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# coding: utf-8
+# -*- coding: utf-8 -*-
 """
     capparselib.CAPParser
     ~~~~~~~~~~~~~
@@ -31,6 +31,7 @@ CAP_MAPPINGS = {
     'urgency': 'cap_urgency',
     'onset': 'cap_effective',
     'web': 'cap_link',
+    'sent': 'cap_sent',
     'category': 'cap_category',
     'certainty': 'cap_certainty',
     'event': 'cap_event',
@@ -50,7 +51,6 @@ CAP_MAPPINGS = {
     'identifier': 'cap_id',
     'msgType': 'cap_message_type',
     'scope': 'cap_scope',
-    'sent': 'cap_sent',
     'status': 'cap_status',
     'restriction': 'cap_restriction',
     'source': 'cap_source',
@@ -88,10 +88,10 @@ class CAPParser(object):
             if hasattr(area_obj, 'geocode'):
                 geocode_list = []
                 for geocode in area_obj['geocode']:
-                    geocode_list.append({"valueName": unicode(geocode.valueName),
-                                         "value": unicode(geocode.value)})
+                    geocode_list.append({"valueName": geocode.valueName,
+                                         "value": geocode.value})
                 new_area_dict['geocodes'] = geocode_list
-            new_area_dict['area_description'] = unicode(area_obj.areaDesc)
+            new_area_dict['area_description'] = area_obj.areaDesc
             new_area_list.append(new_area_dict)
         info_dict['cap_area'] = new_area_list
         info_dict.pop('area')  # override the area value.
@@ -100,8 +100,8 @@ class CAPParser(object):
     def process_event_code(self, info_dict):
         event_code_list = []
         for event_code in info_dict['eventCode']:
-            event_code_list.append({"valueName": unicode(event_code.valueName),
-                                    "value": unicode(event_code.value)})
+            event_code_list.append({"valueName": event_code.valueName,
+                                    "value": event_code.value})
         info_dict['cap_event_code'] = event_code_list
         info_dict.pop('eventCode')
         return info_dict
@@ -109,8 +109,8 @@ class CAPParser(object):
     def process_parameter(self, info_dict):
         parameter_list = []
         for parameter in info_dict['parameter']:
-            parameter_list.append({"valueName": unicode(parameter.valueName),
-                                   "value": unicode(parameter.value)})
+            parameter_list.append({"valueName": parameter.valueName,
+                                   "value": parameter.value})
         info_dict['cap_parameter'] = parameter_list
         info_dict.pop('parameter')
         return info_dict
@@ -118,8 +118,8 @@ class CAPParser(object):
     def process_resource(self, info_dict):
         resource_list = []
         for resource in info_dict['resource']:
-            resource_list.append({"resourceDesc": unicode(resource.resourceDesc),
-                                  "mimeType": unicode(resource.mimeType),
+            resource_list.append({"resourceDesc": resource.resourceDesc,
+                                  "mimeType": resource.mimeType,
                                   "uri": resource.uri})
         info_dict['cap_resource'] = resource_list
         info_dict.pop('resource')
@@ -128,12 +128,12 @@ class CAPParser(object):
     def parse_alert(self, alert):
         alert_dict = alert.__dict__
 
-        for alert_key in alert_dict.keys():
+        for alert_key in list(alert_dict.keys()):
             if alert_key in CAP_MAPPINGS:
                 new_alert_key = CAP_MAPPINGS[alert_key]
                 alert_dict[new_alert_key] = alert_dict.pop(alert_key)
 
-        if alert.__dict__.has_key('info'):
+        if 'info' in dict(alert).keys():
             info_item_list = []
             for info_item in alert.info:
                 info_dict = info_item.__dict__
@@ -141,7 +141,7 @@ class CAPParser(object):
                 for info_key in info_dict.keys():
                     if info_key in CAP_MAPPINGS:
                         new_info_key = CAP_MAPPINGS[info_key]
-                        info_dict[new_info_key] = unicode(info_dict.pop(info_key))
+                        info_dict[new_info_key] = info_dict.pop(info_key)
 
                 if 'area' in info_dict.keys():
                     info_dict = self.process_area(info_dict)
@@ -163,9 +163,10 @@ class CAPParser(object):
 
     def determine_cap_type(self):
         try:
-            parser = etree.XMLParser(recover=self.recover, remove_blank_text=True)  #recovers from bad characters.
-            tree = etree.fromstring(self.xml, parser)
-        except:
+            parser = etree.XMLParser(recover=self.recover, remove_blank_text=True)  # recovers from bad characters.
+            tree = etree.fromstring(self.xml.encode(), parser)
+
+        except ValueError:
             raise Exception("Invalid XML")
 
         ns_list = tree.nsmap.values()
@@ -187,8 +188,8 @@ class CAPParser(object):
             schema = etree.XMLSchema(doc)
             try:
                 parser = objectify.makeparser(schema=schema, recover=self.recover, remove_blank_text=True)
-                a = objectify.fromstring(self.xml, parser)
-            except etree.XMLSyntaxError, e:
+                a = objectify.fromstring(self.xml.encode(), parser)
+            except etree.XMLSyntaxError:
                 raise Exception("Error objectifying XML")
         return a
 

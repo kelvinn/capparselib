@@ -1,9 +1,11 @@
 language: python
 python:
     - 2.7
-
+    - 3.6
+    - 3.7
 install:
     python setup.py install
 
 script:
-    python test/tests.py
+    pip install -r requirements-test.txt
+    python tests/tests.py

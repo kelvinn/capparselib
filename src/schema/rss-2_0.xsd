@@ -451,7 +451,7 @@ Date        Revision  Description
 31-Mar-2003   1       Initial version released for comment
 31-Mar-2003   2       Changes based on feedback from Gudge:
                       - Remove targetNamespace="" and use elemenfFormDefault="unqualified" instead
-                      - Use namespace="##other" on <any>'s to create a more deterministic data model.
+                      - Use namespace="##other" on <any>'s to create a more deterministic resources model.
                       - Added missing xs:documentation inside xs:annotation at the schema level.
                       - Use xs:language for ISO Language Codes in <language> element.
                       - Change guid to a single declaration.  This loses some of the checking of the 

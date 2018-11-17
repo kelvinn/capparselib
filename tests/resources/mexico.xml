@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+    <identifier>avisossmn-ciclontropical-4063</identifier>
+    <sender>smn.cna.gob.mx</sender>
+    <sent>2018-10-20T07:15:00-05:00</sent>
+    <status>Actual</status>
+    <msgType>Update</msgType>
+    <scope>Public</scope>
+    <code>08</code>
+    <references>smn.cna.gob.mx,avisossmn-ciclontropical-4061,2018-10-20T04:15:00-05:00</references>
+    <info>
+        <language>es-419</language>
+        <category>Met</category>
+        <event>Aviso de Ciclón Tropical en el Pacífico</event>
+        <responseType>Execute</responseType>
+        <urgency>Unknown</urgency>
+        <severity>Unknown</severity>
+        <certainty>Unknown</certainty>
+        <effective>2018-10-20T07:15:00-05:00</effective>
+        <expires>2018-10-20T10:15:00-05:00</expires>
+        <senderName>Comisión Nacional del Agua - Servicio Meteorológico Nacional</senderName>
+        <headline>LA TORMENTA TROPICAL "VICENTE" SE LOCALIZA AL SUR DE CHIAPAS</headline>
+        <description>Se prevé que la Tormenta Tropical "VICENTE" tendrá un movimiento errático y lento al oeste-suroeste
+            durante el fín de semana. Su nubosidad favorece el temporal de lluvias y tormentas acompañadas de descargas
+            eléctricas y fuertes ráfagas de viento en el sureste de México.Los datos contenidos en el presente
+            documento, se determinaron con base en la información de modelos numéricos de fenómenos hidrometeorológicos
+            con los que cuenta la Comisión Nacional del Agua, por lo que al ser los mismos variables, no es posible
+            determinar con exactitud su ocurrencia y magnitud. Las medidas para la prevención y mitigación de sus
+            efectos son emitidas por las autoridades de protección civil.
+        </description>
+        <instruction>Extremar precauciones a la población en general en las zonas de los estados mencionados por
+            lluvias, viento y oleaje (incluyendo la navegación marítima) y atender las recomendaciones emitidas por las
+            autoridades del Sistema Nacional de Protección Civil, en cada entidad.
+        </instruction>
+        <web>http://smn.cna.gob.mx/</web>
+        <contact>webmaster@conagua.gob.mx</contact>
+        <parameter>
+            <valueName>Elaboró</valueName>
+            <value>Aline Esperanza Maza Vázquez</value>
+        </parameter>
+        <parameter>
+            <valueName>Revisó</valueName>
+            <value>Oscar Montoya</value>
+        </parameter>
+        <parameter>
+            <valueName>semáforo</valueName>
+            <value>red</value>
+        </parameter>
+        <parameter>
+            <valueName>categoría</valueName>
+            <value>Tormenta Tropical</value>
+        </parameter>
+        <parameter>
+            <valueName>distancia</valueName>
+            <value>lessthan500km</value>
+        </parameter>
+        <parameter>
+            <valueName>trayectoria</valueName>
+            <value>150 km al sur-suroeste de Tapachula, Chis.
+            </value>
+        </parameter>
+        <parameter>
+            <valueName>layer:Google:Region:0.1</valueName>
+            <value>el Pacífico</value>
+        </parameter>
+        <parameter>
+            <valueName>WEA</valueName>
+            <value>NO</value>
+        </parameter>
+        <area>
+            <areaDesc>Chis,Oax</areaDesc>
+            <polygon>18.889628180617784,-91.53354417288199 18.212626807537085,-90.99521409475699
+                17.270896296277066,-91.01169358694449 17.270896296277066,-91.46762620413199
+                17.213186917248603,-91.44565354788199 17.071460361911097,-91.24240647756949
+                16.871811014490802,-91.06662522756949 16.69825988352583,-90.70407639944449
+                16.461345161834554,-90.65463792288199 16.38757907820641,-90.40195237600699
+                16.08695847278949,-90.52829514944449 16.081680338564457,-91.75876389944449
+                15.246001513291203,-92.23666917288199 15.060425718171135,-92.09384690725699
+                14.853450659978222,-92.22018968069449 14.66222053641382,-92.15976487600699
+                14.508052405563477,-92.25864182913199 14.524005832025315,-92.96725999319449
+                15.933835818516815,-94.53281175100699 15.50553224342676,-96.51584397756949
+                16.05000859092957,-98.14731370413199 17.852216509081813,-97.94955979788199
+                18.697217085373946,-95.32382737600699 18.525422427644745,-94.76352464163199
+                18.186534983393027,-94.46689378225699 18.45769822902817,-93.41220628225699
+                18.468119078398868,-92.91782151663199 18.650381210409254,-92.70358811819449
+                18.889628180617784,-91.53354417288199
+            </polygon>
+        </area>
+    </info>
+</alert>

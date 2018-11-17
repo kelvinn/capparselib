@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<alert xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+  <identifier>11105</identifier>
+  <sender>https://www.krisinformation.se/</sender>
+  <sent>2018-10-12T11:05:18+02:00</sent>
+  <status>Actual</status>
+  <msgType>Alert</msgType>
+  <scope>Public</scope>
+  <info>
+    <language>sv-SE</language>
+    <category>Other</category>
+    <event>News</event>
+    <urgency>Unknown</urgency>
+    <severity>Unknown</severity>
+    <certainty>Unknown</certainty>
+    <headline>Militärövningen Trident Juncture 18 kan påverka trafiken</headline>
+    <senderName>försvarsmakten, trafikverket</senderName>
+    <description>En större NATO-övning, Trident Juncture 18, genomförs i Norge från och med den 25 oktober. Eftersom förband från flera länder förflyttas genom Sverige inför och under övningen kan vägtrafiken påverkas.</description>
+    <web>https://www.krisinformation.se/nyheter/2018/oktober/militarovningen-trident-juncture-18-kan-paverka-trafiken/</web>
+    <area>
+      <areaDesc>Sverige</areaDesc>
+      <Type>Sovereign country</Type>
+      <Polygon>
+        <Polygon>
+          <Polygons>16.596265846848,62.8114849680804</Polygons>
+        </Polygon>
+      </Polygon>
+    </area>
+    <resource>
+      <resourceDesc>Full Html version of description</resourceDesc>
+      <mimeType>Text/Html</mimeType>
+      <derefUri>RW4gc3TDtnJyZSBOQVRPLcO2dm5pbmcsIFRyaWRlbnQgSnVuY3R1cmUgMTgsIGdlbm9tZsO2cnMgaSBOb3JnZSBmcsOlbiBvY2ggbWVkIGRlbiAyNSBva3RvYmVyLiBFZnRlcnNvbSBmw7ZyYmFuZCBmcsOlbiBmbGVyYSBsw6RuZGVyIGbDtnJmbHl0dGFzIGdlbm9tIFN2ZXJpZ2UgaW5mw7ZyIG9jaCB1bmRlciDDtnZuaW5nZW4ga2FuIHbDpGd0cmFmaWtlbiBww6V2ZXJrYXMuPHA+VHJhbnNwb3J0ZXJuYSBza2VyIGJsYW5kIGFubmF0IHZpYSDDlnJlc3VuZHNicm9uLCBoYW1uZW4gaSBVbWXDpSBvY2ggZmx5Z3BsYXRzZW4gaSBMdWxlw6UuIDxhIGhyZWY9Imh0dHBzOi8vc3ZlcmlnZXNyYWRpby5zZS9zaWRhL3RyYWZpa2VuIiB0YXJnZXQ9Il9ibGFuayI+U3ZlcmlnZXMgUmFkaW88L2E+Jm5ic3A7IGluZm9ybWVyYXIgb20gbG9rYWxhIHRyYWZpa3N0w7ZybmluZ2FyLjwvcD4KPHA+PHN0cm9uZz5Lb2xvbm5rw7ZybmluZzwvc3Ryb25nPjxicj5WaWQgc3TDtnJyZSBmw7Zyc3ZhcnPDtnZuaW5nYXIga2FuIGtvbG9ubmVyIG1lZCBtw6VuZ2Egb2NoIGV2ZW50dWVsbHQgbMOlbmdzYW1tYSBmb3Jkb24gdXBwc3TDpS4gVsOkbGogZW4gYW5uYW4gdsOkZyBvbSBkZXQgw6RyIG3DtmpsaWd0IG9jaCB1bmR2aWsgYXR0IGvDtnJhIG9tIGtvbG9ubmVyIGTDpHIgZGV0IGludGUgw6RyIG1vdG9ydsOkZy4gPGJyPkVubGlndCBUcmFmaWtmw7Zyb3JkbmluZ2VuIGbDpXIgbWFuIGludGUgYnJ5dGEgZWxsZXIgaGluZHJhIGVuIG1pbGl0w6Rya29sb25uIGVsbGVyIGtvbG9ubiBhdiBmb3Jkb24gc29tIHRpbGxow7ZyIHLDpGRkbmluZ3N0asOkbnN0LiA8YnI+PGJyPjwvcD48cD48YSBocmVmPSJodHRwczovL3d3dy50cmFmaWt2ZXJrZXQuc2Uvb20tb3NzL255aGV0ZXIvTmF0aW9uZWxsdC8yMDE4LTEwL21pbGl0YXJhLXRyYW5zcG9ydGVyLWthbi1wYXZlcmthLXRyYWZpa2VuLyI+VHJhZmlrdmVya2V0IG9tIMO2dm5pbmdlbiBUcmlkZW50IEp1bmN0dXJlIDE4PC9hPjwvcD48cD48YSBocmVmPSJodHRwczovL3d3dy50cmFmaWt2ZXJrZXQuc2UvdHJhZmlraW5mb3JtYXRpb24vdmFnLz9UcmFmZmljVHlwZT1wZXJzb25hbFRyYWZmaWMmbWFwPTAlMkY2NTA3NzglMkY3MjAwMDAwJTJGJkxheWVycz1UcmFmZmljU2l0dWF0aW9uJTJiUm9hZFdvcmslMmJSb2FkQ29uZGl0aW9uJTJiIj5UcmFmaWt2ZXJrZXRzIHbDpGd0cmFmaWtpbmZvcm1hdGlvbjwvYT48L3A+PHA+PGEgaHJlZj0iaHR0cHM6Ly9zdmVyaWdlc3JhZGlvLnNlL3NpZGEvdHJhZmlrZW4iPlN2ZXJpZ2VzIFJhZGlvcyB0cmFmaWtyZWRha3Rpb248L2E+PC9wPjxwPjxhIGhyZWY9Imh0dHBzOi8vd3d3LmZvcnN2YXJzbWFrdGVuLnNlL3N2L3Zhci12ZXJrc2FtaGV0L292bmluZ2FyL3RyaWRlbnQtanVuY3R1cmUtMTgvIj5Gw7Zyc3ZhcnNtYWt0ZW4gb20gw7Z2bmluZ2VuIFRyaWRlbnQgSnVuY3R1cmUgMTg8L2E+PC9wPjxwPjxhIGhyZWY9Imh0dHBzOi8vd3d3Mi5rcmlzaW5mb3JtYXRpb24uc2UvRW5nbGlzaC9uZXdzLWluLWVuZ2xpc2gyL21pbGl0YXJ5LWV4ZXJjaXNlLWNhbi1hZmZlY3QtdHJhZmZpYy8iPlRoaXMgdGV4dCBpbiBFbmdsaXNoPC9hPjwvcD4=</derefUri>
+    </resource>
+  </info>
+</alert>
