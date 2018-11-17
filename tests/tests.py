@@ -29,7 +29,7 @@ CAP_DATA_FILES = [
      "http://earthquake.usgs.gov/research/monitoring/anss/neic/"],
     ["resources/earthquake-iso8859-1.cap", "CAP1_2", 1, "2012-10-14T22:53:04+00:00",
      "http://earthquake.usgs.gov/research/monitoring/anss/neic/"],
-    # ["resources/sweden.xml", "CAP1_2", 11105, "2018-10-12T11:05:18+02:00", "https://www.krisinformation.se/"],
+    ["resources/sweden.xml", "CAP1_2", 1, "2018-10-12T11:05:18+02:00", "https://www.krisinformation.se/"],
     # ["resources/mexico.atom", "ATOM", 469, "2014-10-31T21:15:00-06:00", "smn.cna.gob.mx"],
     ["resources/mexico.xml", "CAP1_2", 1, "2018-10-20T07:15:00-05:00", "smn.cna.gob.mx"],
     ["resources/taiwan.cap", "CAP1_2", 1, "2014-05-14T20:10:00+08:00", "ddmt01@wra.gov.tw"],

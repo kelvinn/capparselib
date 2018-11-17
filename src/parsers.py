@@ -7,7 +7,7 @@
     :copyright: Kelvin Nicholson (kelvin@kelvinism.com), see AUTHORS for more details
     :license: MOZILLA PUBLIC LICENSE (v1.1), see LICENSE for more details
 """
-
+from __future__ import unicode_literals
 import os
 from lxml import objectify, etree
 
@@ -70,7 +70,7 @@ XML_TYPE_XSD_MAPPINGS = {
 
 class CAPParser(object):
     def __init__(self, raw_cap_xml=None, recover=False):
-        self.xml = raw_cap_xml
+        self.xml = raw_cap_xml.encode('utf-8').strip()
         self.recover = recover
         self.objectified_xml = None
         self.cap_xml_type = None
@@ -164,7 +164,7 @@ class CAPParser(object):
     def determine_cap_type(self):
         try:
             parser = etree.XMLParser(recover=self.recover, remove_blank_text=True)  # recovers from bad characters.
-            tree = etree.fromstring(self.xml.encode(), parser)
+            tree = etree.fromstring(self.xml, parser)
 
         except ValueError:
             raise Exception("Invalid XML")
@@ -188,7 +188,7 @@ class CAPParser(object):
             schema = etree.XMLSchema(doc)
             try:
                 parser = objectify.makeparser(schema=schema, recover=self.recover, remove_blank_text=True)
-                a = objectify.fromstring(self.xml.encode(), parser)
+                a = objectify.fromstring(self.xml, parser)
             except etree.XMLSyntaxError:
                 raise Exception("Error objectifying XML")
         return a
