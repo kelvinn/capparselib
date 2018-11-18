@@ -1,6 +1,6 @@
 # capparselib
 
-[![Code Health](https://landscape.io/github/kelvinn/capparselib/master/landscape.png)](https://landscape.io/github/kelvinn/capparselib/master)
+[![Coverage Status](https://coveralls.io/repos/github/kelvinn/capparselib/badge.svg?branch=master)](https://coveralls.io/github/kelvinn/capparselib?branch=master)
 [![Build Status](https://travis-ci.org/kelvinn/capparselib.svg)](https://travis-ci.org/kelvinn/capparselib)
 
 This module parses and 'normalizes' alerts sent using the
