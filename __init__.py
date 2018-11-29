@@ -1,1 +1,2 @@
-__author__ = 'kelvinn'
+__author__ = 'knichols'
+name = "capparselib"
