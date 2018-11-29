@@ -29,8 +29,19 @@ def package(c):
 
 
 @task
+def install(c):
+    c.run("python setup.py install")
+
+
+@task
+def unit(c):
+    c.run("coverage run setup.py test")
+
+
+@task
 def upload_test(c):
     c.run("twine upload --repository-url https://test.pypi.org/legacy/ dist/*")
+
 
 @task
 def upload(c):

@@ -9,9 +9,8 @@ python:
   - "3.6-dev"  # 3.6 development branch
 
 install:
-  - pip install -r requirements-test.txt
-  - python setup.py install
+  - inv clean build install
 
 script:
-  - coverage run setup.py test
+  - inv unit
   - coveralls
