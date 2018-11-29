@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<feed xmlns:cap="urn:oasis:names:tc:emergency:cap:1.2" xmlns="http://www.w3.org/2005/Atom">
+  <id>http://api.krisinformation.se/v1/feed?format=xml</id>
+  <updated>2018-11-21T12:52:06+01:00</updated>
+  <title>Krisinformation.se CAP feed</title>
+  <link href="http://api.krisinformation.se/v1/feed?format=xml" rel="self" type="application/atom+xml" />
+  <entry>
+    <id>http://api.krisinformation.se/v1/capmessage/11337sv?format=xml</id>
+    <updated>2018-11-21T12:52:06+01:00</updated>
+    <published>2018-11-21T10:26:11+01:00</published>
+    <cap:event>News</cap:event>
+    <author>
+      <name>https://www.krisinformation.se/</name>
+    </author>
+    <title>Viktigt meddelande till allmänheten i Gävle</title>
+    <link href="http://api.krisinformation.se/v1/capmessage/11337sv?format=xml" rel="alternate" type="application/atom+xml" />
+    <summary>Uppdatering 21/11 kl 12.47: Det viktiga meddelandet till allmänheten, VMA, som utfärdades för Hemlingby, Sörby, Andersberg och Hemsta i Gävle kommun, Gävleborgs län, gäller inte längre. Faran är över.</summary>
+    <cap:area>
+      <cap:areaDesc>Gävleborgs län</cap:areaDesc>
+      <cap:circle>16.5695265628148,61.4418656555802 0</cap:circle>
+    </cap:area>
+    <cap:area>
+      <cap:areaDesc>Gävle</cap:areaDesc>
+      <cap:circle>17.166667,60.666667 0</cap:circle>
+    </cap:area>
+  </entry>
+  <entry>
+    <id>http://api.krisinformation.se/v1/capmessage/11324sv?format=xml</id>
+    <updated>2018-11-15T15:35:16+01:00</updated>
+    <published>2018-11-15T15:35:16+01:00</published>
+    <cap:event>News</cap:event>
+    <author>
+      <name>https://www.krisinformation.se/</name>
+    </author>
+    <title>Varning för storm i Norrbottens län, norra Lapplandsfjällen</title>
+    <link href="http://api.krisinformation.se/v1/capmessage/11324sv?format=xml" rel="alternate" type="application/atom+xml" />
+    <summary>SMHI varnar för storm klass 2 i Norrbottens län, norra Lapplandsfjällen. Vindarna väntas bli hårda på fredag eftermiddag och nå stormstyrka sent på fredag kväll. 
+</summary>
+    <cap:area>
+      <cap:areaDesc>Sverige</cap:areaDesc>
+      <cap:circle>16.596265846848024,62.811484968080336 0</cap:circle>
+    </cap:area>
+  </entry>
+  <entry>
+    <id>http://api.krisinformation.se/v1/capmessage/11166sv?format=xml</id>
+    <updated>2018-11-07T22:47:09+01:00</updated>
+    <published>2018-11-07T22:47:09+01:00</published>
+    <cap:event>News</cap:event>
+    <author>
+      <name>https://www.krisinformation.se/</name>
+    </author>
+    <title>Viktigt meddelande till allmänheten i Luleå</title>
+    <link href="http://api.krisinformation.se/v1/capmessage/11166sv?format=xml" rel="alternate" type="application/atom+xml" />
+    <summary>Uppdatering 8/11 klockan 00:20: Det VMA som utfärdades för Luleå i Norrbottens län gäller inte längre. Faran är över. 
+
+</summary>
+    <cap:area>
+      <cap:areaDesc>Norrbottens län</cap:areaDesc>
+      <cap:circle>20.2481178645446,66.8633839653276 0</cap:circle>
+    </cap:area>
+    <cap:area>
+      <cap:areaDesc>Luleå</cap:areaDesc>
+      <cap:circle>22.153889,65.584444 0</cap:circle>
+    </cap:area>
+  </entry>
+  <entry>
+    <id>http://api.krisinformation.se/v1/capmessage/11158sv?format=xml</id>
+    <updated>2018-11-02T11:58:37+01:00</updated>
+    <published>2018-11-02T11:29:57+01:00</published>
+    <cap:event>News</cap:event>
+    <author>
+      <name>https://www.krisinformation.se/</name>
+    </author>
+    <title>Viktigt meddelande till allmänheten i Mora</title>
+    <link href="http://api.krisinformation.se/v1/capmessage/11158sv?format=xml" rel="alternate" type="application/atom+xml" />
+    <summary>Uppdatering 2/11 klockan 17.50: Det viktiga meddelandet till allmänheten i Mora, Dalarnas län, gäller inte längre.</summary>
+    <cap:area>
+      <cap:areaDesc>Dalarnas län</cap:areaDesc>
+      <cap:circle>14.3476850029242,60.9598205827823 0</cap:circle>
+    </cap:area>
+    <cap:area>
+      <cap:areaDesc>Mora</cap:areaDesc>
+      <cap:circle>14.533333,61.016667 0</cap:circle>
+    </cap:area>
+  </entry>
+</feed>
