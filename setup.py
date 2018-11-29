@@ -8,11 +8,11 @@ __email__ = 'kelvin@kelvinism.com'
 
 from setuptools import setup
 
-files = ["schema/*"]
+files = ["schema/*", "requirements-base.txt"]
 
 
 def get_requirements(env):
-    with open(u'requirements-{}.txt'.format(env)) as fp:
+    with open(u'src/requirements-{}.txt'.format(env)) as fp:
         return [x.strip() for x in fp.read().split('\n') if not x.startswith('#')]
 
 
@@ -20,7 +20,7 @@ install_requires = get_requirements('base')
 tests_require = get_requirements('test')
 
 setup(name="capparselib",
-      version="0.5.4",
+      version="0.5.4-post5",
       description="A module to parse and standardise CAP feeds",
       long_description="This module provides the ability to parse Common Alerting Protocol (CAP) feeds and standardise"
                        " the resources into a dict, regardless if it was a 1.1 or 1.2 specification."
@@ -37,6 +37,7 @@ setup(name="capparselib",
       package_dir={'capparselib': 'src'},
       packages=['capparselib'],
       package_data={'capparselib': files},
+      include_package_data=True,
       classifiers=['Development Status :: 4 - Beta',
                    'Intended Audience :: Developers',
                    'License :: OSI Approved :: MIT License',
