@@ -3,3 +3,4 @@ parameterized
 coverage
 coveralls
 invoke
+nose

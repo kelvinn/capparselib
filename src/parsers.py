@@ -133,7 +133,7 @@ class CAPParser(object):
                 new_alert_key = CAP_MAPPINGS[alert_key]
                 alert_dict[new_alert_key] = alert_dict.pop(alert_key)
 
-        if 'info' in dict(alert).keys():
+        if 'info' in alert_dict.keys():
             info_item_list = []
             for info_item in alert.info:
                 info_dict = info_item.__dict__

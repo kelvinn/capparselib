@@ -30,6 +30,7 @@ CAP_DATA_FILES = [
      "http://earthquake.usgs.gov/research/monitoring/anss/neic/"],
     ["resources/earthquake-iso8859-1.cap", "CAP1_2", 1, "2012-10-14T22:53:04+00:00",
      "http://earthquake.usgs.gov/research/monitoring/anss/neic/"],
+    ["resources/australia_bom.cap", "CAP1_2", 1, "2019-01-16T03:15:58+00:00", "CAP.Message@bom.gov.au"],
     # ["resources/sweden.cap", "CAP1_2", 1, "2018-10-12T11:05:18+02:00", "https://www.krisinformation.se/"],
     # ["resources/sweden.atom", "CAP1_2", 1, "2018-10-12T11:05:18+02:00", "https://www.krisinformation.se/"],
     ["resources/mexico.xml", "CAP1_2", 1, "2018-10-20T07:15:00-05:00", "smn.cna.gob.mx"],
@@ -96,25 +97,25 @@ class TestCAPParser_1_2(unittest.TestCase):
         alert_dict = self.cap_object.parse_alert(objectified_xml)
         self.assertEqual("2014-05-14T20:10:00+08:00", alert_dict['cap_sent'])
 
-        info = alert_dict.get('info')
-        self.assertEqual("Infra", info.category)
-        self.assertEqual("Observed", info.certainty)
-        self.assertEqual(u"水利署訊:明德水庫:洩洪中.影響範圍:後龍溪流域,鄉鎮:頭屋鄉,請及早應變.", info.description)
-        self.assertEqual("2014-05-14T20:10:00+08:00", info.effective)
-        self.assertEqual(u"水庫洩洪", info.event)
-        self.assertEqual("2014-05-14T21:10:00+08:00", info.expires)
-        self.assertEqual(u"明德水庫:洩洪中", info.headline)
-        self.assertEqual("zh-tw", info.language)
-        self.assertEqual("Monitor", info.responseType)
-        self.assertEqual("Moderate", info.severity)
-        self.assertEqual("Future", info.urgency)
-        self.assertEqual("http://fhy2.wra.gov.tw/Pub_Web_2011/Page/Reservoir.aspx", info.web)
-        self.assertEqual("profile:CAP-TWP:Event:1.0", info.eventCode.valueName)
-        self.assertEqual(u"水庫洩洪警戒", info.parameter.value)
+        info = alert_dict.get('cap_info')[0]
+        self.assertEqual("Infra", info.get('cap_category'))
+        self.assertEqual("Observed", info.get('cap_certainty'))
+        self.assertEqual(u"水利署訊:明德水庫:洩洪中.影響範圍:後龍溪流域,鄉鎮:頭屋鄉,請及早應變.", info.get('cap_description'))
+        self.assertEqual("2014-05-14T20:10:00+08:00", info.get('cap_effective'))
+        self.assertEqual(u"水庫洩洪", info.get('cap_event'))
+        self.assertEqual("2014-05-14T21:10:00+08:00", info.get('cap_expires'))
+        self.assertEqual(u"明德水庫:洩洪中", info.get('cap_headline'))
+        self.assertEqual("zh-tw", info.get('cap_language'))
+        self.assertEqual("Monitor", info.get('cap_response_type'))
+        self.assertEqual("Moderate", info.get('cap_severity'))
+        self.assertEqual("Future", info.get('cap_urgency'))
+        self.assertEqual("http://fhy2.wra.gov.tw/Pub_Web_2011/Page/Reservoir.aspx", info.get('cap_link'))
+        self.assertEqual("profile:CAP-TWP:Event:1.0", info.get('cap_event_code')[0]['valueName'])
+        self.assertEqual(u"水庫洩洪警戒", info.get('cap_parameter')[0]['value'])
 
-        area = info.area
-        self.assertEqual(u"苗栗縣頭屋鄉", area.areaDesc)
-        self.assertEqual(1000512, area['geocode']['value'])
+        area = info.get('cap_area')[0]
+        self.assertEqual(u"苗栗縣頭屋鄉", area['area_description'])
+        self.assertEqual(1000512, area['geocodes'][0]['value'])
 
     def test_load(self):
         self.cap_object.load()
