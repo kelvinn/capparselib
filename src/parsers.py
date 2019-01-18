@@ -71,7 +71,7 @@ XML_TYPE_XSD_MAPPINGS = {
 
 class CAPParser(object):
     def __init__(self, raw_cap_xml=None, recover=False):
-        self.xml = raw_cap_xml.encode('utf-8').strip()
+        self.xml = raw_cap_xml.encode('utf-8').strip() if raw_cap_xml is not None else None
         self.recover = recover
         self.objectified_xml = None
         self.cap_xml_type = None

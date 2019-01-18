@@ -174,17 +174,6 @@ class TestInvalid(unittest.TestCase):
         self.assertRaises(Exception, CAPParser, self.data.decode(self.encoding))
 
 
-class TestInvalidXML(unittest.TestCase):
-    def setUp(self):
-        self.data = None
-        with open('resources/invalid_xmlns.cap', 'br') as f:
-            self.data = f.read()
-            self.encoding = chardet.detect(self.data)['encoding']
-
-    def test_invalid(self):
-        self.assertRaises(Exception, CAPParser, self.data.decode(self.encoding))
-
-
 class TestClass(unittest.TestCase):
 
     @parameterized.expand(CAP_DATA_FILES)
