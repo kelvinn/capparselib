@@ -9,6 +9,7 @@
 """
 from __future__ import unicode_literals
 import os
+import logging
 from lxml import objectify, etree
 
 
@@ -128,7 +129,8 @@ class CAPParser(object):
     def parse_alert(self, alert):
         alert_dict = alert.__dict__
 
-        for alert_key in list(alert_dict.keys()):
+        # Standardise base alert keys across multiple CAP versions
+        for alert_key in list(alert_dict):
             if alert_key in CAP_MAPPINGS:
                 new_alert_key = CAP_MAPPINGS[alert_key]
                 alert_dict[new_alert_key] = alert_dict.pop(alert_key)
@@ -138,10 +140,13 @@ class CAPParser(object):
             for info_item in alert.info:
                 info_dict = info_item.__dict__
 
-                for info_key in info_dict.keys():
+                # Standardise info keys across multiple CAP versions
+                for info_key in list(info_dict):
                     if info_key in CAP_MAPPINGS:
                         new_info_key = CAP_MAPPINGS[info_key]
                         info_dict[new_info_key] = info_dict.pop(info_key)
+                    else:
+                        logging.info("Key not in CAP_MAPPINGS: %s" % info_key)
 
                 if 'area' in info_dict.keys():
                     info_dict = self.process_area(info_dict)
