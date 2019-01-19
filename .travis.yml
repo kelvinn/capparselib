@@ -5,18 +5,44 @@ python:
   - "3.5"
   - "3.6"
 
+cache: pip
+
+before_install:
+
 install:
   - pip install invoke
   - inv clean build package install
-
-script:
-  - inv unit
+script: inv unit
+after_success:
   - coveralls
 
-deploy:
-  - provider: script
-    skip_cleanup: true
-    script:  inv upload-test && inv upload
-    on:
-        tags: true
-        branch: master
+stages:
+  - test
+  - deploy sandpit
+  - deploy
+
+jobs:
+  include:
+    - stage: deploy sandpit
+      python: 3.6
+      install: skip
+      script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: inv upload-test
+        on:
+          tags: true
+          branch: master
+    - stage: deploy
+      python: 3.6
+      install: skip
+      script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: inv upload
+        on:
+          tags: true
+          branch: master
+
