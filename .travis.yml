@@ -7,7 +7,7 @@ python:
 
 install:
   - pip install invoke
-  - inv clean build install
+  - inv clean build package install
 
 script:
   - inv unit
@@ -16,7 +16,7 @@ script:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: inv upload
+    script:  inv upload-test && inv upload
     on:
         tags: true
         branch: master
