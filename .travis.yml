@@ -14,3 +14,11 @@ install:
 script:
   - inv unit
   - coveralls
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: inv upload
+    on:
+        tags: true
+        branch: master

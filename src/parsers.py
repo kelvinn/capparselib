@@ -58,6 +58,10 @@ CAP_MAPPINGS = {
     'incidents': 'cap_incidents',
     'references': 'cap_references',
     'addresses': 'cap_addresses',
+    'area': 'area',  # Leave this as 'area', as it get transformed.
+    'eventCode': 'event_code',  # Leave this as 'area', as it get transformed.
+    'parameter': 'parameter',  # Leave this as 'parameter', as it get transformed.
+    'resource': 'resource',  # Leave this as 'parameter', as it get transformed.
 }
 
 XML_TYPE_XSD_MAPPINGS = {
@@ -100,11 +104,11 @@ class CAPParser(object):
 
     def process_event_code(self, info_dict):
         event_code_list = []
-        for event_code in info_dict['eventCode']:
+        for event_code in info_dict['event_code']:
             event_code_list.append({"valueName": event_code.valueName,
                                     "value": event_code.value})
         info_dict['cap_event_code'] = event_code_list
-        info_dict.pop('eventCode')
+        info_dict.pop('event_code')
         return info_dict
 
     def process_parameter(self, info_dict):
@@ -151,7 +155,7 @@ class CAPParser(object):
                 if 'area' in info_dict.keys():
                     info_dict = self.process_area(info_dict)
 
-                if 'eventCode' in info_dict.keys():
+                if 'event_code' in info_dict.keys():
                     info_dict = self.process_event_code(info_dict)
 
                 if 'parameter' in info_dict.keys():

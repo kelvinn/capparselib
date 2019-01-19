@@ -111,8 +111,8 @@ class TestCAPParser_1_2(unittest.TestCase):
         self.assertEqual("Future", info.get('cap_urgency'))
         self.assertEqual("http://fhy2.wra.gov.tw/Pub_Web_2011/Page/Reservoir.aspx", info.get('cap_link'))
         self.assertEqual("profile:CAP-TWP:Event:1.0", info.get('cap_event_code')[0]['valueName'])
+        self.assertEqual("ReservoirDis", info.get('cap_event_code')[0]['value'])
         self.assertEqual(u"水庫洩洪警戒", info.get('cap_parameter')[0]['value'])
-
         area = info.get('cap_area')[0]
         self.assertEqual(u"苗栗縣頭屋鄉", area['area_description'])
         self.assertEqual(1000512, area['geocodes'][0]['value'])
