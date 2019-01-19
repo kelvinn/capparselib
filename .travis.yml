@@ -12,13 +12,14 @@ before_install:
 install:
   - pip install invoke
   - inv clean build package install
+  - 
 script: inv unit && coveralls
 
 
 deploy:
   - provider: script
-    python: 3.6
     skip_cleanup: true
+    skip_existing: true
     script: inv upload
     on:
         tags: true
