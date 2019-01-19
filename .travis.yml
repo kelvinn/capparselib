@@ -25,7 +25,7 @@ jobs:
   include:
     - stage: deploy sandpit
       python: 3.6
-      install: skip
+      install: pip install invoke
       script: skip
       deploy:
         provider: script
@@ -36,7 +36,7 @@ jobs:
           branch: master
     - stage: deploy
       python: 3.6
-      install: skip
+      install: pip install invoke
       script: skip
       deploy:
         provider: script
