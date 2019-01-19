@@ -14,33 +14,12 @@ install:
   - inv clean build package install
 script: inv unit && coveralls
 
-stages:
-  - test
-  - deploy sandpit
-  - deploy
 
-jobs:
-  include:
-    - stage: deploy sandpit
-      python: 3.6
-      install: pip install invoke twine
-      script: skip
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script: inv upload-test
-        on:
-          tags: true
-          branch: master
-    - stage: deploy
-      python: 3.6
-      install: pip install invoke
-      script: skip
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script: inv upload
-        on:
-          tags: true
-          branch: master
-
+deploy:
+  - provider: script
+    python: 3.6
+    skip_cleanup: true
+    script: inv upload
+    on:
+        tags: true
+        branch: master
