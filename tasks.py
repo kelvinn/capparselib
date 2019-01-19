@@ -42,7 +42,7 @@ def unit(c):
 @task
 def upload_test(c):
     c.run("twine upload --repository-url https://test.pypi.org/legacy/ dist/*")
-    c.run("pip install -t /tmp --isolated -i https://test.pypi.org/simple/ capparselib")
+    # c.run("pip install -t /tmp --isolated -i https://test.pypi.org/simple/ capparselib")
 
 
 @task
