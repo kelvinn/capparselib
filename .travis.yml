@@ -12,9 +12,7 @@ before_install:
 install:
   - pip install invoke
   - inv clean build package install
-script: inv unit
-after_success:
-  - coveralls
+script: inv unit && coveralls
 
 stages:
   - test
