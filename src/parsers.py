@@ -190,6 +190,9 @@ class CAPParser(object):
         else:  # probably RSS TODO Unfinished
             self.cap_xml_type = 'RSS'
 
+    def dirty_invalid_xml_hacks(self):
+        self.xml = bytes(self.xml).replace(b"<references />", b'')
+
     def get_objectified_xml(self):
         xsd_filename = XML_TYPE_XSD_MAPPINGS[self.cap_xml_type]
         with open(os.path.join(CAPLIBRARY_PATH, xsd_filename)) as f:
@@ -218,6 +221,7 @@ class CAPParser(object):
 
     def load(self):
         if self.xml:
+            self.dirty_invalid_xml_hacks()
             self.determine_cap_type()
             for alert in self.get_alert_list():
                 self.alert_list.append(self.parse_alert(alert))

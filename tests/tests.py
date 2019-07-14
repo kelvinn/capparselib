@@ -33,6 +33,7 @@ CAP_DATA_FILES = [
     ["resources/australia_bom.cap", "CAP1_2", 1, "2019-01-16T03:15:58+00:00", "CAP.Message@bom.gov.au"],
     # ["resources/sweden.cap", "CAP1_2", 1, "2018-10-12T11:05:18+02:00", "https://www.krisinformation.se/"],
     # ["resources/sweden.atom", "CAP1_2", 1, "2018-10-12T11:05:18+02:00", "https://www.krisinformation.se/"],
+    ["resources/CanadaNaad.xml", "CAP1_2", 1, "2019-07-12T17:59:29-00:00", "cap-pac@canada.ca"],
     ["resources/mexico.xml", "CAP1_2", 1, "2018-10-20T07:15:00-05:00", "smn.cna.gob.mx"],
     ["resources/taiwan.cap", "CAP1_2", 1, "2014-05-14T20:10:00+08:00", "ddmt01@wra.gov.tw"],
     ["resources/ph.cap", "CAP1_2", 1, "2014-11-03T14:57:33+08:00", "PAGASA-DOST"],
