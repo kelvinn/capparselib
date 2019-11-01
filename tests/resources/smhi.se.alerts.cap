@@ -1,0 +1,1277 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alerts xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+    <alert>
+        <identifier>smhi-bpm-1552396920785</identifier>
+        <sender>noreplyvarning@smhi.se</sender>
+        <sent>2019-03-12T14:51:46+01:00</sent>
+        <status>Actual</status>
+        <msgType>Alert</msgType>
+        <scope>Public</scope>
+        <code>system_affiliation 5</code>
+        <code>latest_update 2019-03-13T09:22:50+01:00</code>
+        <code>system_version 3</code>
+        <code>system_alert_category warning</code>
+        <info>
+            <language>sv-SE</language>
+            <category>Met</category>
+            <event>alpine weather</event>
+            <urgency>Immediate</urgency>
+            <severity>Moderate</severity>
+            <certainty>Likely</certainty>
+            <eventCode>
+                <valueName>system_event_level</valueName>
+                <value>Warning class 1 strong wind and drifting snow/precipitation</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_sv-SE</valueName>
+                <value>Fjällväder</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_priority</valueName>
+                <value>1</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_sv-SE</valueName>
+                <value>Varning klass 1 hård vind med snödrev eller nederbörd</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_color</valueName>
+                <value>#fdeb1b</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_id</valueName>
+                <value>2</value>
+            </eventCode>
+            <effective>2019-03-12T14:51:46+01:00</effective>
+            <onset>2019-03-12T14:51:46+01:00</onset>
+            <expires>2020-03-11T14:22:00+01:00</expires>
+            <senderName>SMHI, Swedish Meteorological and Hydrological Institute</senderName>
+            <headline>Västerbottens län,södra Lapplandsfjällen</headline>
+            <description>När:Fram till onsdag kväll
+Var:På kalfjället
+Intensitet:Sydost 14-17 m/s
+Kommentar:I kombination med snöfall.</description>
+            <web>http://www.smhi.se/vadret/vadret-i-sverige/Varningar</web>
+            <parameter>
+                <valueName>system_position</valueName>
+                <value>1</value>
+            </parameter>
+            <parameter>
+                <valueName>system_history</valueName>
+                <value>{"history":[{"date":"2019-03-12T14:51:46","node":"description","label":"Områdesbeskrivning (Sv)","value":"När:Från onsdag eftermiddag fram till onsdag kväll\nVar:På kalfjället\nIntensitet:Sydost 14-18 m/s\nKommentar:I kombination med snöfall"},{"date":"2019-03-12T16:04:56","node":"description","label":"Områdesbeskrivning (Sv)","value":"När:Från onsdag eftermiddag fram till onsdag kväll\nVar:På kalfjället\nIntensitet:Sydost 14-18 m/s\nKommentar:I kombination med snöfall."},{"date":"2019-03-13T09:12:58","node":"description","label":"Områdesbeskrivning (Sv)","value":"När:Fram till onsdag kväll\nVar:På kalfjället\nIntensitet:Sydost 14-17 m/s\nKommentar:I kombination med snöfall."}]}</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_description</valueName>
+                <value>When:Until Wednesday night
+Where:On the bare mountain
+Intensity:Southeast 14-17 m/s
+Comment:In combination with snowfall.</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_headline</valueName>
+                <value>Västerbottens län,södra Lapplandsfjällen</value>
+            </parameter>
+            <area>
+                <areaDesc>002</areaDesc>
+            </area>
+        </info>
+    </alert>
+    <alert>
+        <identifier>smhi-bpm-1552397021959</identifier>
+        <sender>noreplyvarning@smhi.se</sender>
+        <sent>2019-03-12T14:51:46+01:00</sent>
+        <status>Actual</status>
+        <msgType>Alert</msgType>
+        <scope>Public</scope>
+        <code>system_affiliation 5</code>
+        <code>latest_update 2019-03-12T22:28:58+01:00</code>
+        <code>system_version 2</code>
+        <code>system_alert_category warning</code>
+        <info>
+            <language>sv-SE</language>
+            <category>Met</category>
+            <event>heavy snow SMHI-B</event>
+            <urgency>Immediate</urgency>
+            <severity>Moderate</severity>
+            <certainty>Likely</certainty>
+            <eventCode>
+                <valueName>system_event_level</valueName>
+                <value>Warning class 1 snow</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_sv-SE</valueName>
+                <value>Stora snömängder</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_priority</valueName>
+                <value>1</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_sv-SE</valueName>
+                <value>Varning klass 1 snöfall</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_color</valueName>
+                <value>#fdeb1b</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_id</valueName>
+                <value>3</value>
+            </eventCode>
+            <effective>2019-03-12T14:51:46+01:00</effective>
+            <onset>2019-03-12T14:51:46+01:00</onset>
+            <expires>2020-03-11T14:23:41+01:00</expires>
+            <senderName>SMHI, Swedish Meteorological and Hydrological Institute</senderName>
+            <headline>Värmlands län</headline>
+            <description>När:Fram till onsdag förmiddag
+Var:Hela området
+Intensitet:10-15 cm snö
+Kommentar:-</description>
+            <web>http://www.smhi.se/vadret/vadret-i-sverige/Varningar</web>
+            <parameter>
+                <valueName>system_position</valueName>
+                <value>1</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_description</valueName>
+                <value>When:Until Wednesday morning
+Where:The whole area
+Intensity:10-15 cm snow
+Comment:-</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_headline</valueName>
+                <value>Värmlands län</value>
+            </parameter>
+            <parameter>
+                <valueName>system_history</valueName>
+                <value>{"history":[{"date":"2019-03-12T14:51:46","node":"description","label":"Områdesbeskrivning (Sv)","value":"När:Från natt till onsdag fram till onsdag förmiddag\nVar:Hela området\nIntensitet:10-15 cm snö\nKommentar:-"},{"date":"2019-03-12T22:28:00","node":"description","label":"Områdesbeskrivning (Sv)","value":"När:Fram till onsdag förmiddag\nVar:Hela området\nIntensitet:10-15 cm snö\nKommentar:-"}]}</value>
+            </parameter>
+            <area>
+                <areaDesc>031</areaDesc>
+            </area>
+        </info>
+    </alert>
+    <alert>
+        <identifier>smhi-bpm-1552397145588</identifier>
+        <sender>noreplyvarning@smhi.se</sender>
+        <sent>2019-03-12T14:51:46+01:00</sent>
+        <status>Actual</status>
+        <msgType>Alert</msgType>
+        <scope>Public</scope>
+        <code>system_affiliation 5</code>
+        <code>latest_update 2019-03-12T22:28:58+01:00</code>
+        <code>system_version 2</code>
+        <code>system_alert_category warning</code>
+        <info>
+            <language>sv-SE</language>
+            <category>Met</category>
+            <event>heavy snow SMHI-B</event>
+            <urgency>Immediate</urgency>
+            <severity>Moderate</severity>
+            <certainty>Likely</certainty>
+            <eventCode>
+                <valueName>system_event_level</valueName>
+                <value>Warning class 1 snow</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_sv-SE</valueName>
+                <value>Stora snömängder</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_priority</valueName>
+                <value>1</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_sv-SE</valueName>
+                <value>Varning klass 1 snöfall</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_color</valueName>
+                <value>#fdeb1b</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_id</valueName>
+                <value>3</value>
+            </eventCode>
+            <effective>2019-03-12T14:51:46+01:00</effective>
+            <onset>2019-03-12T14:51:46+01:00</onset>
+            <expires>2020-03-11T14:25:45+01:00</expires>
+            <senderName>SMHI, Swedish Meteorological and Hydrological Institute</senderName>
+            <headline>Örebro län</headline>
+            <description>När:Fram till onsdag middag
+Var:Hela området
+Intensitet:10-15 cm snö
+Kommentar:Störst mängder väntas i norra delen.</description>
+            <web>http://www.smhi.se/vadret/vadret-i-sverige/Varningar</web>
+            <parameter>
+                <valueName>system_position</valueName>
+                <value>1</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_headline</valueName>
+                <value>Örebro län</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_description</valueName>
+                <value>When:Until Wednesday midday
+Where:The whole area
+Intensity:10-15 cm snow
+Comment:The largest amounts are expected in the northern part.</value>
+            </parameter>
+            <parameter>
+                <valueName>system_history</valueName>
+                <value>{"history":[{"date":"2019-03-12T14:51:46","node":"description","label":"Områdesbeskrivning (Sv)","value":"När:Från natt till onsdag fram till onsdag middag\nVar:Hela området\nIntensitet:10-15 cm snö\nKommentar:Störst mängder väntas i norra delen."},{"date":"2019-03-12T22:27:54","node":"description","label":"Områdesbeskrivning (Sv)","value":"När:Fram till onsdag middag\nVar:Hela området\nIntensitet:10-15 cm snö\nKommentar:Störst mängder väntas i norra delen."}]}</value>
+            </parameter>
+            <area>
+                <areaDesc>038</areaDesc>
+            </area>
+        </info>
+    </alert>
+    <alert>
+        <identifier>smhi-bpm-1552397213056</identifier>
+        <sender>noreplyvarning@smhi.se</sender>
+        <sent>2019-03-12T14:51:46+01:00</sent>
+        <status>Actual</status>
+        <msgType>Alert</msgType>
+        <scope>Public</scope>
+        <code>system_affiliation 5</code>
+        <code>latest_update 2019-03-13T02:29:43+01:00</code>
+        <code>system_version 2</code>
+        <code>system_alert_category warning</code>
+        <info>
+            <language>sv-SE</language>
+            <category>Met</category>
+            <event>heavy snow SMHI-B</event>
+            <urgency>Immediate</urgency>
+            <severity>Moderate</severity>
+            <certainty>Likely</certainty>
+            <eventCode>
+                <valueName>system_event_level</valueName>
+                <value>Warning class 1 snow</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_sv-SE</valueName>
+                <value>Stora snömängder</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_priority</valueName>
+                <value>1</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_sv-SE</valueName>
+                <value>Varning klass 1 snöfall</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_color</valueName>
+                <value>#fdeb1b</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_id</valueName>
+                <value>3</value>
+            </eventCode>
+            <effective>2019-03-12T14:51:46+01:00</effective>
+            <onset>2019-03-12T14:51:46+01:00</onset>
+            <expires>2020-03-11T14:26:53+01:00</expires>
+            <senderName>SMHI, Swedish Meteorological and Hydrological Institute</senderName>
+            <headline>Västmanlands län</headline>
+            <description>När:Fram till onsdag middag
+Var:Hela området
+Intensitet:5-10 cm snö
+Kommentar:Störst mängder väntas i västra delen.</description>
+            <web>http://www.smhi.se/vadret/vadret-i-sverige/Varningar</web>
+            <parameter>
+                <valueName>system_position</valueName>
+                <value>1</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_headline</valueName>
+                <value>Västmanlands län</value>
+            </parameter>
+            <parameter>
+                <valueName>system_history</valueName>
+                <value>{"history":[{"date":"2019-03-12T14:51:46","node":"description","label":"Områdesbeskrivning (Sv)","value":"När:Från natt till onsdag fram till onsdag middag\nVar:Hela området\nIntensitet:5-10 cm snö\nKommentar:Störst mängder väntas i västra delen."},{"date":"2019-03-13T02:27:30","node":"description","label":"Områdesbeskrivning (Sv)","value":"När:Fram till onsdag middag\nVar:Hela området\nIntensitet:5-10 cm snö\nKommentar:Störst mängder väntas i västra delen."}]}</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_description</valueName>
+                <value>When:Until Wednesday noon
+Where:The whole area
+Intensity:5-10 cm snow
+Comment:The largest amounts are expected in the western part.</value>
+            </parameter>
+            <area>
+                <areaDesc>035</areaDesc>
+            </area>
+        </info>
+    </alert>
+    <alert>
+        <identifier>smhi-bpm-1552397401981</identifier>
+        <sender>noreplyvarning@smhi.se</sender>
+        <sent>2019-03-12T14:51:46+01:00</sent>
+        <status>Actual</status>
+        <msgType>Alert</msgType>
+        <scope>Public</scope>
+        <code>system_affiliation 5</code>
+        <code>latest_update 2019-03-13T02:29:43+01:00</code>
+        <code>system_version 2</code>
+        <code>system_alert_category warning</code>
+        <info>
+            <language>sv-SE</language>
+            <category>Met</category>
+            <event>heavy snow SMHI-B</event>
+            <urgency>Immediate</urgency>
+            <severity>Moderate</severity>
+            <certainty>Likely</certainty>
+            <eventCode>
+                <valueName>system_event_level</valueName>
+                <value>Warning class 1 snow</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_sv-SE</valueName>
+                <value>Stora snömängder</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_priority</valueName>
+                <value>1</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_sv-SE</valueName>
+                <value>Varning klass 1 snöfall</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_color</valueName>
+                <value>#fdeb1b</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_id</valueName>
+                <value>3</value>
+            </eventCode>
+            <effective>2019-03-12T14:51:46+01:00</effective>
+            <onset>2019-03-12T14:51:46+01:00</onset>
+            <expires>2020-03-11T14:30:01+01:00</expires>
+            <senderName>SMHI, Swedish Meteorological and Hydrological Institute</senderName>
+            <headline>Dalarnas län utom Dalafjällen</headline>
+            <description>När:Fram till onsdag eftermiddag
+Var:Hela området
+Intensitet:10-15 cm snö
+Kommentar:De största mängderna väntas troligen norr om Siljan. </description>
+            <web>http://www.smhi.se/vadret/vadret-i-sverige/Varningar</web>
+            <parameter>
+                <valueName>system_position</valueName>
+                <value>1</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_description</valueName>
+                <value>When:Until Wednesday afternoon
+Where:The whole area
+Intensity:10-15 cm snow
+Comment:The largest amounts are probably expected north of Siljan.</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_headline</valueName>
+                <value>Dalarnas län utom Dalafjällen</value>
+            </parameter>
+            <parameter>
+                <valueName>system_history</valueName>
+                <value>{"history":[{"date":"2019-03-12T14:51:46","node":"description","label":"Områdesbeskrivning (Sv)","value":"När:Från natt till onsdag fram till onsdag eftermiddag\nVar:Hela området\nIntensitet:10-15 cm snö\nKommentar:De största mängderna väntas troligen norr om Siljan. "},{"date":"2019-03-13T02:27:44","node":"description","label":"Områdesbeskrivning (Sv)","value":"När:Fram till onsdag eftermiddag\nVar:Hela området\nIntensitet:10-15 cm snö\nKommentar:De största mängderna väntas troligen norr om Siljan. "}]}</value>
+            </parameter>
+            <area>
+                <areaDesc>008</areaDesc>
+            </area>
+        </info>
+    </alert>
+    <alert>
+        <identifier>smhi-bpm-1552397565782</identifier>
+        <sender>noreplyvarning@smhi.se</sender>
+        <sent>2019-03-12T14:51:46+01:00</sent>
+        <status>Actual</status>
+        <msgType>Alert</msgType>
+        <scope>Public</scope>
+        <code>system_affiliation 5</code>
+        <code>latest_update 2019-03-13T09:22:50+01:00</code>
+        <code>system_version 2</code>
+        <code>system_alert_category warning</code>
+        <info>
+            <language>sv-SE</language>
+            <category>Met</category>
+            <event>heavy snow SMHI-B</event>
+            <urgency>Immediate</urgency>
+            <severity>Moderate</severity>
+            <certainty>Likely</certainty>
+            <eventCode>
+                <valueName>system_event_level</valueName>
+                <value>Warning class 1 snow</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_sv-SE</valueName>
+                <value>Stora snömängder</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_priority</valueName>
+                <value>1</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_sv-SE</valueName>
+                <value>Varning klass 1 snöfall</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_color</valueName>
+                <value>#fdeb1b</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_id</valueName>
+                <value>3</value>
+            </eventCode>
+            <effective>2019-03-12T14:51:46+01:00</effective>
+            <onset>2019-03-12T14:51:46+01:00</onset>
+            <expires>2020-03-11T14:32:45+01:00</expires>
+            <senderName>SMHI, Swedish Meteorological and Hydrological Institute</senderName>
+            <headline>Gävleborgs län inland</headline>
+            <description>När:Fram till onsdag kväll
+Var:Hela området
+Intensitet:5-15 cm snö
+Kommentar:De största mängderna väntas i norra delen. </description>
+            <web>http://www.smhi.se/vadret/vadret-i-sverige/Varningar</web>
+            <parameter>
+                <valueName>system_position</valueName>
+                <value>1</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_headline</valueName>
+                <value>Gävleborgs län inland</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_description</valueName>
+                <value>When:Until Wednesday night
+Where:The whole area
+Intensity:5-15 cm snow
+Comment:The largest amounts are expected in the northern part.</value>
+            </parameter>
+            <parameter>
+                <valueName>system_history</valueName>
+                <value>{"history":[{"date":"2019-03-12T14:51:46","node":"description","label":"Områdesbeskrivning (Sv)","value":"När:Från onsdag morgon fram till onsdag kväll\nVar:Hela området\nIntensitet:5-15 cm snö\nKommentar:De största mängderna väntas i norra delen. "},{"date":"2019-03-13T08:53:56","node":"description","label":"Områdesbeskrivning (Sv)","value":"När:Fram till onsdag kväll\nVar:Hela området\nIntensitet:5-15 cm snö\nKommentar:De största mängderna väntas i norra delen. "}]}</value>
+            </parameter>
+            <area>
+                <areaDesc>011</areaDesc>
+            </area>
+        </info>
+    </alert>
+    <alert>
+        <identifier>smhi-bpm-1552397567326</identifier>
+        <sender>noreplyvarning@smhi.se</sender>
+        <sent>2019-03-12T14:51:46+01:00</sent>
+        <status>Actual</status>
+        <msgType>Alert</msgType>
+        <scope>Public</scope>
+        <code>system_affiliation 5</code>
+        <code>latest_update 2019-03-13T09:22:50+01:00</code>
+        <code>system_version 2</code>
+        <code>system_alert_category warning</code>
+        <info>
+            <language>sv-SE</language>
+            <category>Met</category>
+            <event>heavy snow SMHI-B</event>
+            <urgency>Immediate</urgency>
+            <severity>Moderate</severity>
+            <certainty>Likely</certainty>
+            <eventCode>
+                <valueName>system_event_level</valueName>
+                <value>Warning class 1 snow</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_sv-SE</valueName>
+                <value>Stora snömängder</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_priority</valueName>
+                <value>1</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_sv-SE</valueName>
+                <value>Varning klass 1 snöfall</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_color</valueName>
+                <value>#fdeb1b</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_id</valueName>
+                <value>3</value>
+            </eventCode>
+            <effective>2019-03-12T14:51:46+01:00</effective>
+            <onset>2019-03-12T14:51:46+01:00</onset>
+            <expires>2020-03-11T14:32:47+01:00</expires>
+            <senderName>SMHI, Swedish Meteorological and Hydrological Institute</senderName>
+            <headline>Gävleborgs län kustland</headline>
+            <description>När:Fram till onsdag kväll
+Var:Hela området
+Intensitet:5-15 cm snö
+Kommentar:De största mängderna väntas i norra delen. </description>
+            <web>http://www.smhi.se/vadret/vadret-i-sverige/Varningar</web>
+            <parameter>
+                <valueName>system_position</valueName>
+                <value>1</value>
+            </parameter>
+            <parameter>
+                <valueName>system_history</valueName>
+                <value>{"history":[{"date":"2019-03-12T14:51:46","node":"description","label":"Områdesbeskrivning (Sv)","value":"När:Från onsdag morgon fram till onsdag kväll\nVar:Hela området\nIntensitet:5-15 cm snö\nKommentar:De största mängderna väntas i norra delen. "},{"date":"2019-03-13T08:54:19","node":"description","label":"Områdesbeskrivning (Sv)","value":"När:Fram till onsdag kväll\nVar:Hela området\nIntensitet:5-15 cm snö\nKommentar:De största mängderna väntas i norra delen. "}]}</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_headline</valueName>
+                <value>Gävleborgs län kustland</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_description</valueName>
+                <value>When:Until Wednesday night
+Where:The whole area
+Intensity:5-15 cm snow
+Comment:The largest amounts are expected in the northern part.</value>
+            </parameter>
+            <area>
+                <areaDesc>024</areaDesc>
+            </area>
+        </info>
+    </alert>
+    <alert>
+        <identifier>smhi-bpm-1552397668242</identifier>
+        <sender>noreplyvarning@smhi.se</sender>
+        <sent>2019-03-12T14:51:46+01:00</sent>
+        <status>Actual</status>
+        <msgType>Alert</msgType>
+        <scope>Public</scope>
+        <code>system_affiliation 5</code>
+        <code>latest_update 2019-03-12T22:28:58+01:00</code>
+        <code>system_version 2</code>
+        <code>system_alert_category warning</code>
+        <info>
+            <language>sv-SE</language>
+            <category>Met</category>
+            <event>heavy snow SMHI-B</event>
+            <urgency>Immediate</urgency>
+            <severity>Moderate</severity>
+            <certainty>Likely</certainty>
+            <eventCode>
+                <valueName>system_event_level</valueName>
+                <value>Warning class 1 snow</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_sv-SE</valueName>
+                <value>Stora snömängder</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_priority</valueName>
+                <value>1</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_sv-SE</valueName>
+                <value>Varning klass 1 snöfall</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_color</valueName>
+                <value>#fdeb1b</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_id</valueName>
+                <value>3</value>
+            </eventCode>
+            <effective>2019-03-12T14:51:46+01:00</effective>
+            <onset>2019-03-12T14:51:46+01:00</onset>
+            <expires>2020-03-11T14:34:28+01:00</expires>
+            <senderName>SMHI, Swedish Meteorological and Hydrological Institute</senderName>
+            <headline>Västernorrlands län</headline>
+            <description>När:Onsdag eftermiddag och kväll
+Var:Östra delen
+Intensitet:10-20 cm snö
+Kommentar:Tilltagande sydostlig vind som kan ge snödrev.</description>
+            <web>http://www.smhi.se/vadret/vadret-i-sverige/Varningar</web>
+            <parameter>
+                <valueName>system_position</valueName>
+                <value>1</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_headline</valueName>
+                <value>Västernorrlands län</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_description</valueName>
+                <value>When:Wednesday afternoon and evening
+Where:Eastern part
+Intensity:10-20 cm snow
+Comment:Drifting snow due to increasing south-easterly wind.</value>
+            </parameter>
+            <parameter>
+                <valueName>system_history</valueName>
+                <value>{"history":[{"date":"2019-03-12T14:51:46","node":"description","label":"Områdesbeskrivning (Sv)","value":"När:Onsdag eftermiddag och kväll\nVar:Östra delen\nIntensitet:10-20 cm snö\nKommentar:-"},{"date":"2019-03-12T22:22:54","node":"description","label":"Områdesbeskrivning (Sv)","value":"När:Onsdag eftermiddag och kväll\nVar:Östra delen\nIntensitet:10-20 cm snö\nKommentar:Tilltagande sydostlig vind som kan ge snödrev."}]}</value>
+            </parameter>
+            <area>
+                <areaDesc>034</areaDesc>
+            </area>
+        </info>
+    </alert>
+    <alert>
+        <identifier>smhi-bpm-1552404191814</identifier>
+        <sender>noreplyvarning@smhi.se</sender>
+        <sent>2019-03-12T16:37:16+01:00</sent>
+        <status>Actual</status>
+        <msgType>Alert</msgType>
+        <scope>Public</scope>
+        <code>system_affiliation 5</code>
+        <code>latest_update 2019-03-13T08:39:41+01:00</code>
+        <code>system_version 5</code>
+        <code>system_alert_category warning</code>
+        <info>
+            <language>sv-SE</language>
+            <category>Met</category>
+            <event>average wind speed at sea</event>
+            <urgency>Immediate</urgency>
+            <severity>Moderate</severity>
+            <certainty>Likely</certainty>
+            <eventCode>
+                <valueName>system_event_level</valueName>
+                <value>Warning class 1 moderate gale</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_sv-SE</valueName>
+                <value>Medelvind till havs</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_priority</valueName>
+                <value>1</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_sv-SE</valueName>
+                <value>Varning klass 1 kuling (14-17 m/s)</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_color</valueName>
+                <value>#fdeb1b</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_id</valueName>
+                <value>1</value>
+            </eventCode>
+            <effective>2019-03-12T16:37:16+01:00</effective>
+            <onset>2019-03-12T16:37:16+01:00</onset>
+            <expires>2020-03-11T16:23:11+01:00</expires>
+            <senderName>SMHI, Swedish Meteorological and Hydrological Institute</senderName>
+            <headline>Kattegatt</headline>
+            <description>Kommentar:Onsdag middag syd tidvis 14 m/s.</description>
+            <web>http://www.smhi.se/vadret/vadret-i-sverige/Varningar</web>
+            <parameter>
+                <valueName>system_position</valueName>
+                <value>1</value>
+            </parameter>
+            <parameter>
+                <valueName>system_history</valueName>
+                <value>{"history":[{"date":"2019-03-12T16:37:16","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Syd 14-17 m/s. Avtagande natt till onsdag. Onsdag eftermiddag syd tidvis 14 m/s."},{"date":"2019-03-12T16:51:13","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Syd 14-17 m/s. Tillfälligt avtagande natt till onsdag. Onsdag eftermiddag syd tidvis 14 m/s."},{"date":"2019-03-13T04:03:39","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Syd 14-17 m/s. Tillfälligt avtagande onsdag morgon. Onsdag eftermiddag syd tidvis 14 m/s."},{"date":"2019-03-13T07:50:13","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Onsdag eftermiddag syd tidvis 14 m/s."},{"date":"2019-03-13T08:21:14","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Onsdag middag syd tidvis 14 m/s."}]}</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_description</valueName>
+                <value>Comment:Wednesday afternoon south at times 14 m/s.</value>
+            </parameter>
+            <parameter>
+                <valueName>system_navtex</valueName>
+                <value>{"status":"active","svdescription":"ONSDAG MIDDAG SYD TIDVIS 14 M/S.","endescription":"WEDNESDAY NOON S TEMPO 14 M/S."}</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_headline</valueName>
+                <value>Kattegatt</value>
+            </parameter>
+            <area>
+                <areaDesc>056</areaDesc>
+            </area>
+        </info>
+    </alert>
+    <alert>
+        <identifier>smhi-bpm-1552404310415</identifier>
+        <sender>noreplyvarning@smhi.se</sender>
+        <sent>2019-03-12T16:37:16+01:00</sent>
+        <status>Actual</status>
+        <msgType>Alert</msgType>
+        <scope>Public</scope>
+        <code>system_affiliation 5</code>
+        <code>latest_update 2019-03-13T05:52:25+01:00</code>
+        <code>system_version 5</code>
+        <code>system_alert_category warning</code>
+        <info>
+            <language>sv-SE</language>
+            <category>Met</category>
+            <event>average wind speed at sea</event>
+            <urgency>Immediate</urgency>
+            <severity>Moderate</severity>
+            <certainty>Likely</certainty>
+            <eventCode>
+                <valueName>system_event_level</valueName>
+                <value>Warning class 1 moderate gale</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_sv-SE</valueName>
+                <value>Medelvind till havs</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_priority</valueName>
+                <value>1</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_sv-SE</valueName>
+                <value>Varning klass 1 kuling (14-17 m/s)</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_color</valueName>
+                <value>#fdeb1b</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_id</valueName>
+                <value>1</value>
+            </eventCode>
+            <effective>2019-03-12T16:37:16+01:00</effective>
+            <onset>2019-03-12T16:37:16+01:00</onset>
+            <expires>2020-03-11T16:25:10+01:00</expires>
+            <senderName>SMHI, Swedish Meteorological and Hydrological Institute</senderName>
+            <headline>Bälten</headline>
+            <description>Kommentar:Under dagen sydväst tidvis 14 m/s.</description>
+            <web>http://www.smhi.se/vadret/vadret-i-sverige/Varningar</web>
+            <parameter>
+                <valueName>system_position</valueName>
+                <value>1</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_headline</valueName>
+                <value>Bälten</value>
+            </parameter>
+            <parameter>
+                <valueName>system_history</valueName>
+                <value>{"history":[{"date":"2019-03-12T16:37:16","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Syd 14-17 m/s. Avtagande natt till onsdag. Fram på onsdagen tidvis 14 m/s."},{"date":"2019-03-12T16:49:11","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Syd 14-17 m/s. Tillfälligt avtagande natt till onsdag. Fram på onsdagen tidvis 14 m/s."},{"date":"2019-03-13T04:04:15","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Syd 14-17 m/s. Tillfälligt avtagande onsdag morgon. Fram på onsdagen tidvis 14 m/s."},{"date":"2019-03-13T04:45:00","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Under dagen tidvis 14 m/s."},{"date":"2019-03-13T05:42:13","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Under dagen sydväst tidvis 14 m/s."}]}</value>
+            </parameter>
+            <parameter>
+                <valueName>system_navtex</valueName>
+                <value>{"status":"active","svdescription":"UNDER DAGEN SYDVÄST TIDVIS 14 M/S.","endescription":"DURING DAY SW TEMPO 14 M/S."}</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_description</valueName>
+                <value>Comment:During day southwest at times 14 m/s.</value>
+            </parameter>
+            <area>
+                <areaDesc>054</areaDesc>
+            </area>
+        </info>
+    </alert>
+    <alert>
+        <identifier>smhi-bpm-1552404448769</identifier>
+        <sender>noreplyvarning@smhi.se</sender>
+        <sent>2019-03-12T16:37:16+01:00</sent>
+        <status>Actual</status>
+        <msgType>Alert</msgType>
+        <scope>Public</scope>
+        <code>system_affiliation 5</code>
+        <code>latest_update 2019-03-13T08:39:41+01:00</code>
+        <code>system_version 6</code>
+        <code>system_alert_category warning</code>
+        <info>
+            <language>sv-SE</language>
+            <category>Met</category>
+            <event>average wind speed at sea</event>
+            <urgency>Immediate</urgency>
+            <severity>Moderate</severity>
+            <certainty>Likely</certainty>
+            <eventCode>
+                <valueName>system_event_level</valueName>
+                <value>Warning class 1 moderate gale</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_sv-SE</valueName>
+                <value>Medelvind till havs</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_priority</valueName>
+                <value>1</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_sv-SE</valueName>
+                <value>Varning klass 1 kuling (14-17 m/s)</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_color</valueName>
+                <value>#fdeb1b</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_id</valueName>
+                <value>1</value>
+            </eventCode>
+            <effective>2019-03-12T16:37:16+01:00</effective>
+            <onset>2019-03-12T16:37:16+01:00</onset>
+            <expires>2020-03-11T16:27:28+01:00</expires>
+            <senderName>SMHI, Swedish Meteorological and Hydrological Institute</senderName>
+            <headline>Sydvästra Östersjön</headline>
+            <description>Kommentar:Under dagen sydväst tidvis 14 m/s. I natt väst ca 15 m/s. Avtagande sen natt mot torsdag.</description>
+            <web>http://www.smhi.se/vadret/vadret-i-sverige/Varningar</web>
+            <parameter>
+                <valueName>system_position</valueName>
+                <value>1</value>
+            </parameter>
+            <parameter>
+                <valueName>system_history</valueName>
+                <value>{"history":[{"date":"2019-03-12T16:37:16","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Från tisdag kväll syd tidvis 14 m/s. Avtagande natt till onsdag. Fram på onsdagen sydväst tidvis 14 m/s."},{"date":"2019-03-12T16:47:15","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Från tisdag kväll syd tidvis 14 m/s. Tillfälligt avtagande natt till onsdag. Fram på onsdagen sydväst tidvis 14 m/s."},{"date":"2019-03-12T22:19:06","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Syd tidvis 14 m/s. Tillfälligt avtagande natt till onsdag. Fram på onsdagen sydväst tidvis 14 m/s."},{"date":"2019-03-13T04:04:48","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Syd tidvis 14 m/s. Tillfälligt avtagande onsdag morgon. Fram på onsdagen sydväst tidvis 14 m/s."},{"date":"2019-03-13T04:44:02","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Under dagen sydväst tidvis 14 m/s."},{"date":"2019-03-13T08:25:25","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Under dagen sydväst tidvis 14 m/s. I natt väst ca 15 m/s. Avtagande sen natt mot torsdag."}]}</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_description</valueName>
+                <value>Comment:During the day, southwest at times 14 m/s. During the night vest about 15 m/s. Decreasing late night towards Thursday.</value>
+            </parameter>
+            <parameter>
+                <valueName>system_navtex</valueName>
+                <value>{"status":"active","svdescription":"UNDER DAGEN SYDVÄST TIDVIS 14 M/S. I NATT VÄST CA 15 M/S. AVTAGANDE SEN NATT MOT TORSDAG.","endescription":"DURING DAY SW TEMPO 14 M/S. OVERNIGHT W ABOUT 15 M/S. DECR LATE NIGHT TOWARDS THURSDAY."}</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_headline</valueName>
+                <value>Sydvästra Östersjön</value>
+            </parameter>
+            <area>
+                <areaDesc>053</areaDesc>
+            </area>
+        </info>
+    </alert>
+    <alert>
+        <identifier>smhi-bpm-1552404653372</identifier>
+        <sender>noreplyvarning@smhi.se</sender>
+        <sent>2019-03-12T16:37:16+01:00</sent>
+        <status>Actual</status>
+        <msgType>Alert</msgType>
+        <scope>Public</scope>
+        <code>system_affiliation 5</code>
+        <code>latest_update 2019-03-13T05:52:25+01:00</code>
+        <code>system_version 2</code>
+        <code>system_alert_category warning</code>
+        <info>
+            <language>sv-SE</language>
+            <category>Met</category>
+            <event>average wind speed at sea</event>
+            <urgency>Immediate</urgency>
+            <severity>Moderate</severity>
+            <certainty>Likely</certainty>
+            <eventCode>
+                <valueName>system_event_level</valueName>
+                <value>Warning class 1 moderate gale</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_sv-SE</valueName>
+                <value>Medelvind till havs</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_priority</valueName>
+                <value>1</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_sv-SE</valueName>
+                <value>Varning klass 1 kuling (14-17 m/s)</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_color</valueName>
+                <value>#fdeb1b</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_id</valueName>
+                <value>1</value>
+            </eventCode>
+            <effective>2019-03-12T16:37:16+01:00</effective>
+            <onset>2019-03-12T16:37:16+01:00</onset>
+            <expires>2020-03-11T16:30:53+01:00</expires>
+            <senderName>SMHI, Swedish Meteorological and Hydrological Institute</senderName>
+            <headline>Mellersta Östersjön</headline>
+            <description>Kommentar:Sydost tidvis 15 m/s. Avtagande onsdag eftermiddag.</description>
+            <web>http://www.smhi.se/vadret/vadret-i-sverige/Varningar</web>
+            <parameter>
+                <valueName>system_position</valueName>
+                <value>1</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_description</valueName>
+                <value>Comment:Southeast at times 15 m/s. Decreasing Wednesday afternoon.</value>
+            </parameter>
+            <parameter>
+                <valueName>system_history</valueName>
+                <value>{"history":[{"date":"2019-03-12T16:37:16","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Från natt till onsdag sydost tidvis 15 m/s. Avtagande onsdag eftermiddag."},{"date":"2019-03-13T05:50:15","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Sydost tidvis 15 m/s. Avtagande onsdag eftermiddag."}]}</value>
+            </parameter>
+            <parameter>
+                <valueName>system_navtex</valueName>
+                <value>{"status":"active","svdescription":"SYDOST TIDVIS 15 M/S. AVTAGANDE ONSDAG EFTERMIDDAG.","endescription":"SE TEMPO 15 M/S. DECR WEDNESDAY AFTERNOON."}</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_headline</valueName>
+                <value>Mellersta Östersjön</value>
+            </parameter>
+            <area>
+                <areaDesc>049</areaDesc>
+            </area>
+        </info>
+    </alert>
+    <alert>
+        <identifier>smhi-bpm-1552404720317</identifier>
+        <sender>noreplyvarning@smhi.se</sender>
+        <sent>2019-03-12T16:37:16+01:00</sent>
+        <status>Actual</status>
+        <msgType>Alert</msgType>
+        <scope>Public</scope>
+        <code>system_affiliation 5</code>
+        <code>latest_update 2019-03-13T05:52:25+01:00</code>
+        <code>system_version 2</code>
+        <code>system_alert_category warning</code>
+        <info>
+            <language>sv-SE</language>
+            <category>Met</category>
+            <event>average wind speed at sea</event>
+            <urgency>Immediate</urgency>
+            <severity>Moderate</severity>
+            <certainty>Likely</certainty>
+            <eventCode>
+                <valueName>system_event_level</valueName>
+                <value>Warning class 1 moderate gale</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_sv-SE</valueName>
+                <value>Medelvind till havs</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_priority</valueName>
+                <value>1</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_sv-SE</valueName>
+                <value>Varning klass 1 kuling (14-17 m/s)</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_color</valueName>
+                <value>#fdeb1b</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_id</valueName>
+                <value>1</value>
+            </eventCode>
+            <effective>2019-03-12T16:37:16+01:00</effective>
+            <onset>2019-03-12T16:37:16+01:00</onset>
+            <expires>2020-03-11T16:32:00+01:00</expires>
+            <senderName>SMHI, Swedish Meteorological and Hydrological Institute</senderName>
+            <headline>Norra Östersjön</headline>
+            <description>Kommentar:Sydost tidvis 15 m/s. Avtagande onsdag kväll.</description>
+            <web>http://www.smhi.se/vadret/vadret-i-sverige/Varningar</web>
+            <parameter>
+                <valueName>system_position</valueName>
+                <value>1</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_headline</valueName>
+                <value>Norra Östersjön</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_description</valueName>
+                <value>Comment:Southeast at times 15 m/s. Decreasing Wednesday evening.</value>
+            </parameter>
+            <parameter>
+                <valueName>system_navtex</valueName>
+                <value>{"status":"active","svdescription":"SYDOST TIDVIS 15 M/S. AVTAGANDE ONSDAG KVÄLL.","endescription":"SE TEMPO 15 M/S. DECR WEDNESDAY EVENING."}</value>
+            </parameter>
+            <parameter>
+                <valueName>system_history</valueName>
+                <value>{"history":[{"date":"2019-03-12T16:37:16","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Från onsdag morgon sydost tidvis 15 m/s. Avtagande onsdag kväll."},{"date":"2019-03-13T05:49:48","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Sydost tidvis 15 m/s. Avtagande onsdag kväll."}]}</value>
+            </parameter>
+            <area>
+                <areaDesc>048</areaDesc>
+            </area>
+        </info>
+    </alert>
+    <alert>
+        <identifier>smhi-bpm-1552404771906</identifier>
+        <sender>noreplyvarning@smhi.se</sender>
+        <sent>2019-03-12T16:37:16+01:00</sent>
+        <status>Actual</status>
+        <msgType>Alert</msgType>
+        <scope>Public</scope>
+        <code>system_affiliation 5</code>
+        <code>latest_update 2019-03-13T05:52:25+01:00</code>
+        <code>system_version 2</code>
+        <code>system_alert_category warning</code>
+        <info>
+            <language>sv-SE</language>
+            <category>Met</category>
+            <event>average wind speed at sea</event>
+            <urgency>Immediate</urgency>
+            <severity>Moderate</severity>
+            <certainty>Likely</certainty>
+            <eventCode>
+                <valueName>system_event_level</valueName>
+                <value>Warning class 1 moderate gale</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_sv-SE</valueName>
+                <value>Medelvind till havs</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_priority</valueName>
+                <value>1</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_sv-SE</valueName>
+                <value>Varning klass 1 kuling (14-17 m/s)</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_color</valueName>
+                <value>#fdeb1b</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_id</valueName>
+                <value>1</value>
+            </eventCode>
+            <effective>2019-03-12T16:37:16+01:00</effective>
+            <onset>2019-03-12T16:37:16+01:00</onset>
+            <expires>2020-03-11T16:32:51+01:00</expires>
+            <senderName>SMHI, Swedish Meteorological and Hydrological Institute</senderName>
+            <headline>Ålands hav</headline>
+            <description>Kommentar:Sydost ca 15 m/s. Onsdag kväll avtagande.</description>
+            <web>http://www.smhi.se/vadret/vadret-i-sverige/Varningar</web>
+            <parameter>
+                <valueName>system_position</valueName>
+                <value>1</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_headline</valueName>
+                <value>Ålands hav</value>
+            </parameter>
+            <parameter>
+                <valueName>system_navtex</valueName>
+                <value>{"status":"active","svdescription":"SYDOST CA 15 M/S. ONSDAG KVÄLL AVTAGANDE.","endescription":"SE ABOUT 15 M/S. WEDNESDAY EVENING DECR."}</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_description</valueName>
+                <value>Comment:Southeast about 15 m/s. Wednesday evening decreasing.</value>
+            </parameter>
+            <parameter>
+                <valueName>system_history</valueName>
+                <value>{"history":[{"date":"2019-03-12T16:37:16","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Från onsdag morgon sydost ca 15 m/s. Onsdag kväll avtagande."},{"date":"2019-03-13T05:46:42","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Sydost ca 15 m/s. Onsdag kväll avtagande."}]}</value>
+            </parameter>
+            <area>
+                <areaDesc>045</areaDesc>
+            </area>
+        </info>
+    </alert>
+    <alert>
+        <identifier>smhi-bpm-1552404821040</identifier>
+        <sender>noreplyvarning@smhi.se</sender>
+        <sent>2019-03-12T16:37:16+01:00</sent>
+        <status>Actual</status>
+        <msgType>Alert</msgType>
+        <scope>Public</scope>
+        <code>system_affiliation 5</code>
+        <code>latest_update 2019-03-13T05:52:25+01:00</code>
+        <code>system_version 2</code>
+        <code>system_alert_category warning</code>
+        <info>
+            <language>sv-SE</language>
+            <category>Met</category>
+            <event>average wind speed at sea</event>
+            <urgency>Immediate</urgency>
+            <severity>Moderate</severity>
+            <certainty>Likely</certainty>
+            <eventCode>
+                <valueName>system_event_level</valueName>
+                <value>Warning class 1 moderate gale</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_sv-SE</valueName>
+                <value>Medelvind till havs</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_priority</valueName>
+                <value>1</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_sv-SE</valueName>
+                <value>Varning klass 1 kuling (14-17 m/s)</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_color</valueName>
+                <value>#fdeb1b</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_id</valueName>
+                <value>1</value>
+            </eventCode>
+            <effective>2019-03-12T16:37:16+01:00</effective>
+            <onset>2019-03-12T16:37:16+01:00</onset>
+            <expires>2020-03-11T16:33:41+01:00</expires>
+            <senderName>SMHI, Swedish Meteorological and Hydrological Institute</senderName>
+            <headline>Skärgårdshavet</headline>
+            <description>Kommentar:Sydost 15 m/s. Avtagande onsdag kväll.</description>
+            <web>http://www.smhi.se/vadret/vadret-i-sverige/Varningar</web>
+            <parameter>
+                <valueName>system_position</valueName>
+                <value>1</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_headline</valueName>
+                <value>Skärgårdshavet</value>
+            </parameter>
+            <parameter>
+                <valueName>system_navtex</valueName>
+                <value>{"status":"active","svdescription":"SYDOST 15 M/S. AVTAGANDE ONSDAG KVÄLL.","endescription":"SE 15 M/S. DECR WEDNESDAY EVENING."}</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_description</valueName>
+                <value>Comment:Southeast 15 m/s. Wednesday evening decreasing.</value>
+            </parameter>
+            <parameter>
+                <valueName>system_history</valueName>
+                <value>{"history":[{"date":"2019-03-12T16:37:16","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Från onsdag morgon fram till onsdag kväll sydost 15 m/s."},{"date":"2019-03-13T05:49:16","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Sydost 15 m/s. Avtagande onsdag kväll."}]}</value>
+            </parameter>
+            <area>
+                <areaDesc>046</areaDesc>
+            </area>
+        </info>
+    </alert>
+    <alert>
+        <identifier>smhi-bpm-1552404975411</identifier>
+        <sender>noreplyvarning@smhi.se</sender>
+        <sent>2019-03-12T16:37:16+01:00</sent>
+        <status>Actual</status>
+        <msgType>Alert</msgType>
+        <scope>Public</scope>
+        <code>system_affiliation 5</code>
+        <code>latest_update 2019-03-13T05:52:25+01:00</code>
+        <code>system_version 2</code>
+        <code>system_alert_category warning</code>
+        <info>
+            <language>sv-SE</language>
+            <category>Met</category>
+            <event>average wind speed at sea</event>
+            <urgency>Immediate</urgency>
+            <severity>Moderate</severity>
+            <certainty>Likely</certainty>
+            <eventCode>
+                <valueName>system_event_level</valueName>
+                <value>Warning class 1 moderate gale</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_sv-SE</valueName>
+                <value>Medelvind till havs</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_priority</valueName>
+                <value>1</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_sv-SE</valueName>
+                <value>Varning klass 1 kuling (14-17 m/s)</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_color</valueName>
+                <value>#fdeb1b</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_id</valueName>
+                <value>1</value>
+            </eventCode>
+            <effective>2019-03-12T16:37:16+01:00</effective>
+            <onset>2019-03-12T16:37:16+01:00</onset>
+            <expires>2020-03-11T16:36:15+01:00</expires>
+            <senderName>SMHI, Swedish Meteorological and Hydrological Institute</senderName>
+            <headline>Södra Bottenhavet</headline>
+            <description>Kommentar:Sydost ca 15 m/s. Avtagande sent onsdag kväll.</description>
+            <web>http://www.smhi.se/vadret/vadret-i-sverige/Varningar</web>
+            <parameter>
+                <valueName>system_position</valueName>
+                <value>1</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_description</valueName>
+                <value>Comment:Southeast about 15 m/s. Decreasing late Wednesday evening.</value>
+            </parameter>
+            <parameter>
+                <valueName>system_history</valueName>
+                <value>{"history":[{"date":"2019-03-12T16:37:16","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Från onsdag morgon sydost ca 15 m/s. Avtagande sent onsdag kväll."},{"date":"2019-03-13T05:48:03","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Sydost ca 15 m/s. Avtagande sent onsdag kväll."}]}</value>
+            </parameter>
+            <parameter>
+                <valueName>system_navtex</valueName>
+                <value>{"status":"active","svdescription":"SYDOST CA 15 M/S. AVTAGANDE SENT ONSDAG KVÄLL.","endescription":"SE ABOUT 15 M/S. DECR LATE WEDNESDAY EVENING."}</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_headline</valueName>
+                <value>Södra Bottenhavet</value>
+            </parameter>
+            <area>
+                <areaDesc>044</areaDesc>
+            </area>
+        </info>
+    </alert>
+    <alert>
+        <identifier>smhi-bpm-1552405011762</identifier>
+        <sender>noreplyvarning@smhi.se</sender>
+        <sent>2019-03-12T16:37:16+01:00</sent>
+        <status>Actual</status>
+        <msgType>Alert</msgType>
+        <scope>Public</scope>
+        <code>system_affiliation 5</code>
+        <code>latest_update 2019-03-13T08:39:41+01:00</code>
+        <code>system_version 2</code>
+        <code>system_alert_category warning</code>
+        <info>
+            <language>sv-SE</language>
+            <category>Met</category>
+            <event>average wind speed at sea</event>
+            <urgency>Immediate</urgency>
+            <severity>Moderate</severity>
+            <certainty>Likely</certainty>
+            <eventCode>
+                <valueName>system_event_level</valueName>
+                <value>Warning class 1 moderate gale</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_sv-SE</valueName>
+                <value>Medelvind till havs</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_priority</valueName>
+                <value>1</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_sv-SE</valueName>
+                <value>Varning klass 1 kuling (14-17 m/s)</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_color</valueName>
+                <value>#fdeb1b</value>
+            </eventCode>
+            <eventCode>
+                <valueName>system_event_level_id</valueName>
+                <value>1</value>
+            </eventCode>
+            <effective>2019-03-12T16:37:16+01:00</effective>
+            <onset>2019-03-12T16:37:16+01:00</onset>
+            <expires>2020-03-11T16:36:51+01:00</expires>
+            <senderName>SMHI, Swedish Meteorological and Hydrological Institute</senderName>
+            <headline>Norra Bottenhavet</headline>
+            <description>Kommentar:Från onsdag middag sydost ca 15 m/s. Avtagande sent onsdag kväll.</description>
+            <web>http://www.smhi.se/vadret/vadret-i-sverige/Varningar</web>
+            <parameter>
+                <valueName>system_position</valueName>
+                <value>1</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_headline</valueName>
+                <value>Norra Bottenhavet</value>
+            </parameter>
+            <parameter>
+                <valueName>system_eng_description</valueName>
+                <value>Comment:From Wednesday noon southeast about 15 m/s. Decreasing late night towards Wednesday.</value>
+            </parameter>
+            <parameter>
+                <valueName>system_history</valueName>
+                <value>{"history":[{"date":"2019-03-12T16:37:16","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Onsdag eftermiddag sydost ca 15 m/s. Avtagande sent onsdag kväll."},{"date":"2019-03-13T08:39:07","node":"description","label":"Områdesbeskrivning (Sv)","value":"Kommentar:Från onsdag middag sydost ca 15 m/s. Avtagande sent onsdag kväll."}]}</value>
+            </parameter>
+            <parameter>
+                <valueName>system_navtex</valueName>
+                <value>{"status":"active","svdescription":"FRÅN ONSDAG MIDDAG SYDOST CA 15 M/S. AVTAGANDE SENT ONSDAG KVÄLL.","endescription":"FM WEDNESDAY NOON SE ABOUT 15 M/S. DECR NIGHT TOWARDS WEDNESDAY."}</value>
+            </parameter>
+            <area>
+                <areaDesc>043</areaDesc>
+            </area>
+        </info>
+    </alert>
+</alerts>
