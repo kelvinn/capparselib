@@ -66,6 +66,14 @@ This will install necessary dependencies, and run the included tests.
 
 ## Publishing
 
-These are mainly notes for myself, so I do not have to keep looking them up.
+Deployment to PyPi should happen automatically When the package version numbers gets incremented.
 
-    $ python 
+To test a deploy, you can do the following locally (notes for myself):
+
+    $ pip install twine
+    $ inv build package upload-test
+    
+Then can test installation with:
+
+    $ pip install -i https://test.pypi.org/simple/ capparselib
+ 

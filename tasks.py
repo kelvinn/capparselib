@@ -25,7 +25,7 @@ def build(c, docs=False):
 
 @task
 def package(c):
-    c.run("python setup.py sdist")
+    c.run("python setup.py sdist bdist_wheel")
 
 
 @task
