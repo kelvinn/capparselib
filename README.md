@@ -63,3 +63,9 @@ You can run tests quite easily with:
     $ python setup.py test
     
 This will install necessary dependencies, and run the included tests.
+
+## Publishing
+
+These are mainly notes for myself, so I do not have to keep looking them up.
+
+    $ python 
