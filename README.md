@@ -53,7 +53,13 @@ fields as needed:
     >>> alert['cap_info']['cap_severity']
         'Severe'
 
-If you want to try another CAP parser, take a look at 'cap-alerts',
-located at: https://code.google.com/p/cap-alerts/
+## Testing
 
-Or RCAP, for Ruby, located here: https://github.com/farrel/RCAP
+There are quite a number of tests included with various payloads.
+
+You can run tests quite easily with:
+
+    $ pip install -r src/requirements-test.txt 
+    $ python setup.py test
+    
+This will install necessary dependencies, and run the included tests.
