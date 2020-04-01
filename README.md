@@ -66,7 +66,8 @@ This will install necessary dependencies, and run the included tests.
 
 ## Publishing
 
-Deployment to PyPi should happen automatically When the package version numbers gets incremented.
+Deployment to PyPi should happen automatically when the package version numbers gets incremented and a new tag
+is added to a commit.
 
 To test a deploy, you can do the following locally (notes for myself):
 
