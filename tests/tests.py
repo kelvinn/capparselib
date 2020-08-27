@@ -24,6 +24,7 @@ sys.path.insert(0, os.path.dirname(TEST_ROOT))
 
 CAP_DATA_FILES = [
     ["resources/weather.cap", "CAP1_1", 1, "2014-05-10T22:00:00-06:00", "w-nws.webmaster@noaa.gov"],
+    ["resources/NOAA_MultiplePolygons.txt", "CAP1_2", 1, "2020-08-26T04:14:00-05:00", "w-nws.webmaster@noaa.gov"],
     ["resources/amber.atom", "ATOM", 1, "2010-06-03T19:15:00-05:00", "KARO@CLETS.DOJ.DC.GOV"],
     ["resources/australia.cap", "CAP1_2", 1, "2011-10-05T23:04:00+10:00", "webmaster@rfs.nsw.gov.au"],
     ["resources/earthquake.cap", "CAP1_1", 1, "2010-08-31T00:09:25-05:00",

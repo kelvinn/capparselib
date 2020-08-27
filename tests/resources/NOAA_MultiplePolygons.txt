@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alert xmlns:ns2="http://gov.fema.ipaws.services/caprequest" xmlns="urn:oasis:names:tc:emergency:cap:1.2" xmlns:ns4="http://gov.fema.ipaws.services/IPAWS_CAPService/" xmlns:ns3="http://gov.fema.ipaws.services/capresponse">
+    <identifier>NWS-IDP-PROD-4412298-3677414</identifier>
+    <sender>w-nws.webmaster@noaa.gov</sender>
+    <sent>2020-08-26T04:14:00-05:00</sent>
+    <status>Actual</status>
+    <msgType>Update</msgType>
+    <scope>Public</scope>
+    <code>IPAWSv1.0</code>
+    <note></note>
+    <references>w-nws.webmaster@noaa.gov,NWS-IDP-PROD-4410291-3675936,2020-08-25T10:32:00-05:00 w-nws.webmaster@noaa.gov,NWS-IDP-PROD-4410291-3675935,2020-08-25T10:32:00-05:00 w-nws.webmaster@noaa.gov,NWS-IDP-PROD-4410291-3675937,2020-08-25T10:32:00-05:00 w-nws.webmaster@noaa.gov,NWS-IDP-PROD-4410291-3675938,2020-08-25T10:32:00-05:00 w-nws.webmaster@noaa.gov,NWS-IDP-PROD-4411079-3676518,2020-08-25T16:16:00-05:00 w-nws.webmaster@noaa.gov,NWS-IDP-PROD-4411079-3676519,2020-08-25T16:16:00-05:00 w-nws.webmaster@noaa.gov,NWS-IDP-PROD-4411932-3677172,2020-08-25T22:05:00-05:00 w-nws.webmaster@noaa.gov,NWS-IDP-PROD-4411932-3677173,2020-08-25T22:05:00-05:00</references>
+    <info>
+        <language>en-US</language>
+        <category>Met</category>
+        <event>Hurricane Warning</event>
+        <responseType>Avoid</responseType>
+        <urgency>Immediate</urgency>
+        <severity>Extreme</severity>
+        <certainty>Likely</certainty>
+        <eventCode>
+            <valueName>SAME</valueName>
+            <value>HUW</value>
+        </eventCode>
+        <eventCode>
+            <valueName>NationalWeatherService</valueName>
+            <value>HUW</value>
+        </eventCode>
+        <effective>2020-08-26T04:14:00-05:00</effective>
+        <onset>2020-08-26T04:14:00-05:00</onset>
+        <expires>2020-08-26T12:15:00-05:00</expires>
+        <senderName>NWS Lake Charles LA</senderName>
+        <headline>Hurricane Warning issued August 26 at 4:14AM CDT by NWS Lake Charles LA</headline>
+        <description>* LOCATIONS AFFECTED
+- Crowley
+- Rayne
+- Church Point
+
+* WIND
+- LATEST LOCAL FORECAST: Equivalent Tropical Storm force wind
+- Peak Wind Forecast: 35-45 mph with gusts to 65 mph
+- Window for Tropical Storm force winds: early this afternoon
+until Thursday afternoon
+
+- THREAT TO LIFE AND PROPERTY THAT INCLUDES TYPICAL FORECAST
+UNCERTAINTY IN TRACK, SIZE AND INTENSITY: Potential for wind
+greater than 110 mph
+- The wind threat has remained nearly steady from the
+previous assessment.
+- PLAN: Plan for extreme wind of equivalent CAT 3 hurricane
+force or higher.
+- PREPARE: Remaining efforts to protect life and property
+should be urgently completed. Prepare for catastrophic wind
+damage.
+- ACT: Move to safe shelter before the wind becomes hazardous.
+
+- POTENTIAL IMPACTS: Devastating to Catastrophic
+- Structural damage to sturdy buildings, some with complete
+roof and wall failures. Complete destruction of mobile
+homes. Damage greatly accentuated by large airborne
+projectiles. Locations may be uninhabitable for weeks or
+months.
+- Numerous large trees snapped or uprooted along with fences
+and roadway signs blown over.
+- Many roads impassable from large debris, and more within
+urban or heavily wooded places. Many bridges and access
+routes impassable.
+- Widespread power and communications outages.
+
+* STORM SURGE
+- LATEST LOCAL FORECAST: Life-threatening storm surge possible
+- Peak Storm Surge Inundation: The potential for 4-6 feet
+above ground somewhere within surge prone areas
+- Window of concern: Around high tide
+
+- THREAT TO LIFE AND PROPERTY THAT INCLUDES TYPICAL FORECAST
+UNCERTAINTY IN TRACK, SIZE AND INTENSITY: Potential for storm
+surge flooding greater than 3 feet above ground
+- The storm surge threat has remained nearly steady from the
+previous assessment.
+- PLAN: Plan for life-threatening storm surge flooding of
+greater than 3 feet above ground.
+- PREPARE: Evacuation efforts and flood preparations should
+soon be brought to completion before conditions become
+unsafe.
+- ACT: Leave immediately if evacuation orders are given for
+your area to avoid being cut off from emergency services or
+needlessly risk lives.
+
+- POTENTIAL IMPACTS: Significant
+- Areas of inundation from storm surge flooding. Damage to
+non-elevated structures possible.
+- Sections of escape routes and secondary roads become
+weakened or washed out, especially in usually vulnerable
+low spots.
+- Moderate damage to marinas, docks, and piers. Several small
+craft broken away from moorings, especially in unprotected
+anchorages.
+
+* FLOODING RAIN
+- LATEST LOCAL FORECAST: Flash Flood Watch is in effect
+- Peak Rainfall Amounts: Additional 3-6 inches, with locally
+higher amounts
+
+- THREAT TO LIFE AND PROPERTY THAT INCLUDES TYPICAL FORECAST
+UNCERTAINTY IN TRACK, SIZE AND INTENSITY: Potential for major
+flooding rain
+- The flooding rain threat has remained nearly steady from
+the previous assessment.
+- PLAN: Emergency plans should include the potential for
+major flooding from heavy rain. Evacuations and rescues are
+likely.
+- PREPARE: Strongly consider protective actions, especially
+if you are in an area vulnerable to flooding.
+- ACT: Heed any flood watches and warnings. Failure to take
+action will likely result in serious injury or loss of life.
+
+- POTENTIAL IMPACTS: Extensive
+- Major rainfall flooding may prompt many evacuations and
+rescues.
+- Rivers and tributaries may rapidly overflow their banks in
+multiple places. Small streams, creeks, canals, and ditches
+may become dangerous rivers. Flood control systems and
+barriers may become stressed.
+- Flood waters can enter many structures within multiple
+communities, some structures becoming uninhabitable or
+washed away. Many places where flood waters may cover
+escape routes. Streets and parking lots become rivers of
+moving water with underpasses submerged. Driving conditions
+become dangerous. Many road and bridge closures with some
+weakened or washed out.
+
+* TORNADO
+- LATEST LOCAL FORECAST:
+- Situation is somewhat favorable for tornadoes
+
+- THREAT TO LIFE AND PROPERTY THAT INCLUDES TYPICAL FORECAST
+UNCERTAINTY IN TRACK, SIZE AND INTENSITY: Potential for a few
+tornadoes
+- The tornado threat has remained nearly steady from the
+previous assessment.
+- PLAN: Emergency plans should include the potential for a
+few tornadoes.
+- PREPARE: If your shelter is particularly vulnerable to
+tornadoes, prepare to relocate to safe shelter before
+hazardous weather arrives.
+- ACT: If a tornado warning is issued, be ready to shelter
+quickly.
+
+- POTENTIAL IMPACTS: Limited
+- The occurrence of isolated tornadoes can hinder the
+execution of emergency plans during tropical events.
+- A few places may experience tornado damage, along with
+power and communications disruptions.
+- Locations could realize roofs peeled off buildings,
+chimneys toppled, mobile homes pushed off foundations or
+overturned, large tree tops and branches snapped off,
+shallow-rooted trees knocked over, moving vehicles blown
+off roads, and small boats pulled from moorings.</description>
+        <web>http://www.weather.gov</web>
+        <parameter>
+            <valueName>NWSheadline</valueName>
+            <value>HURRICANE WARNING REMAINS IN EFFECT... ...STORM SURGE WARNING REMAINS IN EFFECT</value>
+        </parameter>
+        <parameter>
+            <valueName>VTEC</valueName>
+            <value>/O.CON.KLCH.HU.W.1013.000000T0000Z-000000T0000Z/</value>
+        </parameter>
+        <parameter>
+            <valueName>EAS-ORG</valueName>
+            <value>WXR</value>
+        </parameter>
+        <parameter>
+            <valueName>PIL</valueName>
+            <value>LCHTCVLCH</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>EAS</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>NWEM</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>CMAS</value>
+        </parameter>
+        <area>
+            <areaDesc>Acadia</areaDesc>
+            <polygon>30.094,-92.619 30.091,-92.625 30.093,-92.623 30.094,-92.619</polygon>
+            <polygon>30.094,-92.619 30.120,-92.623 30.126,-92.628 30.133,-92.623 30.135,-92.628 30.161,-92.608 30.176,-92.618 30.180,-92.592 30.197,-92.593 30.200,-92.584 30.207,-92.603 30.231,-92.626 30.251,-92.622 30.264,-92.627 30.276,-92.622 30.296,-92.627 30.307,-92.622 30.317,-92.632 30.320,-92.624 30.326,-92.626 30.331,-92.619 30.374,-92.631 30.385,-92.621 30.391,-92.604 30.408,-92.605 30.420,-92.595 30.438,-92.601 30.455,-92.620 30.481,-92.632 30.481,-92.493 30.480,-92.245 30.437,-92.244 30.437,-92.177 30.350,-92.175 30.349,-92.159 30.321,-92.158 30.320,-92.142 30.299,-92.142 30.285,-92.142 30.283,-92.159 30.270,-92.159 30.270,-92.176 30.241,-92.177 30.241,-92.210 30.227,-92.210 30.222,-92.215 30.218,-92.238 30.211,-92.248 30.185,-92.246 30.172,-92.252 30.147,-92.275 30.147,-92.286 30.146,-92.293 30.131,-92.301 30.123,-92.323 30.102,-92.332 30.093,-92.346 30.086,-92.347 30.062,-92.387 30.050,-92.422 30.065,-92.484 30.075,-92.491 30.089,-92.521 30.104,-92.529 30.115,-92.554 30.098,-92.583 30.098,-92.605 30.089,-92.618 30.094,-92.619</polygon>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>LAZ043</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>022001</value>
+            </geocode>
+        </area>
+    </info>
+</alert>
