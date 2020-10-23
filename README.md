@@ -1,7 +1,7 @@
 # capparselib
 
 [![Coverage Status](https://coveralls.io/repos/github/kelvinn/capparselib/badge.svg?branch=master)](https://coveralls.io/github/kelvinn/capparselib?branch=master)
-[![Build Status](https://travis-ci.org/kelvinn/capparselib.svg)](https://travis-ci.org/kelvinn/capparselib)
+![Python package](https://github.com/kelvinn/capparselib/workflows/Python%20package/badge.svg)
 
 This module parses and 'normalizes' alerts sent using the
 Common Alerting Protocol. It currently can handle XML in
