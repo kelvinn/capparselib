@@ -27,8 +27,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install invoke
-        pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install flake8
     - name: Clean and build
       run: |
         inv clean build package install
