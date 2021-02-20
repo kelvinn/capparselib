@@ -1,7 +1,7 @@
 chardet
 parameterized
 coverage
-coveralls
+coveralls>=3.0.0
 invoke
 nose
 twine
