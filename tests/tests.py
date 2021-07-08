@@ -27,6 +27,7 @@ CAP_DATA_FILES = [
     ["resources/NOAA_MultiplePolygons.txt", "CAP1_2", 1, "2020-08-26T04:14:00-05:00", "w-nws.webmaster@noaa.gov"],
     ["resources/amber.atom", "ATOM", 1, "2010-06-03T19:15:00-05:00", "KARO@CLETS.DOJ.DC.GOV"],
     ["resources/australia.cap", "CAP1_2", 1, "2011-10-05T23:04:00+10:00", "webmaster@rfs.nsw.gov.au"],
+    # ["resources/us_nws_weather.atom", "ATOM", 2, "2014-05-10T22:00:00-06:00", "w-nws.webmaster@noaa.gov"],
     ["resources/earthquake.cap", "CAP1_1", 1, "2010-08-31T00:09:25-05:00",
      "http://earthquake.usgs.gov/research/monitoring/anss/neic/"],
     ["resources/earthquake-iso8859-1.cap", "CAP1_2", 1, "2012-10-14T22:53:04+00:00",
@@ -123,6 +124,43 @@ class TestCAPParser_1_2(unittest.TestCase):
         self.cap_object.load()
         result = self.cap_object.alert_list
         self.assertEqual("ddmt01@wra.gov.tw", result[0]["cap_sender"])
+
+
+class TestCAPParser_1_2_Canada(unittest.TestCase):
+    def setUp(self):
+        with open('resources/CanadaNaad.xml', 'br') as f:
+            data = f.read()
+            encoding = chardet.detect(data)['encoding']
+            self.cap_object = CAPParser(data.decode(encoding))
+
+    def test_determine_cap_type(self):
+        self.cap_object.determine_cap_type()
+        self.assertEqual("CAP1_2", self.cap_object.cap_xml_type)
+
+    def test_get_objectified_xml(self):
+        self.cap_object.determine_cap_type()
+        objectified_xml = self.cap_object.get_objectified_xml()
+        children = objectified_xml.info.getchildren()
+        self.assertIsNotNone(children)
+
+    def test_parse_alert(self):
+        self.cap_object.determine_cap_type()
+        objectified_xml = self.cap_object.get_objectified_xml()
+        alert_dict = self.cap_object.parse_alert(objectified_xml)
+        self.assertEqual("2019-07-12T17:59:29-00:00", alert_dict['cap_sent'])
+
+        info = alert_dict.get('cap_info')[0]
+        self.assertEqual("general public", info.get('cap_audience'))
+        self.assertEqual("Possible", info.get('cap_certainty'))
+        self.assertEqual("Monitor", info.get('cap_response_type'))
+        self.assertEqual("Minor", info.get('cap_severity'))
+        self.assertEqual("Future", info.get('cap_urgency'))
+        self.assertEqual("profile:CAP-CP:Event:0.4", info.get('cap_event_code')[0]['valueName'])
+
+    def test_load(self):
+        self.cap_object.load()
+        result = self.cap_object.alert_list
+        self.assertEqual("cap-pac@canada.ca", result[0]["cap_sender"])
 
 
 class TestCAPParser_ATOM(unittest.TestCase):

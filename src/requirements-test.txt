@@ -5,3 +5,4 @@ coveralls>=3.0.0
 invoke
 nose
 twine
+chardet>=4.0.0

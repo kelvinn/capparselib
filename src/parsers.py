@@ -21,12 +21,14 @@ XML_TYPE = None
 
 CAPLIBRARY_PATH = os.path.realpath(os.path.dirname(__file__))
 
-# Do not put event_code, eventCode
+# This is a shared list of attributes between all CAP versions.
+# Do not put event_code, eventCode, area, etc
 CAP_MAPPINGS = {
     'title': 'cap_headline',
     'summary': 'cap_description',
     'description': 'cap_description',
     'expires': 'cap_expires',
+    'event': 'cap_event',
     'responseType': 'cap_response_type',
     'severity': 'cap_severity',
     'urgency': 'cap_urgency',
@@ -35,7 +37,7 @@ CAP_MAPPINGS = {
     'sent': 'cap_sent',
     'category': 'cap_category',
     'certainty': 'cap_certainty',
-    'event': 'cap_event',
+    'audience': 'cap_audience',
     'headline': 'cap_headline',
     'instruction': 'cap_instruction',
     'language': 'cap_language',
