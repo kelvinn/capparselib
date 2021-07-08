@@ -38,10 +38,12 @@ def unit(c):
     c.run("pip install -r src/requirements-test.txt")  # convert this to inside setup.py, somehow.
     c.run("coverage run setup.py test")
 
+
 @task
 def flake8(c):
     c.run("flake8 src/ --count --select=E9,F63,F7,F82 --show-source --statistics")
     c.run("flake8 src/ --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics")
+
 
 @task
 def upload_test(c):
