@@ -163,6 +163,44 @@ class TestCAPParser_1_2_Canada(unittest.TestCase):
         self.assertEqual("cap-pac@canada.ca", result[0]["cap_sender"])
 
 
+class TestCAPParser_1_2_NOAA(unittest.TestCase):
+    def setUp(self):
+        with open('resources/NOAA_MultiplePolygons.txt', 'br') as f:
+            data = f.read()
+            encoding = chardet.detect(data)['encoding']
+            self.cap_object = CAPParser(data.decode(encoding))
+
+    def test_determine_cap_type(self):
+        self.cap_object.determine_cap_type()
+        self.assertEqual("CAP1_2", self.cap_object.cap_xml_type)
+
+    def test_get_objectified_xml(self):
+        self.cap_object.determine_cap_type()
+        objectified_xml = self.cap_object.get_objectified_xml()
+        children = objectified_xml.info.getchildren()
+        self.assertIsNotNone(children)
+
+    def test_parse_alert(self):
+        self.cap_object.determine_cap_type()
+        objectified_xml = self.cap_object.get_objectified_xml()
+        alert_dict = self.cap_object.parse_alert(objectified_xml)
+        self.assertEqual("2020-08-26T04:14:00-05:00", alert_dict['cap_sent'])
+
+        info = alert_dict.get('cap_info')[0]
+        self.assertEqual(None, info.get('cap_audience'))
+        self.assertEqual("Likely", info.get('cap_certainty'))
+        self.assertEqual("Avoid", info.get('cap_response_type'))
+        self.assertEqual("Extreme", info.get('cap_severity'))
+        self.assertEqual("Immediate", info.get('cap_urgency'))
+        self.assertEqual("2020-08-26T04:14:00-05:00", info.get('cap_onset'))
+        self.assertEqual("SAME", info.get('cap_event_code')[0]['valueName'])
+
+    def test_load(self):
+        self.cap_object.load()
+        result = self.cap_object.alert_list
+        self.assertEqual("w-nws.webmaster@noaa.gov", result[0]["cap_sender"])
+
+
 class TestCAPParser_ATOM(unittest.TestCase):
     def setUp(self):
         with open('resources/amber.atom', 'br') as f:

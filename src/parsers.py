@@ -32,7 +32,7 @@ CAP_MAPPINGS = {
     'responseType': 'cap_response_type',
     'severity': 'cap_severity',
     'urgency': 'cap_urgency',
-    'onset': 'cap_effective',
+    'onset': 'cap_onset',
     'web': 'cap_link',
     'sent': 'cap_sent',
     'category': 'cap_category',
