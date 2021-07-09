@@ -10,6 +10,8 @@ on:
     branches: [ master ]
   release:
     types: [created]
+  schedule:
+    - cron: "20 4 * * 0"
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
