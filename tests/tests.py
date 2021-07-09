@@ -192,7 +192,8 @@ class TestCAPParser_1_2_NOAA(unittest.TestCase):
         self.assertEqual("Avoid", info.get('cap_response_type'))
         self.assertEqual("Extreme", info.get('cap_severity'))
         self.assertEqual("Immediate", info.get('cap_urgency'))
-        self.assertEqual("2020-08-26T04:14:00-05:00", info.get('cap_onset'))
+        self.assertEqual("2020-08-26T04:14:00-05:00", info.get('cap_effective'))
+        self.assertEqual("2020-08-26T04:14:10-05:00", info.get('cap_onset'))
         self.assertEqual("SAME", info.get('cap_event_code')[0]['valueName'])
 
     def test_load(self):

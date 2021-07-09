@@ -26,7 +26,7 @@
             <value>HUW</value>
         </eventCode>
         <effective>2020-08-26T04:14:00-05:00</effective>
-        <onset>2020-08-26T04:14:00-05:00</onset>
+        <onset>2020-08-26T04:14:10-05:00</onset>
         <expires>2020-08-26T12:15:00-05:00</expires>
         <senderName>NWS Lake Charles LA</senderName>
         <headline>Hurricane Warning issued August 26 at 4:14AM CDT by NWS Lake Charles LA</headline>
