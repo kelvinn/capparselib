@@ -85,9 +85,7 @@ class CAPParser(object):
         self.load()
 
     def process_area(self, info_dict):
-
         new_area_list = []
-
         for area_obj in info_dict['area']:
             new_area_dict = {}
             if hasattr(area_obj, 'circle'):
