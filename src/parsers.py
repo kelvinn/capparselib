@@ -85,13 +85,21 @@ class CAPParser(object):
         self.load()
 
     def process_area(self, info_dict):
+
         new_area_list = []
+
         for area_obj in info_dict['area']:
             new_area_dict = {}
             if hasattr(area_obj, 'circle'):
-                new_area_dict['circle'] = info_dict['area'].circle
+                circles_list = []
+                for circle in area_obj['circle']:
+                    circles_list.append(circle)
+                new_area_dict["circles"] = circles_list
             if hasattr(area_obj, 'polygon'):
-                new_area_dict['polygon'] = info_dict['area'].polygon
+                polygons_list = []
+                for polygon in area_obj['polygon']:
+                    polygons_list.append(polygon)
+                new_area_dict["polygons"] = polygons_list
             if hasattr(area_obj, 'geocode'):
                 geocode_list = []
                 for geocode in area_obj['geocode']:
