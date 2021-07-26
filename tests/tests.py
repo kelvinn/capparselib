@@ -195,6 +195,12 @@ class TestCAPParser_1_2_NOAA(unittest.TestCase):
         self.assertEqual("2020-08-26T04:14:00-05:00", info.get('cap_effective'))
         self.assertEqual("2020-08-26T04:14:10-05:00", info.get('cap_onset'))
         self.assertEqual("SAME", info.get('cap_event_code')[0]['valueName'])
+        area = info.get("cap_area")[0]
+        self.assertEqual(2, len(area.get("polygons")))
+        self.assertEqual(
+            "30.094,-92.619 30.091,-92.625 30.093,-92.623 30.094,-92.619",
+            area.get("polygons")[0]
+        )
 
     def test_load(self):
         self.cap_object.load()
