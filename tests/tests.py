@@ -40,7 +40,8 @@ CAP_DATA_FILES = [
     ["resources/taiwan.cap", "CAP1_2", 1, "2014-05-14T20:10:00+08:00", "ddmt01@wra.gov.tw"],
     ["resources/ph.cap", "CAP1_2", 1, "2014-11-03T14:57:33+08:00", "PAGASA-DOST"],
     ["resources/wcatwc-warning.cap", "CAP1_2", 1, "2011-09-02T11:36:50-00:00",
-     "http://newwcatwc.arh.noaa.gov/tsuPortal/"]
+     "http://newwcatwc.arh.noaa.gov/tsuPortal/"],
+    ["resources/iceland_met_office.cap", "CAP1_2", 1, "2021-09-10T13:30:26-00:00", "IMO-Icelandic_Met_Office"]
 ]
 
 CAP_DATA_FILES_NO_INFO = [
