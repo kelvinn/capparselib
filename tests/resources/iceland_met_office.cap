@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+  <identifier>is-IMO-2a4c2db8-07fd-4a0f-b372-9667280d46d1</identifier>
+  <sender>IMO-Icelandic_Met_Office</sender>
+  <sent>2021-09-10T13:30:26-00:00</sent>
+  <status>Actual</status>
+  <msgType>Alert</msgType>
+  <scope>Public</scope>
+  <info>
+    <language>is-IS</language>
+    <category>Met</category>
+    <event>Veðurviðvörun: Vindur</event>
+    <responseType>None</responseType>
+    <urgency>Unknown</urgency>
+    <severity>Moderate</severity>
+    <certainty>Likely</certainty>
+    <eventCode>
+      <valueName>alertType</valueName>
+      <value>Wind</value>
+    </eventCode>
+    <onset>2021-09-12T18:00:00-00:00</onset>
+    <expires>2021-09-13T10:00:00-00:00</expires>
+    <senderName>IMO - Meteorologist on duty</senderName>
+    <headline>Hvöss suðaustanátt</headline>
+    <description>Suðaustan hvassviðri (15-20 m/s) og rigning. Hyggilegt að ganga frá lausum munum þannig að þeir fjúki ekki.</description>
+    <web>http://www.vedur.is/#spasvaedi=ho</web>
+    <contact>None</contact>
+    <parameter>
+      <valueName>Color</valueName>
+      <value>Yellow</value>
+    </parameter>
+    <resource>
+      <resourceDesc>Icon: Vindur</resourceDesc>
+      <mimeType>image/png</mimeType>
+      <size>17296</size>
+      <uri>https://cdn.vedur.is/cap/v1/icons/yellow_wind.png</uri>
+      <digest>1c8015126336af265ec36ef202e91611f9cfd7a7</digest>
+    </resource>
+    <area>
+      <areaDesc>Höfuðborgarsvæðið</areaDesc>
+      <polygon>64.17,-22.04 64.19,-21.7 64.15,-21.68 64.09,-21.78 64.05,-21.93 64.04,-22.04 64.09,-22.07 64.17,-22.04</polygon>
+      <geocode>
+        <valueName>Spásvæði</valueName>
+        <value>Höfuðborgarsvæðið</value>
+      </geocode>
+    </area>
+  </info>
+  <info>
+    <language>en-US</language>
+    <category>Met</category>
+    <event>Weather Warning: Wind</event>
+    <responseType>None</responseType>
+    <urgency>Unknown</urgency>
+    <severity>Moderate</severity>
+    <certainty>Likely</certainty>
+    <eventCode>
+      <valueName>alertType</valueName>
+      <value>Wind</value>
+    </eventCode>
+    <onset>2021-09-12T18:00:00-00:00</onset>
+    <expires>2021-09-13T10:00:00-00:00</expires>
+    <senderName>IMO - Meteorologist on duty</senderName>
+    <headline>Southeast gales</headline>
+    <description>Southeast gales (15-20 m/s) and rain. People are advised to secure loose objects outside to prevent damage.</description>
+    <web>http://en.vedur.is/#forec_area=ho</web>
+    <contact>None</contact>
+    <parameter>
+      <valueName>Color</valueName>
+      <value>Yellow</value>
+    </parameter>
+    <resource>
+      <resourceDesc>Icon: Wind</resourceDesc>
+      <mimeType>image/png</mimeType>
+      <size>17296</size>
+      <uri>https://cdn.vedur.is/cap/v1/icons/yellow_wind.png</uri>
+      <digest>1c8015126336af265ec36ef202e91611f9cfd7a7</digest>
+    </resource>
+    <area>
+      <areaDesc>Reykjavik - Capital Region</areaDesc>
+      <polygon>64.17,-22.04 64.19,-21.7 64.15,-21.68 64.09,-21.78 64.05,-21.93 64.04,-22.04 64.09,-22.07 64.17,-22.04</polygon>
+      <geocode>
+        <valueName>Forecast Region</valueName>
+        <value>Reykjavik - Capital Region</value>
+      </geocode>
+    </area>
+  </info>
+</alert>
