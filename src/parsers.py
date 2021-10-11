@@ -12,6 +12,7 @@ import os
 import logging
 from lxml import objectify, etree
 
+from src import cap_mappings
 
 ATOM_URI = 'http://www.w3.org/2005/Atom'
 CAP1_1_URN = 'urn:oasis:names:tc:emergency:cap:1.1'
@@ -20,51 +21,6 @@ EDXL_DE_URN = 'urn:oasis:names:tc:emergency:EDXL:DE:1.0'
 XML_TYPE = None
 
 CAPLIBRARY_PATH = os.path.realpath(os.path.dirname(__file__))
-
-# This is a shared list of attributes between all CAP versions.
-# Do not put event_code, eventCode, area, etc
-CAP_MAPPINGS = {
-    'title': 'cap_headline',
-    'summary': 'cap_description',
-    'description': 'cap_description',
-    'expires': 'cap_expires',
-    'event': 'cap_event',
-    'responseType': 'cap_response_type',
-    'severity': 'cap_severity',
-    'urgency': 'cap_urgency',
-    'onset': 'cap_onset',
-    'web': 'cap_link',
-    'sent': 'cap_sent',
-    'category': 'cap_category',
-    'certainty': 'cap_certainty',
-    'audience': 'cap_audience',
-    'headline': 'cap_headline',
-    'instruction': 'cap_instruction',
-    'language': 'cap_language',
-    'link': 'cap_link',
-    'author': 'cap_sender',
-    'areaDesc': 'cap_area_description',
-    'effective': 'cap_effective',
-    'sender': 'cap_sender',
-    'contact': 'cap_contact',
-    'senderName': 'cap_sender_name',
-    'note': 'cap_note',
-    'code': 'cap_code',
-    'id': 'cap_id',
-    'identifier': 'cap_id',
-    'msgType': 'cap_message_type',
-    'scope': 'cap_scope',
-    'status': 'cap_status',
-    'restriction': 'cap_restriction',
-    'source': 'cap_source',
-    'incidents': 'cap_incidents',
-    'references': 'cap_references',
-    'addresses': 'cap_addresses',
-    'area': 'area',  # Leave this as 'area', as it get transformed.
-    'eventCode': 'event_code',  # Leave this as 'area', as it get transformed.
-    'parameter': 'parameter',  # Leave this as 'parameter', as it get transformed.
-    'resource': 'resource',  # Leave this as 'parameter', as it get transformed.
-}
 
 XML_TYPE_XSD_MAPPINGS = {
     'ATOM': 'schema/atom.xsd',
@@ -76,9 +32,10 @@ XML_TYPE_XSD_MAPPINGS = {
 
 
 class CAPParser(object):
-    def __init__(self, raw_cap_xml=None, recover=False):
+    def __init__(self, raw_cap_xml=None, recover=False, mappings=cap_mappings.DEFAULT_CAP_MAPPINGS):
         self.xml = raw_cap_xml.encode('utf-8').strip() if raw_cap_xml is not None else None
         self.recover = recover
+        self.mappings = mappings
         self.objectified_xml = None
         self.cap_xml_type = None
         self.alert_list = []
@@ -143,8 +100,8 @@ class CAPParser(object):
 
         # Standardise base alert keys across multiple CAP versions
         for alert_key in list(alert_dict):
-            if alert_key in CAP_MAPPINGS:
-                new_alert_key = CAP_MAPPINGS[alert_key]
+            if alert_key in self.mappings:
+                new_alert_key = self.mappings[alert_key]
                 alert_dict[new_alert_key] = alert_dict.pop(alert_key)
 
         if 'info' in alert_dict.keys():
@@ -154,11 +111,11 @@ class CAPParser(object):
 
                 # Standardise info keys across multiple CAP versions
                 for info_key in list(info_dict):
-                    if info_key in CAP_MAPPINGS:
-                        new_info_key = CAP_MAPPINGS[info_key]
+                    if info_key in self.mappings:
+                        new_info_key = self.mappings[info_key]
                         info_dict[new_info_key] = info_dict.pop(info_key)
                     else:
-                        logging.info("Key not in CAP_MAPPINGS: %s" % info_key)
+                        logging.info("Key not in self.mappings: %s" % info_key)
 
                 if 'area' in info_dict.keys():
                     info_dict = self.process_area(info_dict)

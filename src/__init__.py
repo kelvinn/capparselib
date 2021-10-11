@@ -7,4 +7,4 @@ try:
 except ImportError:
     __version__ = 'unknown'
 
-__all__ = ['parsers', 'schema']
+__all__ = ['parsers', 'cap_mappings', 'schema']

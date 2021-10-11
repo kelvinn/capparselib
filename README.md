@@ -33,11 +33,10 @@ Basic usage includes (from the source directory):
     >>> alert_list = CAPParser(src).as_dict()
 
 The CAPParser class returns a list of alerts, which are each a
-dictionary of items according to a hopefully logical mapping
-of fields. For instance, fields with names 'headline' (CAP1.2)
+dictionary of items. The library provides its own default mapping 
+of the alert fields. For instance, fields with names 'headline' (CAP1.2)
 and 'title' (CAP1.1) are both renamed to 'cap_headline'.
-Using the above basic usage example, you can then access
-fields as needed:
+Using the above basic usage example, you can then access fields as needed:
 
     >>> alert = alert_list[0]
     >>> alert['cap_sender']
@@ -52,6 +51,18 @@ fields as needed:
         'cap_instruction', 'cap_category']
     >>> alert['cap_info']['cap_severity']
         'Severe'
+
+Instead of using the default mapping, you can use your own or those provided extra in the 
+file cap_mappings.py (currently just one extra). Here is how:
+
+    >>> from capparselib.parsers import CAPParser
+    >>> import capparselib.cap_mappings 
+    >>> f = r'test/data/weather.cap'
+    >>> src = open(f, 'r').read()
+    >>> alert_list = CAPParser(src, mappings=cap_mappings.CAP_1_2_MAPPINGS).as_dict()
+
+
+   
 
 ## Testing
 
