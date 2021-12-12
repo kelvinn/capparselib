@@ -20,7 +20,7 @@ install_requires = get_requirements('base')
 tests_require = get_requirements('test')
 
 setup(name="capparselib",
-      version="0.6.6",
+      version="0.6.7",
       description="A module to parse and standardise CAP feeds",
       long_description="This module provides the ability to parse Common Alerting Protocol (CAP) feeds and standardise"
                        " the resources into a dict, regardless if it was a 1.1 or 1.2 specification."
