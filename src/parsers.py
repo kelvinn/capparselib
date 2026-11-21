@@ -12,7 +12,7 @@ import os
 import logging
 from lxml import objectify, etree
 
-from src import cap_mappings
+from . import cap_mappings
 
 ATOM_URI = 'http://www.w3.org/2005/Atom'
 CAP1_1_URN = 'urn:oasis:names:tc:emergency:cap:1.1'

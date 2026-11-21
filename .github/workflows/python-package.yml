@@ -42,8 +42,46 @@ jobs:
       - name: Test
         run: inv unit && coveralls
 
+  upgrade:
+    # Installs the last 5 released versions one by one (each an upgrade over the
+    # previous), then upgrades to the wheel built from this commit. After every
+    # step, import the package and parse a CAP file from outside the checkout.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"  # old releases pin lxml==4.6.3, which has no wheels for 3.10+
+      - name: Build wheel from this commit
+        run: |
+          python -m pip install --upgrade pip build
+          python -m build --wheel --outdir "$RUNNER_TEMP/dist"
+      - name: Install and upgrade through the last 5 releases, then this commit
+        run: |
+          mkdir -p "$RUNNER_TEMP/work" && cp tests/smoke_installed.py tests/resources/australia.cap "$RUNNER_TEMP/work/"
+          python -m venv "$RUNNER_TEMP/venv"
+          PIP="$RUNNER_TEMP/venv/bin/pip"; PY="$RUNNER_TEMP/venv/bin/python"
+          VERSIONS=$(curl -fsS https://pypi.org/pypi/capparselib/json | python -c "
+          import json, sys
+          from packaging.version import Version
+          rel = json.load(sys.stdin)['releases']
+          vs = sorted((v for v, files in rel.items() if files and not Version(v).is_prerelease), key=Version)
+          print(' '.join(vs[-5:]))")
+          echo "Upgrade path: $VERSIONS <this commit>"
+          cd "$RUNNER_TEMP/work"   # outside the checkout, so ./src can't mask a broken install
+          for v in $VERSIONS; do
+            echo "::group::capparselib==$v"
+            "$PIP" install --upgrade "capparselib==$v"
+            "$PY" smoke_installed.py australia.cap
+            echo "::endgroup::"
+          done
+          echo "::group::this commit"
+          "$PIP" install --upgrade "$RUNNER_TEMP"/dist/capparselib-*.whl
+          "$PY" smoke_installed.py australia.cap
+          echo "::endgroup::"
+
   deploy:
-    needs: build
+    needs: [build, upgrade]
     runs-on: ubuntu-latest
 
     if: github.event_name == 'release' && github.event.action == 'created'
