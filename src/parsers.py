@@ -30,12 +30,20 @@ XML_TYPE_XSD_MAPPINGS = {
     'RSS': 'schema/rss-2_0.xsd',
 }
 
+# Official OASIS XSDs, used when use_extended_xsd_check=False.
+OFFICIAL_XML_TYPE_XSD_MAPPINGS = {
+    'CAP1_2': 'schema/CAP-v1.2.xsd',
+    'CAP1_1': 'schema/CAP-v1.1.xsd',
+}
+
 
 class CAPParser(object):
-    def __init__(self, raw_cap_xml=None, recover=False, mappings=cap_mappings.DEFAULT_CAP_MAPPINGS):
+    def __init__(self, raw_cap_xml=None, recover=False, mappings=cap_mappings.DEFAULT_CAP_MAPPINGS,
+                 use_extended_xsd_check=True):
         self.xml = raw_cap_xml.encode('utf-8').strip() if raw_cap_xml is not None else None
         self.recover = recover
         self.mappings = mappings
+        self.use_extended_xsd_check = use_extended_xsd_check
         self.objectified_xml = None
         self.cap_xml_type = None
         self.alert_list = []
@@ -160,6 +168,9 @@ class CAPParser(object):
 
     def get_objectified_xml(self):
         xsd_filename = XML_TYPE_XSD_MAPPINGS[self.cap_xml_type]
+        if not self.use_extended_xsd_check:
+            # Only standalone CAP 1.1/1.2 have an official XSD; others (Atom, EDXL-DE, RSS) are unchanged.
+            xsd_filename = OFFICIAL_XML_TYPE_XSD_MAPPINGS.get(self.cap_xml_type, xsd_filename)
         with open(os.path.join(CAPLIBRARY_PATH, xsd_filename)) as f:
             doc = etree.parse(f)
             schema = etree.XMLSchema(doc)

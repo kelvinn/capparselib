@@ -61,6 +61,11 @@ file cap_mappings.py (currently just one extra). Here is how:
     >>> src = open(f, 'r').read()
     >>> alert_list = CAPParser(src, mappings=cap_mappings.CAP_1_2_MAPPINGS).as_dict()
 
+By default, standalone CAP 1.1/1.2 messages are validated against this library's extended XSDs, which follow the
+written spec more strictly than the official ones. To validate against the official OASIS XSDs instead:
+
+    >>> alert_list = CAPParser(src, use_extended_xsd_check=False).as_dict()
+
 
    
 
