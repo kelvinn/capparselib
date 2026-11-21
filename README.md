@@ -82,9 +82,13 @@ This will install necessary dependencies, and run the included tests.
 
 ## Publishing
 
-Releases are automatic. Bump `version` in `setup.py` and merge to `master`: once tests pass, the `publish` job uploads to PyPI, then creates the `v<version>` tag and a GitHub release with generated notes. Merges that don't change the version are skipped.
+Releases are automatic. Bump `version` in `setup.py` and merge to `master`. Once the `build` (lint, tests on Python 3.10-3.13) and `upgrade` (installs recent PyPI releases in turn, then this commit's wheel, and smoke-tests each) jobs pass, the `publish` job:
 
-To test a deploy, you can do the following locally (notes for myself):
+1. Checks whether a `v<version>` tag already exists. If it does, the job does nothing, so merges that don't bump the version are skipped.
+2. Builds the package and uploads it to PyPI using [Trusted Publishing](https://docs.pypi.org/trusted-publishers/) (OIDC). No API token or secret is stored in the repo; the `pypi` GitHub environment is what PyPI trusts.
+3. Only after the upload succeeds, creates the `v<version>` tag and a GitHub release with generated notes. A failed upload leaves no tag behind, so you can fix and re-merge.
+
+To test a deploy locally (notes for myself):
 
     $ pip install twine
     $ inv build package upload-test
