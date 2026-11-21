@@ -8,8 +8,6 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-  release:
-    types: [created]
   schedule:
     - cron: "20 4 * * 0"
 
@@ -105,25 +103,52 @@ jobs:
           "$PY" smoke_installed.py australia.cap
           echo "::endgroup::"
 
-  deploy:
+  publish:
     needs: [build, upgrade]
+    # Runs on every push to master, but only does anything when setup.py carries a
+    # version that has no v<version> tag yet. Bump the version and merge to release.
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     environment: pypi
     permissions:
+      contents: write  # create the tag and GitHub release
       id-token: write  # required for PyPI Trusted Publishing (OIDC)
-
-    if: github.event_name == 'release' && github.event.action == 'created'
     steps:
       - uses: actions/checkout@v4
+      - name: Detect unreleased version
+        id: ver
+        run: |
+          VERSION=$(sed -n 's/^ *version="\([^"]*\)".*/\1/p' setup.py | head -n1)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          if git ls-remote --exit-code --tags origin "refs/tags/v$VERSION" >/dev/null 2>&1; then
+            echo "v$VERSION is already tagged; nothing to publish."
+            echo "new=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "new=true" >> "$GITHUB_OUTPUT"
+          fi
       - name: Set up Python
+        if: steps.ver.outputs.new == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
       - name: Install dependencies
+        if: steps.ver.outputs.new == 'true'
         run: |
           python -m pip install --upgrade pip
           pip install setuptools wheel invoke
       - name: Build
+        if: steps.ver.outputs.new == 'true'
         run: invoke package
       - name: Publish to PyPI
+        if: steps.ver.outputs.new == 'true'
         uses: pypa/gh-action-pypi-publish@release/v1
+      # Tag and release only after PyPI succeeds, so a failed upload leaves nothing to clean up.
+      - name: Tag and create GitHub release
+        if: steps.ver.outputs.new == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "v${{ steps.ver.outputs.version }}" \
+            --target "$GITHUB_SHA" \
+            --title "Release ${{ steps.ver.outputs.version }}" \
+            --generate-notes
