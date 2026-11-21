@@ -70,7 +70,7 @@ There are quite a number of tests included with various payloads.
 
 You can run tests quite easily with:
 
-    $ pip install -r src/requirements-test.txt 
+    $ pip install -r src/requirements-base.txt -r src/requirements-test.txt
     $ python -m unittest tests.tests
     
 This will install necessary dependencies, and run the included tests.
