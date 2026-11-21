@@ -16,7 +16,7 @@
 ## Commands
 
 ```bash
-pip install -r src/requirements-test.txt   # test deps (nose, parameterized, coverage, invoke, twine...)
+pip install -r src/requirements-base.txt -r src/requirements-test.txt   # runtime + test deps
 python -m unittest tests.tests          # run tests
 inv unit                                   # tests under coverage
 inv flake8                                 # lint (same as CI)
