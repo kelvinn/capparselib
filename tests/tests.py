@@ -41,7 +41,8 @@ CAP_DATA_FILES = [
     ["resources/ph.cap", "CAP1_2", 1, "2014-11-03T14:57:33+08:00", "PAGASA-DOST"],
     ["resources/wcatwc-warning.cap", "CAP1_2", 1, "2011-09-02T11:36:50-00:00",
      "http://newwcatwc.arh.noaa.gov/tsuPortal/"],
-    ["resources/iceland_met_office.cap", "CAP1_2", 1, "2021-09-10T13:30:26-00:00", "IMO-Icelandic_Met_Office"]
+    ["resources/iceland_met_office.cap", "CAP1_2", 1, "2021-09-10T13:30:26-00:00", "IMO-Icelandic_Met_Office"],
+    ["resources/smhi_metcoop.cap", "CAP1_2", 1, "2026-11-20T21:15:23+00:00", "noreplyvarning@smhi.se"]
 ]
 
 CAP_DATA_FILES_NO_INFO = [
