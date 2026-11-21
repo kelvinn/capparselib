@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install invoke flake8 wheel
+          pip install invoke flake8 wheel setuptools
       - name: Flake8
         run: inv flake8
       - name: Clean and build
