@@ -50,9 +50,8 @@ jobs:
     # Installs released versions one by one (each an upgrade over the previous),
     # then upgrades to the wheel built from this commit. After every step, import
     # the package and parse a CAP file from outside the checkout.
-    #  - legacy: last 5 releases on an older runner/Python. Old releases pin
-    #    lxml 4.x, which has no wheels for 3.10+, and Python 3.9 is not published
-    #    for ubuntu-latest (26.04).
+    #  - legacy: last 5 releases on an older runner/Python (3.9 is not published
+    #    for ubuntu-latest, 26.04).
     #  - latest: latest release only, on the current runner/Python.
     name: upgrade (${{ matrix.name }})
     runs-on: ${{ matrix.os }}
@@ -64,21 +63,19 @@ jobs:
             os: ubuntu-24.04
             python-version: "3.9"
             releases: 5
-            pip_args: ""
+            # releases pin lxml 4.5.0-4.6.3; only 4.6.3 has a 3.9 wheel, so install deps once and skip the pins
+            deps: "lxml==4.6.3 python-dateutil chardet"
           - name: latest
             os: ubuntu-latest
             python-version: "3.13"
             releases: 1
             # releases pin lxml 4.x (no 3.13 wheels): install current deps, then the release without its pins
-            pip_args: "--no-deps"
+            deps: "-r src/requirements-base.txt"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install libxml2/libxslt headers
-        if: matrix.name == 'legacy'  # old releases pin lxml 4.5/4.6, which has no 3.9 wheel and builds from source
-        run: sudo apt-get update && sudo apt-get install -y libxml2-dev libxslt1-dev
       - name: Build wheel from this commit
         run: |
           python -m pip install --upgrade pip build
@@ -95,11 +92,11 @@ jobs:
           vs = sorted((v for v, files in rel.items() if files and not all(f.get('yanked') for f in files) and not Version(v).is_prerelease), key=Version)  # skip yanked (e.g. the broken 0.6.7)
           print(' '.join(vs[-${{ matrix.releases }}:]))")
           echo "Upgrade path: $VERSIONS <this commit>"
-          [ -n "${{ matrix.pip_args }}" ] && "$PIP" install -r src/requirements-base.txt
+          "$PIP" install ${{ matrix.deps }}
           cd "$RUNNER_TEMP/work"   # outside the checkout, so ./src can't mask a broken install
           for v in $VERSIONS; do
             echo "::group::capparselib==$v"
-            "$PIP" install --upgrade ${{ matrix.pip_args }} "capparselib==$v"
+            "$PIP" install --upgrade --no-deps "capparselib==$v"
             "$PY" smoke_installed.py australia.cap
             echo "::endgroup::"
           done
