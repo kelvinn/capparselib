@@ -47,18 +47,34 @@ jobs:
         run: coveralls
 
   upgrade:
-    # Installs the last 5 released versions one by one (each an upgrade over the
-    # previous), then upgrades to the wheel built from this commit. After every
-    # step, import the package and parse a CAP file from outside the checkout.
-    # Pinned: Python 3.9 is not published for ubuntu-latest (26.04).
-    runs-on: ubuntu-24.04
+    # Installs released versions one by one (each an upgrade over the previous),
+    # then upgrades to the wheel built from this commit. After every step, import
+    # the package and parse a CAP file from outside the checkout.
+    #  - legacy: last 5 releases on an older runner/Python. Old releases pin
+    #    lxml 4.x, which has no wheels for 3.10+, and Python 3.9 is not published
+    #    for ubuntu-latest (26.04).
+    #  - latest: latest release only, on the current runner/Python.
+    name: upgrade (${{ matrix.name }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: legacy
+            os: ubuntu-24.04
+            python-version: "3.9"
+            releases: 5
+          - name: latest
+            os: ubuntu-latest
+            python-version: "3.13"
+            releases: 1
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.9"  # old releases pin lxml==4.6.3, which has no wheels for 3.10+
+          python-version: ${{ matrix.python-version }}
       - name: Install libxml2/libxslt headers
-        # old releases pin lxml 4.5/4.6, which has no wheel for 3.9 and builds from source
+        if: matrix.name == 'legacy'  # old releases pin lxml 4.5/4.6, which has no 3.9 wheel and builds from source
         run: sudo apt-get update && sudo apt-get install -y libxml2-dev libxslt1-dev
       - name: Build wheel from this commit
         run: |
@@ -74,7 +90,7 @@ jobs:
           from packaging.version import Version
           rel = json.load(sys.stdin)['releases']
           vs = sorted((v for v, files in rel.items() if files and not Version(v).is_prerelease), key=Version)
-          print(' '.join(vs[-5:]))")
+          print(' '.join(vs[-${{ matrix.releases }}:]))")
           echo "Upgrade path: $VERSIONS <this commit>"
           cd "$RUNNER_TEMP/work"   # outside the checkout, so ./src can't mask a broken install
           for v in $VERSIONS; do
