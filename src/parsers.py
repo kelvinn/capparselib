@@ -61,6 +61,9 @@ class CAPParser(object):
                     geocode_list.append({"valueName": geocode.valueName,
                                          "value": geocode.value})
                 new_area_dict['geocodes'] = geocode_list
+            for key in ('altitude', 'ceiling'):
+                if hasattr(area_obj, key):
+                    new_area_dict[key] = getattr(area_obj, key)
             new_area_dict['area_description'] = area_obj.areaDesc
             new_area_list.append(new_area_dict)
         info_dict['cap_area'] = new_area_list
