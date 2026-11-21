@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+	<identifier>15058141600000_20210726033528</identifier>
+	<sender>Huolingole_Meteorological_Observatory,_Tongliao_City,_Inner_Mongolia</sender>
+	<sent>2021-07-26T03:35:28+08:00</sent>
+	<status>Actual</status>
+	<msgType>Alert</msgType>
+	<scope>Public</scope>
+	<note>@@</note>
+	<info>
+		<language>en-US</language>
+		<category>Met</category>
+		<event>Rainstorm</event>
+		<urgency>Unknown</urgency>
+		<severity>Moderate</severity>
+		<certainty>Unknown</certainty>
+		<senderName>Bao Meilan</senderName>
+		<headline>The meteorological observatory of huolingole City, Tongliao City, Inner Mongolia issued a yellow rainstorm warning [level III / heavy]</headline>
+		<description>At 03:30 on July 26, 2021, the meteorological observatory of horingol City, Tongliao City, Inner Mongolia issued a yellow rainstorm warning signal: the precipitation in the urban area of horingol has reached 44.5mm, and the rainfall will continue in the next 6 hours. Relevant units and personnel shall be prepared for prevention.</description>
+		<instruction>1. The government and relevant departments shall do a good job in preventing rainstorm according to their responsibilities;</instruction>
+		<area>
+			<areaDesc>Huolingol Shi</areaDesc>
+			<geocode>
+				<valueName>CPEAS Geographic Code</valueName>
+				<value>150581000000</value>
+			</geocode>
+		</area>
+	</info>
+	<info>
+		<language>zh-CN</language>
+		<category>Met</category>
+		<event>暴雨</event>
+		<urgency>Unknown</urgency>
+		<severity>Moderate</severity>
+		<certainty>Unknown</certainty>
+		<senderName>包梅兰</senderName>
+		<headline>内蒙古通辽市霍林郭勒市气象台发布暴雨黄色预警[III级/较重]</headline>
+		<description>内蒙古通辽市霍林郭勒市气象台2021年07月26日03时30分发布暴雨黄色预警信号：霍林郭勒市区降水量已达44.5mm，且未来6小时降雨仍将持续。请有关单位和人员做好防范准备。</description>
+		<instruction>1.政府及相关部门按照职责做好防暴雨工作； 2.交通管理部门应当根据路况在强降雨路段采取交通管制措施，在积水路段实行交通引导； 3.切断低洼地带有危险的室外电源，暂停在空旷地方的户外作业，转移危险地带人员和危房居民到安全场所避雨； 4.检查城市、农田、鱼塘排水系统，采取必要的排涝措施。</instruction>
+		<area>
+			<areaDesc>霍林郭勒市</areaDesc>
+			<geocode>
+				<valueName>CPEAS Geographic Code</valueName>
+				<value>150581000000</value>
+			</geocode>
+		</area>
+	</info>
+</alert>

@@ -287,3 +287,36 @@ class TestClass(unittest.TestCase):
 
             info_list = alert['info']
             self.assertIsNotNone(info_list)
+
+
+class TestOfficialXSD(unittest.TestCase):
+    @parameterized.expand([
+        ("earthquake.cap", "CAP1_1"),
+        ("canada.cap", "CAP1_2"),
+    ])
+    def test_official_xsd(self, filename, cap_type):
+        with open(os.path.join(os.path.dirname(__file__), "resources", filename), encoding="utf-8") as f:
+            raw = f.read()
+        official = CAPParser(raw, use_extended_xsd_check=False)
+        extended = CAPParser(raw)
+        self.assertEqual(official.cap_xml_type, cap_type)
+        self.assertEqual(official.as_dict(), extended.as_dict())
+
+
+class TestChinaCMAOfficialXSD(unittest.TestCase):
+    """CMA alert valid against the official CAP 1.2 XSD but not the extended one (issue #28)."""
+
+    def setUp(self):
+        path = os.path.join(os.path.dirname(__file__), "resources", "china_cma.cap")
+        with open(path, encoding="utf-8") as f:
+            self.raw = f.read()
+
+    def test_extended_xsd_rejects(self):
+        with self.assertRaises(Exception):
+            CAPParser(self.raw)
+
+    def test_official_xsd_parses(self):
+        result = CAPParser(self.raw, use_extended_xsd_check=False).as_dict()
+        self.assertEqual(1, len(result))
+        self.assertEqual("15058141600000_20210726033528", result[0]["cap_id"])
+        self.assertEqual("2021-07-26T03:35:28+08:00", result[0]["cap_sent"])
