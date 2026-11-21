@@ -1,0 +1,105 @@
+name: Dependabot Auto-Merge
+
+on:
+  workflow_run:
+    workflows: ["Python package"]
+    types: [completed]
+    # Only Dependabot PR branches, so other PR runs don't spawn skipped runs.
+    branches: ["dependabot/**"]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: dependabot-auto-merge-${{ github.event.workflow_run.id }}
+  cancel-in-progress: true
+
+jobs:
+  auto-merge:
+    name: Merge passing low-risk Dependabot PR
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.pull_requests[0].number != null
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Inspect pull request
+        id: pr
+        env:
+          GH_REPO: ${{ github.repository }}
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.workflow_run.pull_requests[0].number }}
+        run: |
+          pr_json="$(gh pr view "$PR_NUMBER" --json author,baseRefName,headRefName,isDraft,state,title,commits,headRefOid)"
+
+          # Only merge the commit that CI actually tested.
+          tested_sha="${{ github.event.workflow_run.head_sha }}"
+          current_sha="$(echo "$pr_json" | jq -r '.headRefOid')"
+
+          echo "base=$(echo "$pr_json" | jq -r '.baseRefName')" >> "$GITHUB_OUTPUT"
+          echo "draft=$(echo "$pr_json" | jq -r '.isDraft')" >> "$GITHUB_OUTPUT"
+          echo "state=$(echo "$pr_json" | jq -r '.state')" >> "$GITHUB_OUTPUT"
+          echo "is_dependabot=$(echo "$pr_json" | jq -r '(.author.login == "dependabot[bot]") or (.author.login == "app/dependabot")')" >> "$GITHUB_OUTPUT"
+          echo "sha_matches=$([ "$tested_sha" = "$current_sha" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+
+          # Treat a bump as low risk only when "from" and "to" share a major
+          # version. Titles that don't match the expected shape are treated as
+          # major so a human looks at them.
+          title="$(echo "$pr_json" | jq -r '.title')"
+          is_major="true"
+          if [[ "$title" =~ from\ v?([0-9]+)[^\ ]*\ to\ v?([0-9]+)[^\ ]* ]]; then
+            if [ "${BASH_REMATCH[1]}" = "${BASH_REMATCH[2]}" ]; then
+              is_major="false"
+            fi
+          fi
+          echo "is_major=$is_major" >> "$GITHUB_OUTPUT"
+
+          # PRs pushed to by the repair workflow (merge-conflict resolution by
+          # Claude) get a human look, even with green CI.
+          has_repair_commit="$(echo "$pr_json" | jq -r '[.commits[]?.messageHeadline] | any(startswith("fix: resolve merge conflicts"))')"
+          echo "has_repair_commit=$has_repair_commit" >> "$GITHUB_OUTPUT"
+
+      - name: Merge pull request
+        if: >-
+          steps.pr.outputs.is_dependabot == 'true' &&
+          steps.pr.outputs.base == github.event.repository.default_branch &&
+          steps.pr.outputs.draft == 'false' &&
+          steps.pr.outputs.state == 'OPEN' &&
+          steps.pr.outputs.sha_matches == 'true' &&
+          steps.pr.outputs.is_major == 'false' &&
+          steps.pr.outputs.has_repair_commit == 'false'
+        env:
+          GH_REPO: ${{ github.repository }}
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.workflow_run.pull_requests[0].number }}
+        run: |
+          for attempt in 1 2 3; do
+            if gh pr merge "$PR_NUMBER" --squash --delete-branch; then
+              exit 0
+            fi
+            sleep 10
+          done
+          exit 1
+
+      - name: Flag for human review
+        if: >-
+          steps.pr.outputs.is_dependabot == 'true' &&
+          steps.pr.outputs.draft == 'false' &&
+          steps.pr.outputs.state == 'OPEN' &&
+          (steps.pr.outputs.is_major == 'true' || steps.pr.outputs.has_repair_commit == 'true')
+        env:
+          GH_REPO: ${{ github.repository }}
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.workflow_run.pull_requests[0].number }}
+          IS_MAJOR: ${{ steps.pr.outputs.is_major }}
+        run: |
+          reason="was modified by the automated Dependabot repair workflow"
+          if [ "$IS_MAJOR" = "true" ]; then
+            reason="is a major version bump (or its title could not be parsed)"
+          fi
+          gh label create "needs-review" --color FBCA04 \
+            --description "Requires manual review before merge" >/dev/null 2>&1 || true
+          gh pr edit "$PR_NUMBER" --add-label "needs-review" || true
+          gh pr comment "$PR_NUMBER" --body "CI passed, but this PR was **not** auto-merged because it $reason. Please review manually." || true
