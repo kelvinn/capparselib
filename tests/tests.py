@@ -209,6 +209,20 @@ class TestCAPParser_1_2_NOAA(unittest.TestCase):
         self.assertEqual("w-nws.webmaster@noaa.gov", result[0]["cap_sender"])
 
 
+class TestCAPParser_1_2_AltitudeCeiling(unittest.TestCase):
+    def setUp(self):
+        with open('resources/cap12_altitude_ceiling.cap', 'br') as f:
+            self.cap_object = CAPParser(f.read().decode('utf-8'))
+
+    def test_altitude_and_ceiling(self):
+        self.cap_object.load()
+        areas = self.cap_object.as_dict()[0]['cap_info'][0]['cap_area']
+        self.assertEqual(1500.5, areas[0]['altitude'])
+        self.assertEqual(3000, areas[0]['ceiling'])
+        self.assertNotIn('altitude', areas[1])
+        self.assertNotIn('ceiling', areas[1])
+
+
 class TestCAPParser_ATOM(unittest.TestCase):
     def setUp(self):
         with open('resources/amber.atom', 'br') as f:
