@@ -108,6 +108,9 @@ jobs:
   deploy:
     needs: [build, upgrade]
     runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write  # required for PyPI Trusted Publishing (OIDC)
 
     if: github.event_name == 'release' && github.event.action == 'created'
     steps:
@@ -119,12 +122,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install setuptools wheel twine invoke
-      - name: Publish
-        env:
-          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-        run: |
-          invoke package
-          invoke upload-test
-          invoke upload
+          pip install setuptools wheel invoke
+      - name: Build
+        run: invoke package
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
