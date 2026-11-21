@@ -64,10 +64,13 @@ jobs:
             os: ubuntu-24.04
             python-version: "3.9"
             releases: 5
+            pip_args: ""
           - name: latest
             os: ubuntu-latest
             python-version: "3.13"
             releases: 1
+            # releases pin lxml 4.x (no 3.13 wheels): install current deps, then the release without its pins
+            pip_args: "--no-deps"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -89,13 +92,14 @@ jobs:
           import json, sys
           from packaging.version import Version
           rel = json.load(sys.stdin)['releases']
-          vs = sorted((v for v, files in rel.items() if files and not Version(v).is_prerelease), key=Version)
+          vs = sorted((v for v, files in rel.items() if files and not all(f.get('yanked') for f in files) and not Version(v).is_prerelease), key=Version)  # skip yanked (e.g. the broken 0.6.7)
           print(' '.join(vs[-${{ matrix.releases }}:]))")
           echo "Upgrade path: $VERSIONS <this commit>"
+          [ -n "${{ matrix.pip_args }}" ] && "$PIP" install -r src/requirements-base.txt
           cd "$RUNNER_TEMP/work"   # outside the checkout, so ./src can't mask a broken install
           for v in $VERSIONS; do
             echo "::group::capparselib==$v"
-            "$PIP" install --upgrade "capparselib==$v"
+            "$PIP" install --upgrade ${{ matrix.pip_args }} "capparselib==$v"
             "$PY" smoke_installed.py australia.cap
             echo "::endgroup::"
           done
