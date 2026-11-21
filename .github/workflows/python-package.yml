@@ -40,7 +40,11 @@ jobs:
       - name: Clean and build
         run: inv clean build package install
       - name: Test
-        run: inv unit && coveralls
+        run: inv unit
+      - name: Upload coverage
+        # Coveralls rejects concurrent matrix uploads with 422 intermittently; don't fail the build on it
+        continue-on-error: true
+        run: coveralls
 
   upgrade:
     # Installs the last 5 released versions one by one (each an upgrade over the
@@ -53,6 +57,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.9"  # old releases pin lxml==4.6.3, which has no wheels for 3.10+
+      - name: Install libxml2/libxslt headers
+        # old releases pin lxml 4.5/4.6, which has no wheel for 3.9 and builds from source
+        run: sudo apt-get update && sudo apt-get install -y libxml2-dev libxslt1-dev
       - name: Build wheel from this commit
         run: |
           python -m pip install --upgrade pip build
