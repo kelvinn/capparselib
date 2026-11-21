@@ -46,7 +46,8 @@ jobs:
     # Installs the last 5 released versions one by one (each an upgrade over the
     # previous), then upgrades to the wheel built from this commit. After every
     # step, import the package and parse a CAP file from outside the checkout.
-    runs-on: ubuntu-latest
+    # Pinned: Python 3.9 is not published for ubuntu-latest (26.04).
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
