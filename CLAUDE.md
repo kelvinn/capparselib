@@ -17,8 +17,7 @@
 
 ```bash
 pip install -r src/requirements-test.txt   # test deps (nose, parameterized, coverage, invoke, twine...)
-python setup.py test                       # run tests (setup.py test_suite="tests")
-python -m unittest tests.tests             # alternative, run from repo root
+python -m unittest tests.tests          # run tests
 inv unit                                   # tests under coverage
 inv flake8                                 # lint (same as CI)
 ```
@@ -28,7 +27,7 @@ Runtime deps are in `src/requirements-base.txt` (`lxml`, `python-dateutil`, `cha
 ## Conventions and gotchas
 
 - Style: flake8, max line length 160 (`tox.ini` and `inv flake8`), max complexity 10.
-- CI (`.github/workflows/python-package.yml`) tests Python 3.8–3.9 and publishes to PyPI on a GitHub release. Releases require bumping `version` in `setup.py`. Avoid syntax newer than 3.8.
+- CI (`.github/workflows/python-package.yml`) tests Python 3.10–3.13 and publishes to PyPI on a GitHub release. Releases require bumping `version` in `setup.py`. Avoid syntax newer than 3.10.
 - `parse_alert` mutates the lxml objects' `__dict__` in place; keys not in the mapping are logged at info level and left unmapped in info dicts.
 - Errors are raised as bare `Exception("Invalid XML")` / `Exception("Error objectifying XML")`; tests may rely on this.
 - `recover=True` makes lxml tolerate bad XML; `dirty_invalid_xml_hacks` strips `<references />` which breaks validation.

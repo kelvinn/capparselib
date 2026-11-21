@@ -36,7 +36,7 @@ def install(c):
 @task
 def unit(c):
     c.run("pip install -r src/requirements-test.txt")  # convert this to inside setup.py, somehow.
-    c.run("coverage run setup.py test")
+    c.run("coverage run -m unittest tests.tests")
 
 
 @task
