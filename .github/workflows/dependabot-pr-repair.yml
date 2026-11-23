@@ -2,7 +2,7 @@ name: Dependabot PR Repair
 
 on:
   schedule:
-    - cron: "0 */4 * * *"
+    - cron: "0 10 * * *"
   push:
     branches: [master]
   workflow_dispatch:
