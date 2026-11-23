@@ -1,7 +1,7 @@
 chardet
 parameterized
 coverage
-coveralls>=3.0.0
+coveralls>=4.1.0
 invoke
 twine
 chardet>=4.0.0
